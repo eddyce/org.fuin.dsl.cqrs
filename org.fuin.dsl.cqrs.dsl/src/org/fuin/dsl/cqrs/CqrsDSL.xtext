@@ -1,0 +1,74 @@
+grammar org.fuin.dsl.cqrs.CqrsDSL  hidden(WS, ML_COMMENT, SL_COMMENT)
+
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
+import "http://www.fuin.org/dsl/ddd/DomainDrivenDesignDsl" as ddd
+
+generate cqrsDSL "http://www.fuin.org/cqrs-dsl/CqrsDSL"
+
+DomainModel:
+	namespace=Namespace;
+
+Namespace:
+	'namespace' name=FQN '{'
+		imports+=Import*
+		// elements+=AbstractElement*
+	'}';
+
+Import:
+	'import' importedNamespace=(FQN | FQNWithWildcard) ';';
+
+	
+Literal:
+	NullLiteral | BooleanLiteral | NumberLiteral | StringLiteral;
+
+FQN:
+  ID ('.' ID)*;
+
+FQNWithWildcard :
+	FQN  '.' '*';
+
+BooleanLiteral:
+	{BooleanLiteral} value=('false' | 'true');
+
+NullLiteral:
+	{NullLiteral} value='null';
+
+NumberLiteral:
+	{NumberLiteral} value=Number;
+
+StringLiteral:
+	{StringLiteral} value=STRING;
+
+terminal ID:
+	('A'..'Z'|'a'..'z') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
+	
+terminal STRING: 
+			'"' ( '\\' ('b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\') | !('\\'|'"') )* '"' |
+			"'" ( '\\' ('b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\') | !('\\'|"'") )* "'";
+
+Number hidden():
+	HEX | (INT | DECIMAL) ('.' (INT | DECIMAL))?;
+
+terminal HEX:
+	('0x'|'0X') ('0'..'9'|'a'..'f'|'A'..'F'|'_')+ 
+	('#' (('b'|'B')('i'|'I') | ('l'|'L')))?;
+	
+terminal INT returns ecore::EInt:
+	'0'..'9' ('0'..'9'|'_')*; 
+
+terminal DECIMAL:
+	INT 
+	(('e'|'E') ('+'|'-')? INT)? 
+	(('b'|'B')('i'|'I'|'d'|'D') | ('l'|'L'|'d'|'D'|'f'|'F'))?;
+
+// Documentation
+terminal DOC: '/**' -> '*/';
+
+// Multi line comment		 
+terminal ML_COMMENT: '/*' (!'*') -> '*/' ;
+
+// Single line comment
+terminal SL_COMMENT: '//' !('\n'|'\r')* ('\r'? '\n')?;
+
+// Whitespace - Anything that is ignored.
+terminal WS: (' '|'\t'|'\r'|'\n')+;

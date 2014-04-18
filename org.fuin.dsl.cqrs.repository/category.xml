@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature id="org.fuin.dsl.cqrs.sdk" version="0.1.0.qualifier">
+      <category name="org.fuin.dsl.cqrs.category"/>
+   </feature>
+   <category-def name="org.fuin.dsl.cqrs.category" label="CQRS DSL">
+      <description>
+         CQRS DSL
+      </description>
+   </category-def>
+</site>

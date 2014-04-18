@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature id="org.fuin.dsl.cqrs.sdk"
+         label="CQRS DSL Feature"
+         version="0.1.0.qualifier"
+         provider-name="Future Invent Informationsmanagement GmbH, Hamburg (Germany)">
+    
+   <description>
+      CQRS DSL
+   </description>
+
+   <copyright url="http://www.fuin.org">
+      Copyright (C) 2013 Future Invent Informationsmanagement GmbH, Hamburg (Germany). All rights reserved.
+   </copyright>
+
+   <license url="license.html">
+      %license
+   </license>
+    
+    <plugin
+            id="org.fuin.dsl.cqrs.dsl"
+            download-size="0"
+            install-size="0"
+            version="0.1.0.qualifier"
+            unpack="false"/>
+    
+    <plugin
+            id="org.fuin.dsl.cqrs.ui"
+            download-size="0"
+            install-size="0"
+            version="0.1.0.qualifier"
+            unpack="false"/>
+            
+</feature>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.fuin.dsl.cqrs.dsl/src-gen" editDirectory="/org.fuin.dsl.cqrs.dsl.edit/src"
+    editorDirectory="/org.fuin.dsl.cqrs.dsl.editor/src" modelPluginID="org.fuin.dsl.cqrs.dsl"
+    forceOverwrite="true" modelName="CqrsDSL" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    complianceLevel="5.0" copyrightFields="false" editPluginID="org.fuin.dsl.cqrs.dsl.edit"
+    editorPluginID="org.fuin.dsl.cqrs.dsl.editor" runtimeVersion="2.9">
+  <genPackages prefix="CqrsDSL" basePackage="org.fuin.dsl.cqrs" disposableProviderFactory="true"
+      fileExtensions="cqrs" ecorePackage="CqrsDSL.ecore#/">
+    <genClasses ecoreClass="CqrsDSL.ecore#//DomainModel">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CqrsDSL.ecore#//DomainModel/namespace"/>
+    </genClasses>
+    <genClasses ecoreClass="CqrsDSL.ecore#//Namespace">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CqrsDSL.ecore#//Namespace/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CqrsDSL.ecore#//Namespace/imports"/>
+    </genClasses>
+    <genClasses ecoreClass="CqrsDSL.ecore#//Import">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CqrsDSL.ecore#//Import/importedNamespace"/>
+    </genClasses>
+    <genClasses ecoreClass="CqrsDSL.ecore#//Literal">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CqrsDSL.ecore#//Literal/value"/>
+    </genClasses>
+    <genClasses ecoreClass="CqrsDSL.ecore#//BooleanLiteral"/>
+    <genClasses ecoreClass="CqrsDSL.ecore#//NullLiteral"/>
+    <genClasses ecoreClass="CqrsDSL.ecore#//NumberLiteral"/>
+    <genClasses ecoreClass="CqrsDSL.ecore#//StringLiteral"/>
+  </genPackages>
+</genmodel:GenModel>
