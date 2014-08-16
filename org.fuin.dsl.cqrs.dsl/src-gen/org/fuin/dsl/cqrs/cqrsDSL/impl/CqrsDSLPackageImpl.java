@@ -9,16 +9,23 @@ import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
+import org.fuin.dsl.cqrs.cqrsDSL.AbstractElement;
 import org.fuin.dsl.cqrs.cqrsDSL.BooleanLiteral;
+import org.fuin.dsl.cqrs.cqrsDSL.Command;
+import org.fuin.dsl.cqrs.cqrsDSL.CommandHandler;
+import org.fuin.dsl.cqrs.cqrsDSL.Context;
 import org.fuin.dsl.cqrs.cqrsDSL.CqrsDSLFactory;
 import org.fuin.dsl.cqrs.cqrsDSL.CqrsDSLPackage;
 import org.fuin.dsl.cqrs.cqrsDSL.DomainModel;
-import org.fuin.dsl.cqrs.cqrsDSL.Import;
-import org.fuin.dsl.cqrs.cqrsDSL.Literal;
 import org.fuin.dsl.cqrs.cqrsDSL.Namespace;
 import org.fuin.dsl.cqrs.cqrsDSL.NullLiteral;
 import org.fuin.dsl.cqrs.cqrsDSL.NumberLiteral;
+import org.fuin.dsl.cqrs.cqrsDSL.Projection;
 import org.fuin.dsl.cqrs.cqrsDSL.StringLiteral;
+import org.fuin.dsl.cqrs.cqrsDSL.TypeMetaInfo;
+import org.fuin.dsl.cqrs.cqrsDSL.View;
+
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -40,6 +47,13 @@ public class CqrsDSLPackageImpl extends EPackageImpl implements CqrsDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass contextEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass namespaceEClass = null;
 
   /**
@@ -47,14 +61,42 @@ public class CqrsDSLPackageImpl extends EPackageImpl implements CqrsDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass importEClass = null;
+  private EClass abstractElementEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass literalEClass = null;
+  private EClass commandEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass commandHandlerEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass projectionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass viewEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass typeMetaInfoEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -132,6 +174,9 @@ public class CqrsDSLPackageImpl extends EPackageImpl implements CqrsDSLPackage
 
     isInited = true;
 
+    // Initialize simple dependencies
+    DomainDrivenDesignDslPackage.eINSTANCE.eClass();
+
     // Create package meta-data objects
     theCqrsDSLPackage.createPackageContents();
 
@@ -162,9 +207,39 @@ public class CqrsDSLPackageImpl extends EPackageImpl implements CqrsDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getDomainModel_Namespace()
+  public EReference getDomainModel_Contexts()
   {
     return (EReference)domainModelEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getContext()
+  {
+    return contextEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getContext_Name()
+  {
+    return (EAttribute)contextEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getContext_Namespaces()
+  {
+    return (EReference)contextEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -202,9 +277,9 @@ public class CqrsDSLPackageImpl extends EPackageImpl implements CqrsDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getImport()
+  public EReference getNamespace_Elements()
   {
-    return importEClass;
+    return (EReference)namespaceEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -212,9 +287,9 @@ public class CqrsDSLPackageImpl extends EPackageImpl implements CqrsDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getImport_ImportedNamespace()
+  public EClass getAbstractElement()
   {
-    return (EAttribute)importEClass.getEStructuralFeatures().get(0);
+    return abstractElementEClass;
   }
 
   /**
@@ -222,9 +297,9 @@ public class CqrsDSLPackageImpl extends EPackageImpl implements CqrsDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getLiteral()
+  public EAttribute getAbstractElement_Doc()
   {
-    return literalEClass;
+    return (EAttribute)abstractElementEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -232,9 +307,119 @@ public class CqrsDSLPackageImpl extends EPackageImpl implements CqrsDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getLiteral_Value()
+  public EAttribute getAbstractElement_Name()
   {
-    return (EAttribute)literalEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)abstractElementEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getCommand()
+  {
+    return commandEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getCommand_Variables()
+  {
+    return (EReference)commandEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getCommand_Message()
+  {
+    return (EAttribute)commandEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getCommandHandler()
+  {
+    return commandHandlerEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getCommandHandler_Commands()
+  {
+    return (EReference)commandHandlerEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getCommandHandler_Aggregates()
+  {
+    return (EReference)commandHandlerEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getProjection()
+  {
+    return projectionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getProjection_Events()
+  {
+    return (EReference)projectionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getView()
+  {
+    return viewEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getView_Projection()
+  {
+    return (EReference)viewEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getTypeMetaInfo()
+  {
+    return typeMetaInfoEClass;
   }
 
   /**
@@ -308,17 +493,36 @@ public class CqrsDSLPackageImpl extends EPackageImpl implements CqrsDSLPackage
 
     // Create classes and their features
     domainModelEClass = createEClass(DOMAIN_MODEL);
-    createEReference(domainModelEClass, DOMAIN_MODEL__NAMESPACE);
+    createEReference(domainModelEClass, DOMAIN_MODEL__CONTEXTS);
+
+    contextEClass = createEClass(CONTEXT);
+    createEAttribute(contextEClass, CONTEXT__NAME);
+    createEReference(contextEClass, CONTEXT__NAMESPACES);
 
     namespaceEClass = createEClass(NAMESPACE);
     createEAttribute(namespaceEClass, NAMESPACE__NAME);
     createEReference(namespaceEClass, NAMESPACE__IMPORTS);
+    createEReference(namespaceEClass, NAMESPACE__ELEMENTS);
 
-    importEClass = createEClass(IMPORT);
-    createEAttribute(importEClass, IMPORT__IMPORTED_NAMESPACE);
+    abstractElementEClass = createEClass(ABSTRACT_ELEMENT);
+    createEAttribute(abstractElementEClass, ABSTRACT_ELEMENT__DOC);
+    createEAttribute(abstractElementEClass, ABSTRACT_ELEMENT__NAME);
 
-    literalEClass = createEClass(LITERAL);
-    createEAttribute(literalEClass, LITERAL__VALUE);
+    commandEClass = createEClass(COMMAND);
+    createEReference(commandEClass, COMMAND__VARIABLES);
+    createEAttribute(commandEClass, COMMAND__MESSAGE);
+
+    commandHandlerEClass = createEClass(COMMAND_HANDLER);
+    createEReference(commandHandlerEClass, COMMAND_HANDLER__COMMANDS);
+    createEReference(commandHandlerEClass, COMMAND_HANDLER__AGGREGATES);
+
+    projectionEClass = createEClass(PROJECTION);
+    createEReference(projectionEClass, PROJECTION__EVENTS);
+
+    viewEClass = createEClass(VIEW);
+    createEReference(viewEClass, VIEW__PROJECTION);
+
+    typeMetaInfoEClass = createEClass(TYPE_META_INFO);
 
     booleanLiteralEClass = createEClass(BOOLEAN_LITERAL);
 
@@ -353,29 +557,56 @@ public class CqrsDSLPackageImpl extends EPackageImpl implements CqrsDSLPackage
     setNsPrefix(eNS_PREFIX);
     setNsURI(eNS_URI);
 
+    // Obtain other dependent packages
+    DomainDrivenDesignDslPackage theDomainDrivenDesignDslPackage = (DomainDrivenDesignDslPackage)EPackage.Registry.INSTANCE.getEPackage(DomainDrivenDesignDslPackage.eNS_URI);
+
     // Create type parameters
 
     // Set bounds for type parameters
 
     // Add supertypes to classes
-    booleanLiteralEClass.getESuperTypes().add(this.getLiteral());
-    nullLiteralEClass.getESuperTypes().add(this.getLiteral());
-    numberLiteralEClass.getESuperTypes().add(this.getLiteral());
-    stringLiteralEClass.getESuperTypes().add(this.getLiteral());
+    commandEClass.getESuperTypes().add(this.getAbstractElement());
+    commandHandlerEClass.getESuperTypes().add(this.getAbstractElement());
+    projectionEClass.getESuperTypes().add(this.getAbstractElement());
+    viewEClass.getESuperTypes().add(this.getAbstractElement());
+    typeMetaInfoEClass.getESuperTypes().add(theDomainDrivenDesignDslPackage.getTypeMetaInfo());
+    booleanLiteralEClass.getESuperTypes().add(theDomainDrivenDesignDslPackage.getBooleanLiteral());
+    nullLiteralEClass.getESuperTypes().add(theDomainDrivenDesignDslPackage.getNullLiteral());
+    numberLiteralEClass.getESuperTypes().add(theDomainDrivenDesignDslPackage.getNumberLiteral());
+    stringLiteralEClass.getESuperTypes().add(theDomainDrivenDesignDslPackage.getStringLiteral());
 
     // Initialize classes and features; add operations and parameters
     initEClass(domainModelEClass, DomainModel.class, "DomainModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getDomainModel_Namespace(), this.getNamespace(), null, "namespace", null, 0, 1, DomainModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDomainModel_Contexts(), this.getContext(), null, "contexts", null, 0, -1, DomainModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(contextEClass, Context.class, "Context", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getContext_Name(), ecorePackage.getEString(), "name", null, 0, 1, Context.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getContext_Namespaces(), this.getNamespace(), null, "namespaces", null, 0, -1, Context.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(namespaceEClass, Namespace.class, "Namespace", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getNamespace_Name(), ecorePackage.getEString(), "name", null, 0, 1, Namespace.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getNamespace_Imports(), this.getImport(), null, "imports", null, 0, -1, Namespace.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getNamespace_Imports(), theDomainDrivenDesignDslPackage.getImport(), null, "imports", null, 0, -1, Namespace.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getNamespace_Elements(), this.getAbstractElement(), null, "elements", null, 0, -1, Namespace.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(importEClass, Import.class, "Import", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getImport_ImportedNamespace(), ecorePackage.getEString(), "importedNamespace", null, 0, 1, Import.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(abstractElementEClass, AbstractElement.class, "AbstractElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getAbstractElement_Doc(), ecorePackage.getEString(), "doc", null, 0, 1, AbstractElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getAbstractElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, AbstractElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(literalEClass, Literal.class, "Literal", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getLiteral_Value(), ecorePackage.getEString(), "value", null, 0, 1, Literal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(commandEClass, Command.class, "Command", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getCommand_Variables(), theDomainDrivenDesignDslPackage.getVariable(), null, "variables", null, 0, -1, Command.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getCommand_Message(), ecorePackage.getEString(), "message", null, 0, 1, Command.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(commandHandlerEClass, CommandHandler.class, "CommandHandler", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getCommandHandler_Commands(), this.getCommand(), null, "commands", null, 0, -1, CommandHandler.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getCommandHandler_Aggregates(), theDomainDrivenDesignDslPackage.getAggregate(), null, "aggregates", null, 0, -1, CommandHandler.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(projectionEClass, Projection.class, "Projection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getProjection_Events(), theDomainDrivenDesignDslPackage.getEvent(), null, "events", null, 0, -1, Projection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(viewEClass, View.class, "View", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getView_Projection(), this.getProjection(), null, "projection", null, 0, 1, View.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(typeMetaInfoEClass, TypeMetaInfo.class, "TypeMetaInfo", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(booleanLiteralEClass, BooleanLiteral.class, "BooleanLiteral", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

@@ -4,22 +4,40 @@
     editorDirectory="/org.fuin.dsl.cqrs.dsl.editor/src" modelPluginID="org.fuin.dsl.cqrs.dsl"
     forceOverwrite="true" modelName="CqrsDSL" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     complianceLevel="5.0" copyrightFields="false" editPluginID="org.fuin.dsl.cqrs.dsl.edit"
-    editorPluginID="org.fuin.dsl.cqrs.dsl.editor" runtimeVersion="2.9">
+    editorPluginID="org.fuin.dsl.cqrs.dsl.editor" runtimeVersion="2.9" usedGenPackages="../../../org.fuin.dsl.ddd.dsl/model/generated/DomainDrivenDesignDsl.genmodel#//domainDrivenDesignDsl">
   <genPackages prefix="CqrsDSL" basePackage="org.fuin.dsl.cqrs" disposableProviderFactory="true"
       fileExtensions="cqrs" ecorePackage="CqrsDSL.ecore#/">
     <genClasses ecoreClass="CqrsDSL.ecore#//DomainModel">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CqrsDSL.ecore#//DomainModel/namespace"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CqrsDSL.ecore#//DomainModel/contexts"/>
+    </genClasses>
+    <genClasses ecoreClass="CqrsDSL.ecore#//Context">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CqrsDSL.ecore#//Context/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CqrsDSL.ecore#//Context/namespaces"/>
     </genClasses>
     <genClasses ecoreClass="CqrsDSL.ecore#//Namespace">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CqrsDSL.ecore#//Namespace/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CqrsDSL.ecore#//Namespace/imports"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CqrsDSL.ecore#//Namespace/elements"/>
     </genClasses>
-    <genClasses ecoreClass="CqrsDSL.ecore#//Import">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CqrsDSL.ecore#//Import/importedNamespace"/>
+    <genClasses ecoreClass="CqrsDSL.ecore#//AbstractElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CqrsDSL.ecore#//AbstractElement/doc"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CqrsDSL.ecore#//AbstractElement/name"/>
     </genClasses>
-    <genClasses ecoreClass="CqrsDSL.ecore#//Literal">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CqrsDSL.ecore#//Literal/value"/>
+    <genClasses ecoreClass="CqrsDSL.ecore#//Command">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CqrsDSL.ecore#//Command/variables"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CqrsDSL.ecore#//Command/message"/>
     </genClasses>
+    <genClasses ecoreClass="CqrsDSL.ecore#//CommandHandler">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CqrsDSL.ecore#//CommandHandler/commands"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CqrsDSL.ecore#//CommandHandler/aggregates"/>
+    </genClasses>
+    <genClasses ecoreClass="CqrsDSL.ecore#//Projection">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CqrsDSL.ecore#//Projection/events"/>
+    </genClasses>
+    <genClasses ecoreClass="CqrsDSL.ecore#//View">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CqrsDSL.ecore#//View/projection"/>
+    </genClasses>
+    <genClasses ecoreClass="CqrsDSL.ecore#//TypeMetaInfo"/>
     <genClasses ecoreClass="CqrsDSL.ecore#//BooleanLiteral"/>
     <genClasses ecoreClass="CqrsDSL.ecore#//NullLiteral"/>
     <genClasses ecoreClass="CqrsDSL.ecore#//NumberLiteral"/>

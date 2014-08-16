@@ -6,6 +6,8 @@ import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
 
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Import;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Namespace</b></em>'.
@@ -16,6 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link org.fuin.dsl.cqrs.cqrsDSL.Namespace#getName <em>Name</em>}</li>
  *   <li>{@link org.fuin.dsl.cqrs.cqrsDSL.Namespace#getImports <em>Imports</em>}</li>
+ *   <li>{@link org.fuin.dsl.cqrs.cqrsDSL.Namespace#getElements <em>Elements</em>}</li>
  * </ul>
  * </p>
  *
@@ -53,7 +56,7 @@ public interface Namespace extends EObject
 
   /**
    * Returns the value of the '<em><b>Imports</b></em>' containment reference list.
-   * The list contents are of type {@link org.fuin.dsl.cqrs.cqrsDSL.Import}.
+   * The list contents are of type {@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Import}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Imports</em>' containment reference list isn't clear,
@@ -66,5 +69,21 @@ public interface Namespace extends EObject
    * @generated
    */
   EList<Import> getImports();
+
+  /**
+   * Returns the value of the '<em><b>Elements</b></em>' containment reference list.
+   * The list contents are of type {@link org.fuin.dsl.cqrs.cqrsDSL.AbstractElement}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Elements</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Elements</em>' containment reference list.
+   * @see org.fuin.dsl.cqrs.cqrsDSL.CqrsDSLPackage#getNamespace_Elements()
+   * @model containment="true"
+   * @generated
+   */
+  EList<AbstractElement> getElements();
 
 } // Namespace

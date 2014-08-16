@@ -13,6 +13,6 @@ package org.fuin.dsl.cqrs.cqrsDSL;
  * @model
  * @generated
  */
-public interface StringLiteral extends Literal
+public interface StringLiteral extends org.fuin.dsl.ddd.domainDrivenDesignDsl.StringLiteral
 {
 } // StringLiteral

@@ -18,28 +18,25 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import org.fuin.dsl.cqrs.cqrsDSL.AbstractElement;
+import org.fuin.dsl.cqrs.cqrsDSL.Context;
 import org.fuin.dsl.cqrs.cqrsDSL.CqrsDSLPackage;
 import org.fuin.dsl.cqrs.cqrsDSL.Namespace;
 
-import org.fuin.dsl.ddd.domainDrivenDesignDsl.Import;
-
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Namespace</b></em>'.
+ * An implementation of the model object '<em><b>Context</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.fuin.dsl.cqrs.cqrsDSL.impl.NamespaceImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.fuin.dsl.cqrs.cqrsDSL.impl.NamespaceImpl#getImports <em>Imports</em>}</li>
- *   <li>{@link org.fuin.dsl.cqrs.cqrsDSL.impl.NamespaceImpl#getElements <em>Elements</em>}</li>
+ *   <li>{@link org.fuin.dsl.cqrs.cqrsDSL.impl.ContextImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.fuin.dsl.cqrs.cqrsDSL.impl.ContextImpl#getNamespaces <em>Namespaces</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class NamespaceImpl extends MinimalEObjectImpl.Container implements Namespace
+public class ContextImpl extends MinimalEObjectImpl.Container implements Context
 {
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -62,31 +59,21 @@ public class NamespaceImpl extends MinimalEObjectImpl.Container implements Names
   protected String name = NAME_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getImports() <em>Imports</em>}' containment reference list.
+   * The cached value of the '{@link #getNamespaces() <em>Namespaces</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getImports()
+   * @see #getNamespaces()
    * @generated
    * @ordered
    */
-  protected EList<Import> imports;
-
-  /**
-   * The cached value of the '{@link #getElements() <em>Elements</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getElements()
-   * @generated
-   * @ordered
-   */
-  protected EList<AbstractElement> elements;
+  protected EList<Namespace> namespaces;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected NamespaceImpl()
+  protected ContextImpl()
   {
     super();
   }
@@ -99,7 +86,7 @@ public class NamespaceImpl extends MinimalEObjectImpl.Container implements Names
   @Override
   protected EClass eStaticClass()
   {
-    return CqrsDSLPackage.Literals.NAMESPACE;
+    return CqrsDSLPackage.Literals.CONTEXT;
   }
 
   /**
@@ -122,7 +109,7 @@ public class NamespaceImpl extends MinimalEObjectImpl.Container implements Names
     String oldName = name;
     name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CqrsDSLPackage.NAMESPACE__NAME, oldName, name));
+      eNotify(new ENotificationImpl(this, Notification.SET, CqrsDSLPackage.CONTEXT__NAME, oldName, name));
   }
 
   /**
@@ -130,27 +117,13 @@ public class NamespaceImpl extends MinimalEObjectImpl.Container implements Names
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Import> getImports()
+  public EList<Namespace> getNamespaces()
   {
-    if (imports == null)
+    if (namespaces == null)
     {
-      imports = new EObjectContainmentEList<Import>(Import.class, this, CqrsDSLPackage.NAMESPACE__IMPORTS);
+      namespaces = new EObjectContainmentEList<Namespace>(Namespace.class, this, CqrsDSLPackage.CONTEXT__NAMESPACES);
     }
-    return imports;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EList<AbstractElement> getElements()
-  {
-    if (elements == null)
-    {
-      elements = new EObjectContainmentEList<AbstractElement>(AbstractElement.class, this, CqrsDSLPackage.NAMESPACE__ELEMENTS);
-    }
-    return elements;
+    return namespaces;
   }
 
   /**
@@ -163,10 +136,8 @@ public class NamespaceImpl extends MinimalEObjectImpl.Container implements Names
   {
     switch (featureID)
     {
-      case CqrsDSLPackage.NAMESPACE__IMPORTS:
-        return ((InternalEList<?>)getImports()).basicRemove(otherEnd, msgs);
-      case CqrsDSLPackage.NAMESPACE__ELEMENTS:
-        return ((InternalEList<?>)getElements()).basicRemove(otherEnd, msgs);
+      case CqrsDSLPackage.CONTEXT__NAMESPACES:
+        return ((InternalEList<?>)getNamespaces()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -181,12 +152,10 @@ public class NamespaceImpl extends MinimalEObjectImpl.Container implements Names
   {
     switch (featureID)
     {
-      case CqrsDSLPackage.NAMESPACE__NAME:
+      case CqrsDSLPackage.CONTEXT__NAME:
         return getName();
-      case CqrsDSLPackage.NAMESPACE__IMPORTS:
-        return getImports();
-      case CqrsDSLPackage.NAMESPACE__ELEMENTS:
-        return getElements();
+      case CqrsDSLPackage.CONTEXT__NAMESPACES:
+        return getNamespaces();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -202,16 +171,12 @@ public class NamespaceImpl extends MinimalEObjectImpl.Container implements Names
   {
     switch (featureID)
     {
-      case CqrsDSLPackage.NAMESPACE__NAME:
+      case CqrsDSLPackage.CONTEXT__NAME:
         setName((String)newValue);
         return;
-      case CqrsDSLPackage.NAMESPACE__IMPORTS:
-        getImports().clear();
-        getImports().addAll((Collection<? extends Import>)newValue);
-        return;
-      case CqrsDSLPackage.NAMESPACE__ELEMENTS:
-        getElements().clear();
-        getElements().addAll((Collection<? extends AbstractElement>)newValue);
+      case CqrsDSLPackage.CONTEXT__NAMESPACES:
+        getNamespaces().clear();
+        getNamespaces().addAll((Collection<? extends Namespace>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -227,14 +192,11 @@ public class NamespaceImpl extends MinimalEObjectImpl.Container implements Names
   {
     switch (featureID)
     {
-      case CqrsDSLPackage.NAMESPACE__NAME:
+      case CqrsDSLPackage.CONTEXT__NAME:
         setName(NAME_EDEFAULT);
         return;
-      case CqrsDSLPackage.NAMESPACE__IMPORTS:
-        getImports().clear();
-        return;
-      case CqrsDSLPackage.NAMESPACE__ELEMENTS:
-        getElements().clear();
+      case CqrsDSLPackage.CONTEXT__NAMESPACES:
+        getNamespaces().clear();
         return;
     }
     super.eUnset(featureID);
@@ -250,12 +212,10 @@ public class NamespaceImpl extends MinimalEObjectImpl.Container implements Names
   {
     switch (featureID)
     {
-      case CqrsDSLPackage.NAMESPACE__NAME:
+      case CqrsDSLPackage.CONTEXT__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case CqrsDSLPackage.NAMESPACE__IMPORTS:
-        return imports != null && !imports.isEmpty();
-      case CqrsDSLPackage.NAMESPACE__ELEMENTS:
-        return elements != null && !elements.isEmpty();
+      case CqrsDSLPackage.CONTEXT__NAMESPACES:
+        return namespaces != null && !namespaces.isEmpty();
     }
     return super.eIsSet(featureID);
   }
@@ -277,4 +237,4 @@ public class NamespaceImpl extends MinimalEObjectImpl.Container implements Names
     return result.toString();
   }
 
-} //NamespaceImpl
+} //ContextImpl

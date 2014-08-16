@@ -13,6 +13,6 @@ package org.fuin.dsl.cqrs.cqrsDSL;
  * @model
  * @generated
  */
-public interface NumberLiteral extends Literal
+public interface NumberLiteral extends org.fuin.dsl.ddd.domainDrivenDesignDsl.NumberLiteral
 {
 } // NumberLiteral

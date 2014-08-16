@@ -16,7 +16,7 @@ import org.fuin.dsl.cqrs.cqrsDSL.StringLiteral;
  *
  * @generated
  */
-public class StringLiteralImpl extends LiteralImpl implements StringLiteral
+public class StringLiteralImpl extends org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.StringLiteralImpl implements StringLiteral
 {
   /**
    * <!-- begin-user-doc -->

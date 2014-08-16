@@ -13,6 +13,7 @@ public class AbstractCqrsDSLValidator extends org.eclipse.xtext.validation.Abstr
 	protected List<EPackage> getEPackages() {
 	    List<EPackage> result = new ArrayList<EPackage>();
 	    result.add(org.fuin.dsl.cqrs.cqrsDSL.CqrsDSLPackage.eINSTANCE);
+	    result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.fuin.org/dsl/ddd/DomainDrivenDesignDsl"));
 		return result;
 	}
 }

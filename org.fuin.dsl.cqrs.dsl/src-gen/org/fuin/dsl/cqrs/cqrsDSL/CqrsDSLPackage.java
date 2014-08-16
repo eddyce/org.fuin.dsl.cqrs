@@ -7,6 +7,8 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage;
+
 /**
  * <!-- begin-user-doc -->
  * The <b>Package</b> for the model.
@@ -67,13 +69,13 @@ public interface CqrsDSLPackage extends EPackage
   int DOMAIN_MODEL = 0;
 
   /**
-   * The feature id for the '<em><b>Namespace</b></em>' containment reference.
+   * The feature id for the '<em><b>Contexts</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int DOMAIN_MODEL__NAMESPACE = 0;
+  int DOMAIN_MODEL__CONTEXTS = 0;
 
   /**
    * The number of structural features of the '<em>Domain Model</em>' class.
@@ -85,6 +87,43 @@ public interface CqrsDSLPackage extends EPackage
   int DOMAIN_MODEL_FEATURE_COUNT = 1;
 
   /**
+   * The meta object id for the '{@link org.fuin.dsl.cqrs.cqrsDSL.impl.ContextImpl <em>Context</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.fuin.dsl.cqrs.cqrsDSL.impl.ContextImpl
+   * @see org.fuin.dsl.cqrs.cqrsDSL.impl.CqrsDSLPackageImpl#getContext()
+   * @generated
+   */
+  int CONTEXT = 1;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONTEXT__NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Namespaces</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONTEXT__NAMESPACES = 1;
+
+  /**
+   * The number of structural features of the '<em>Context</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONTEXT_FEATURE_COUNT = 2;
+
+  /**
    * The meta object id for the '{@link org.fuin.dsl.cqrs.cqrsDSL.impl.NamespaceImpl <em>Namespace</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -92,7 +131,7 @@ public interface CqrsDSLPackage extends EPackage
    * @see org.fuin.dsl.cqrs.cqrsDSL.impl.CqrsDSLPackageImpl#getNamespace()
    * @generated
    */
-  int NAMESPACE = 1;
+  int NAMESPACE = 2;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -113,69 +152,325 @@ public interface CqrsDSLPackage extends EPackage
   int NAMESPACE__IMPORTS = 1;
 
   /**
+   * The feature id for the '<em><b>Elements</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NAMESPACE__ELEMENTS = 2;
+
+  /**
    * The number of structural features of the '<em>Namespace</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int NAMESPACE_FEATURE_COUNT = 2;
+  int NAMESPACE_FEATURE_COUNT = 3;
 
   /**
-   * The meta object id for the '{@link org.fuin.dsl.cqrs.cqrsDSL.impl.ImportImpl <em>Import</em>}' class.
+   * The meta object id for the '{@link org.fuin.dsl.cqrs.cqrsDSL.impl.AbstractElementImpl <em>Abstract Element</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.fuin.dsl.cqrs.cqrsDSL.impl.ImportImpl
-   * @see org.fuin.dsl.cqrs.cqrsDSL.impl.CqrsDSLPackageImpl#getImport()
+   * @see org.fuin.dsl.cqrs.cqrsDSL.impl.AbstractElementImpl
+   * @see org.fuin.dsl.cqrs.cqrsDSL.impl.CqrsDSLPackageImpl#getAbstractElement()
    * @generated
    */
-  int IMPORT = 2;
+  int ABSTRACT_ELEMENT = 3;
 
   /**
-   * The feature id for the '<em><b>Imported Namespace</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int IMPORT__IMPORTED_NAMESPACE = 0;
-
-  /**
-   * The number of structural features of the '<em>Import</em>' class.
+   * The feature id for the '<em><b>Doc</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int IMPORT_FEATURE_COUNT = 1;
+  int ABSTRACT_ELEMENT__DOC = 0;
 
   /**
-   * The meta object id for the '{@link org.fuin.dsl.cqrs.cqrsDSL.impl.LiteralImpl <em>Literal</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.fuin.dsl.cqrs.cqrsDSL.impl.LiteralImpl
-   * @see org.fuin.dsl.cqrs.cqrsDSL.impl.CqrsDSLPackageImpl#getLiteral()
-   * @generated
-   */
-  int LITERAL = 3;
-
-  /**
-   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int LITERAL__VALUE = 0;
+  int ABSTRACT_ELEMENT__NAME = 1;
 
   /**
-   * The number of structural features of the '<em>Literal</em>' class.
+   * The number of structural features of the '<em>Abstract Element</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int LITERAL_FEATURE_COUNT = 1;
+  int ABSTRACT_ELEMENT_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link org.fuin.dsl.cqrs.cqrsDSL.impl.CommandImpl <em>Command</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.fuin.dsl.cqrs.cqrsDSL.impl.CommandImpl
+   * @see org.fuin.dsl.cqrs.cqrsDSL.impl.CqrsDSLPackageImpl#getCommand()
+   * @generated
+   */
+  int COMMAND = 4;
+
+  /**
+   * The feature id for the '<em><b>Doc</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMMAND__DOC = ABSTRACT_ELEMENT__DOC;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMMAND__NAME = ABSTRACT_ELEMENT__NAME;
+
+  /**
+   * The feature id for the '<em><b>Variables</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMMAND__VARIABLES = ABSTRACT_ELEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Message</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMMAND__MESSAGE = ABSTRACT_ELEMENT_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Command</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMMAND_FEATURE_COUNT = ABSTRACT_ELEMENT_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link org.fuin.dsl.cqrs.cqrsDSL.impl.CommandHandlerImpl <em>Command Handler</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.fuin.dsl.cqrs.cqrsDSL.impl.CommandHandlerImpl
+   * @see org.fuin.dsl.cqrs.cqrsDSL.impl.CqrsDSLPackageImpl#getCommandHandler()
+   * @generated
+   */
+  int COMMAND_HANDLER = 5;
+
+  /**
+   * The feature id for the '<em><b>Doc</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMMAND_HANDLER__DOC = ABSTRACT_ELEMENT__DOC;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMMAND_HANDLER__NAME = ABSTRACT_ELEMENT__NAME;
+
+  /**
+   * The feature id for the '<em><b>Commands</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMMAND_HANDLER__COMMANDS = ABSTRACT_ELEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Aggregates</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMMAND_HANDLER__AGGREGATES = ABSTRACT_ELEMENT_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Command Handler</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMMAND_HANDLER_FEATURE_COUNT = ABSTRACT_ELEMENT_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link org.fuin.dsl.cqrs.cqrsDSL.impl.ProjectionImpl <em>Projection</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.fuin.dsl.cqrs.cqrsDSL.impl.ProjectionImpl
+   * @see org.fuin.dsl.cqrs.cqrsDSL.impl.CqrsDSLPackageImpl#getProjection()
+   * @generated
+   */
+  int PROJECTION = 6;
+
+  /**
+   * The feature id for the '<em><b>Doc</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PROJECTION__DOC = ABSTRACT_ELEMENT__DOC;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PROJECTION__NAME = ABSTRACT_ELEMENT__NAME;
+
+  /**
+   * The feature id for the '<em><b>Events</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PROJECTION__EVENTS = ABSTRACT_ELEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Projection</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PROJECTION_FEATURE_COUNT = ABSTRACT_ELEMENT_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link org.fuin.dsl.cqrs.cqrsDSL.impl.ViewImpl <em>View</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.fuin.dsl.cqrs.cqrsDSL.impl.ViewImpl
+   * @see org.fuin.dsl.cqrs.cqrsDSL.impl.CqrsDSLPackageImpl#getView()
+   * @generated
+   */
+  int VIEW = 7;
+
+  /**
+   * The feature id for the '<em><b>Doc</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VIEW__DOC = ABSTRACT_ELEMENT__DOC;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VIEW__NAME = ABSTRACT_ELEMENT__NAME;
+
+  /**
+   * The feature id for the '<em><b>Projection</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VIEW__PROJECTION = ABSTRACT_ELEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>View</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VIEW_FEATURE_COUNT = ABSTRACT_ELEMENT_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link org.fuin.dsl.cqrs.cqrsDSL.impl.TypeMetaInfoImpl <em>Type Meta Info</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.fuin.dsl.cqrs.cqrsDSL.impl.TypeMetaInfoImpl
+   * @see org.fuin.dsl.cqrs.cqrsDSL.impl.CqrsDSLPackageImpl#getTypeMetaInfo()
+   * @generated
+   */
+  int TYPE_META_INFO = 8;
+
+  /**
+   * The feature id for the '<em><b>Slabel</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE_META_INFO__SLABEL = DomainDrivenDesignDslPackage.TYPE_META_INFO__SLABEL;
+
+  /**
+   * The feature id for the '<em><b>Label</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE_META_INFO__LABEL = DomainDrivenDesignDslPackage.TYPE_META_INFO__LABEL;
+
+  /**
+   * The feature id for the '<em><b>Tooltip</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE_META_INFO__TOOLTIP = DomainDrivenDesignDslPackage.TYPE_META_INFO__TOOLTIP;
+
+  /**
+   * The feature id for the '<em><b>Prompt</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE_META_INFO__PROMPT = DomainDrivenDesignDslPackage.TYPE_META_INFO__PROMPT;
+
+  /**
+   * The feature id for the '<em><b>Examples</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE_META_INFO__EXAMPLES = DomainDrivenDesignDslPackage.TYPE_META_INFO__EXAMPLES;
+
+  /**
+   * The number of structural features of the '<em>Type Meta Info</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE_META_INFO_FEATURE_COUNT = DomainDrivenDesignDslPackage.TYPE_META_INFO_FEATURE_COUNT + 0;
 
   /**
    * The meta object id for the '{@link org.fuin.dsl.cqrs.cqrsDSL.impl.BooleanLiteralImpl <em>Boolean Literal</em>}' class.
@@ -185,7 +480,7 @@ public interface CqrsDSLPackage extends EPackage
    * @see org.fuin.dsl.cqrs.cqrsDSL.impl.CqrsDSLPackageImpl#getBooleanLiteral()
    * @generated
    */
-  int BOOLEAN_LITERAL = 4;
+  int BOOLEAN_LITERAL = 9;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -194,7 +489,7 @@ public interface CqrsDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int BOOLEAN_LITERAL__VALUE = LITERAL__VALUE;
+  int BOOLEAN_LITERAL__VALUE = DomainDrivenDesignDslPackage.BOOLEAN_LITERAL__VALUE;
 
   /**
    * The number of structural features of the '<em>Boolean Literal</em>' class.
@@ -203,7 +498,7 @@ public interface CqrsDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int BOOLEAN_LITERAL_FEATURE_COUNT = LITERAL_FEATURE_COUNT + 0;
+  int BOOLEAN_LITERAL_FEATURE_COUNT = DomainDrivenDesignDslPackage.BOOLEAN_LITERAL_FEATURE_COUNT + 0;
 
   /**
    * The meta object id for the '{@link org.fuin.dsl.cqrs.cqrsDSL.impl.NullLiteralImpl <em>Null Literal</em>}' class.
@@ -213,7 +508,7 @@ public interface CqrsDSLPackage extends EPackage
    * @see org.fuin.dsl.cqrs.cqrsDSL.impl.CqrsDSLPackageImpl#getNullLiteral()
    * @generated
    */
-  int NULL_LITERAL = 5;
+  int NULL_LITERAL = 10;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -222,7 +517,7 @@ public interface CqrsDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int NULL_LITERAL__VALUE = LITERAL__VALUE;
+  int NULL_LITERAL__VALUE = DomainDrivenDesignDslPackage.NULL_LITERAL__VALUE;
 
   /**
    * The number of structural features of the '<em>Null Literal</em>' class.
@@ -231,7 +526,7 @@ public interface CqrsDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int NULL_LITERAL_FEATURE_COUNT = LITERAL_FEATURE_COUNT + 0;
+  int NULL_LITERAL_FEATURE_COUNT = DomainDrivenDesignDslPackage.NULL_LITERAL_FEATURE_COUNT + 0;
 
   /**
    * The meta object id for the '{@link org.fuin.dsl.cqrs.cqrsDSL.impl.NumberLiteralImpl <em>Number Literal</em>}' class.
@@ -241,7 +536,7 @@ public interface CqrsDSLPackage extends EPackage
    * @see org.fuin.dsl.cqrs.cqrsDSL.impl.CqrsDSLPackageImpl#getNumberLiteral()
    * @generated
    */
-  int NUMBER_LITERAL = 6;
+  int NUMBER_LITERAL = 11;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -250,7 +545,7 @@ public interface CqrsDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int NUMBER_LITERAL__VALUE = LITERAL__VALUE;
+  int NUMBER_LITERAL__VALUE = DomainDrivenDesignDslPackage.NUMBER_LITERAL__VALUE;
 
   /**
    * The number of structural features of the '<em>Number Literal</em>' class.
@@ -259,7 +554,7 @@ public interface CqrsDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int NUMBER_LITERAL_FEATURE_COUNT = LITERAL_FEATURE_COUNT + 0;
+  int NUMBER_LITERAL_FEATURE_COUNT = DomainDrivenDesignDslPackage.NUMBER_LITERAL_FEATURE_COUNT + 0;
 
   /**
    * The meta object id for the '{@link org.fuin.dsl.cqrs.cqrsDSL.impl.StringLiteralImpl <em>String Literal</em>}' class.
@@ -269,7 +564,7 @@ public interface CqrsDSLPackage extends EPackage
    * @see org.fuin.dsl.cqrs.cqrsDSL.impl.CqrsDSLPackageImpl#getStringLiteral()
    * @generated
    */
-  int STRING_LITERAL = 7;
+  int STRING_LITERAL = 12;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -278,7 +573,7 @@ public interface CqrsDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STRING_LITERAL__VALUE = LITERAL__VALUE;
+  int STRING_LITERAL__VALUE = DomainDrivenDesignDslPackage.STRING_LITERAL__VALUE;
 
   /**
    * The number of structural features of the '<em>String Literal</em>' class.
@@ -287,7 +582,7 @@ public interface CqrsDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STRING_LITERAL_FEATURE_COUNT = LITERAL_FEATURE_COUNT + 0;
+  int STRING_LITERAL_FEATURE_COUNT = DomainDrivenDesignDslPackage.STRING_LITERAL_FEATURE_COUNT + 0;
 
 
   /**
@@ -301,15 +596,47 @@ public interface CqrsDSLPackage extends EPackage
   EClass getDomainModel();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.fuin.dsl.cqrs.cqrsDSL.DomainModel#getNamespace <em>Namespace</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.fuin.dsl.cqrs.cqrsDSL.DomainModel#getContexts <em>Contexts</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Namespace</em>'.
-   * @see org.fuin.dsl.cqrs.cqrsDSL.DomainModel#getNamespace()
+   * @return the meta object for the containment reference list '<em>Contexts</em>'.
+   * @see org.fuin.dsl.cqrs.cqrsDSL.DomainModel#getContexts()
    * @see #getDomainModel()
    * @generated
    */
-  EReference getDomainModel_Namespace();
+  EReference getDomainModel_Contexts();
+
+  /**
+   * Returns the meta object for class '{@link org.fuin.dsl.cqrs.cqrsDSL.Context <em>Context</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Context</em>'.
+   * @see org.fuin.dsl.cqrs.cqrsDSL.Context
+   * @generated
+   */
+  EClass getContext();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.fuin.dsl.cqrs.cqrsDSL.Context#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.fuin.dsl.cqrs.cqrsDSL.Context#getName()
+   * @see #getContext()
+   * @generated
+   */
+  EAttribute getContext_Name();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.fuin.dsl.cqrs.cqrsDSL.Context#getNamespaces <em>Namespaces</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Namespaces</em>'.
+   * @see org.fuin.dsl.cqrs.cqrsDSL.Context#getNamespaces()
+   * @see #getContext()
+   * @generated
+   */
+  EReference getContext_Namespaces();
 
   /**
    * Returns the meta object for class '{@link org.fuin.dsl.cqrs.cqrsDSL.Namespace <em>Namespace</em>}'.
@@ -344,46 +671,163 @@ public interface CqrsDSLPackage extends EPackage
   EReference getNamespace_Imports();
 
   /**
-   * Returns the meta object for class '{@link org.fuin.dsl.cqrs.cqrsDSL.Import <em>Import</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.fuin.dsl.cqrs.cqrsDSL.Namespace#getElements <em>Elements</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Import</em>'.
-   * @see org.fuin.dsl.cqrs.cqrsDSL.Import
+   * @return the meta object for the containment reference list '<em>Elements</em>'.
+   * @see org.fuin.dsl.cqrs.cqrsDSL.Namespace#getElements()
+   * @see #getNamespace()
    * @generated
    */
-  EClass getImport();
+  EReference getNamespace_Elements();
 
   /**
-   * Returns the meta object for the attribute '{@link org.fuin.dsl.cqrs.cqrsDSL.Import#getImportedNamespace <em>Imported Namespace</em>}'.
+   * Returns the meta object for class '{@link org.fuin.dsl.cqrs.cqrsDSL.AbstractElement <em>Abstract Element</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Imported Namespace</em>'.
-   * @see org.fuin.dsl.cqrs.cqrsDSL.Import#getImportedNamespace()
-   * @see #getImport()
+   * @return the meta object for class '<em>Abstract Element</em>'.
+   * @see org.fuin.dsl.cqrs.cqrsDSL.AbstractElement
    * @generated
    */
-  EAttribute getImport_ImportedNamespace();
+  EClass getAbstractElement();
 
   /**
-   * Returns the meta object for class '{@link org.fuin.dsl.cqrs.cqrsDSL.Literal <em>Literal</em>}'.
+   * Returns the meta object for the attribute '{@link org.fuin.dsl.cqrs.cqrsDSL.AbstractElement#getDoc <em>Doc</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Literal</em>'.
-   * @see org.fuin.dsl.cqrs.cqrsDSL.Literal
+   * @return the meta object for the attribute '<em>Doc</em>'.
+   * @see org.fuin.dsl.cqrs.cqrsDSL.AbstractElement#getDoc()
+   * @see #getAbstractElement()
    * @generated
    */
-  EClass getLiteral();
+  EAttribute getAbstractElement_Doc();
 
   /**
-   * Returns the meta object for the attribute '{@link org.fuin.dsl.cqrs.cqrsDSL.Literal#getValue <em>Value</em>}'.
+   * Returns the meta object for the attribute '{@link org.fuin.dsl.cqrs.cqrsDSL.AbstractElement#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Value</em>'.
-   * @see org.fuin.dsl.cqrs.cqrsDSL.Literal#getValue()
-   * @see #getLiteral()
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.fuin.dsl.cqrs.cqrsDSL.AbstractElement#getName()
+   * @see #getAbstractElement()
    * @generated
    */
-  EAttribute getLiteral_Value();
+  EAttribute getAbstractElement_Name();
+
+  /**
+   * Returns the meta object for class '{@link org.fuin.dsl.cqrs.cqrsDSL.Command <em>Command</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Command</em>'.
+   * @see org.fuin.dsl.cqrs.cqrsDSL.Command
+   * @generated
+   */
+  EClass getCommand();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.fuin.dsl.cqrs.cqrsDSL.Command#getVariables <em>Variables</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Variables</em>'.
+   * @see org.fuin.dsl.cqrs.cqrsDSL.Command#getVariables()
+   * @see #getCommand()
+   * @generated
+   */
+  EReference getCommand_Variables();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.fuin.dsl.cqrs.cqrsDSL.Command#getMessage <em>Message</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Message</em>'.
+   * @see org.fuin.dsl.cqrs.cqrsDSL.Command#getMessage()
+   * @see #getCommand()
+   * @generated
+   */
+  EAttribute getCommand_Message();
+
+  /**
+   * Returns the meta object for class '{@link org.fuin.dsl.cqrs.cqrsDSL.CommandHandler <em>Command Handler</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Command Handler</em>'.
+   * @see org.fuin.dsl.cqrs.cqrsDSL.CommandHandler
+   * @generated
+   */
+  EClass getCommandHandler();
+
+  /**
+   * Returns the meta object for the reference list '{@link org.fuin.dsl.cqrs.cqrsDSL.CommandHandler#getCommands <em>Commands</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference list '<em>Commands</em>'.
+   * @see org.fuin.dsl.cqrs.cqrsDSL.CommandHandler#getCommands()
+   * @see #getCommandHandler()
+   * @generated
+   */
+  EReference getCommandHandler_Commands();
+
+  /**
+   * Returns the meta object for the reference list '{@link org.fuin.dsl.cqrs.cqrsDSL.CommandHandler#getAggregates <em>Aggregates</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference list '<em>Aggregates</em>'.
+   * @see org.fuin.dsl.cqrs.cqrsDSL.CommandHandler#getAggregates()
+   * @see #getCommandHandler()
+   * @generated
+   */
+  EReference getCommandHandler_Aggregates();
+
+  /**
+   * Returns the meta object for class '{@link org.fuin.dsl.cqrs.cqrsDSL.Projection <em>Projection</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Projection</em>'.
+   * @see org.fuin.dsl.cqrs.cqrsDSL.Projection
+   * @generated
+   */
+  EClass getProjection();
+
+  /**
+   * Returns the meta object for the reference list '{@link org.fuin.dsl.cqrs.cqrsDSL.Projection#getEvents <em>Events</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference list '<em>Events</em>'.
+   * @see org.fuin.dsl.cqrs.cqrsDSL.Projection#getEvents()
+   * @see #getProjection()
+   * @generated
+   */
+  EReference getProjection_Events();
+
+  /**
+   * Returns the meta object for class '{@link org.fuin.dsl.cqrs.cqrsDSL.View <em>View</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>View</em>'.
+   * @see org.fuin.dsl.cqrs.cqrsDSL.View
+   * @generated
+   */
+  EClass getView();
+
+  /**
+   * Returns the meta object for the reference '{@link org.fuin.dsl.cqrs.cqrsDSL.View#getProjection <em>Projection</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Projection</em>'.
+   * @see org.fuin.dsl.cqrs.cqrsDSL.View#getProjection()
+   * @see #getView()
+   * @generated
+   */
+  EReference getView_Projection();
+
+  /**
+   * Returns the meta object for class '{@link org.fuin.dsl.cqrs.cqrsDSL.TypeMetaInfo <em>Type Meta Info</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Type Meta Info</em>'.
+   * @see org.fuin.dsl.cqrs.cqrsDSL.TypeMetaInfo
+   * @generated
+   */
+  EClass getTypeMetaInfo();
 
   /**
    * Returns the meta object for class '{@link org.fuin.dsl.cqrs.cqrsDSL.BooleanLiteral <em>Boolean Literal</em>}'.
@@ -459,12 +903,38 @@ public interface CqrsDSLPackage extends EPackage
     EClass DOMAIN_MODEL = eINSTANCE.getDomainModel();
 
     /**
-     * The meta object literal for the '<em><b>Namespace</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Contexts</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference DOMAIN_MODEL__NAMESPACE = eINSTANCE.getDomainModel_Namespace();
+    EReference DOMAIN_MODEL__CONTEXTS = eINSTANCE.getDomainModel_Contexts();
+
+    /**
+     * The meta object literal for the '{@link org.fuin.dsl.cqrs.cqrsDSL.impl.ContextImpl <em>Context</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.fuin.dsl.cqrs.cqrsDSL.impl.ContextImpl
+     * @see org.fuin.dsl.cqrs.cqrsDSL.impl.CqrsDSLPackageImpl#getContext()
+     * @generated
+     */
+    EClass CONTEXT = eINSTANCE.getContext();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CONTEXT__NAME = eINSTANCE.getContext_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Namespaces</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CONTEXT__NAMESPACES = eINSTANCE.getContext_Namespaces();
 
     /**
      * The meta object literal for the '{@link org.fuin.dsl.cqrs.cqrsDSL.impl.NamespaceImpl <em>Namespace</em>}' class.
@@ -493,40 +963,136 @@ public interface CqrsDSLPackage extends EPackage
     EReference NAMESPACE__IMPORTS = eINSTANCE.getNamespace_Imports();
 
     /**
-     * The meta object literal for the '{@link org.fuin.dsl.cqrs.cqrsDSL.impl.ImportImpl <em>Import</em>}' class.
+     * The meta object literal for the '<em><b>Elements</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.fuin.dsl.cqrs.cqrsDSL.impl.ImportImpl
-     * @see org.fuin.dsl.cqrs.cqrsDSL.impl.CqrsDSLPackageImpl#getImport()
      * @generated
      */
-    EClass IMPORT = eINSTANCE.getImport();
+    EReference NAMESPACE__ELEMENTS = eINSTANCE.getNamespace_Elements();
 
     /**
-     * The meta object literal for the '<em><b>Imported Namespace</b></em>' attribute feature.
+     * The meta object literal for the '{@link org.fuin.dsl.cqrs.cqrsDSL.impl.AbstractElementImpl <em>Abstract Element</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see org.fuin.dsl.cqrs.cqrsDSL.impl.AbstractElementImpl
+     * @see org.fuin.dsl.cqrs.cqrsDSL.impl.CqrsDSLPackageImpl#getAbstractElement()
      * @generated
      */
-    EAttribute IMPORT__IMPORTED_NAMESPACE = eINSTANCE.getImport_ImportedNamespace();
+    EClass ABSTRACT_ELEMENT = eINSTANCE.getAbstractElement();
 
     /**
-     * The meta object literal for the '{@link org.fuin.dsl.cqrs.cqrsDSL.impl.LiteralImpl <em>Literal</em>}' class.
+     * The meta object literal for the '<em><b>Doc</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.fuin.dsl.cqrs.cqrsDSL.impl.LiteralImpl
-     * @see org.fuin.dsl.cqrs.cqrsDSL.impl.CqrsDSLPackageImpl#getLiteral()
      * @generated
      */
-    EClass LITERAL = eINSTANCE.getLiteral();
+    EAttribute ABSTRACT_ELEMENT__DOC = eINSTANCE.getAbstractElement_Doc();
 
     /**
-     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute LITERAL__VALUE = eINSTANCE.getLiteral_Value();
+    EAttribute ABSTRACT_ELEMENT__NAME = eINSTANCE.getAbstractElement_Name();
+
+    /**
+     * The meta object literal for the '{@link org.fuin.dsl.cqrs.cqrsDSL.impl.CommandImpl <em>Command</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.fuin.dsl.cqrs.cqrsDSL.impl.CommandImpl
+     * @see org.fuin.dsl.cqrs.cqrsDSL.impl.CqrsDSLPackageImpl#getCommand()
+     * @generated
+     */
+    EClass COMMAND = eINSTANCE.getCommand();
+
+    /**
+     * The meta object literal for the '<em><b>Variables</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference COMMAND__VARIABLES = eINSTANCE.getCommand_Variables();
+
+    /**
+     * The meta object literal for the '<em><b>Message</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute COMMAND__MESSAGE = eINSTANCE.getCommand_Message();
+
+    /**
+     * The meta object literal for the '{@link org.fuin.dsl.cqrs.cqrsDSL.impl.CommandHandlerImpl <em>Command Handler</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.fuin.dsl.cqrs.cqrsDSL.impl.CommandHandlerImpl
+     * @see org.fuin.dsl.cqrs.cqrsDSL.impl.CqrsDSLPackageImpl#getCommandHandler()
+     * @generated
+     */
+    EClass COMMAND_HANDLER = eINSTANCE.getCommandHandler();
+
+    /**
+     * The meta object literal for the '<em><b>Commands</b></em>' reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference COMMAND_HANDLER__COMMANDS = eINSTANCE.getCommandHandler_Commands();
+
+    /**
+     * The meta object literal for the '<em><b>Aggregates</b></em>' reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference COMMAND_HANDLER__AGGREGATES = eINSTANCE.getCommandHandler_Aggregates();
+
+    /**
+     * The meta object literal for the '{@link org.fuin.dsl.cqrs.cqrsDSL.impl.ProjectionImpl <em>Projection</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.fuin.dsl.cqrs.cqrsDSL.impl.ProjectionImpl
+     * @see org.fuin.dsl.cqrs.cqrsDSL.impl.CqrsDSLPackageImpl#getProjection()
+     * @generated
+     */
+    EClass PROJECTION = eINSTANCE.getProjection();
+
+    /**
+     * The meta object literal for the '<em><b>Events</b></em>' reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PROJECTION__EVENTS = eINSTANCE.getProjection_Events();
+
+    /**
+     * The meta object literal for the '{@link org.fuin.dsl.cqrs.cqrsDSL.impl.ViewImpl <em>View</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.fuin.dsl.cqrs.cqrsDSL.impl.ViewImpl
+     * @see org.fuin.dsl.cqrs.cqrsDSL.impl.CqrsDSLPackageImpl#getView()
+     * @generated
+     */
+    EClass VIEW = eINSTANCE.getView();
+
+    /**
+     * The meta object literal for the '<em><b>Projection</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference VIEW__PROJECTION = eINSTANCE.getView_Projection();
+
+    /**
+     * The meta object literal for the '{@link org.fuin.dsl.cqrs.cqrsDSL.impl.TypeMetaInfoImpl <em>Type Meta Info</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.fuin.dsl.cqrs.cqrsDSL.impl.TypeMetaInfoImpl
+     * @see org.fuin.dsl.cqrs.cqrsDSL.impl.CqrsDSLPackageImpl#getTypeMetaInfo()
+     * @generated
+     */
+    EClass TYPE_META_INFO = eINSTANCE.getTypeMetaInfo();
 
     /**
      * The meta object literal for the '{@link org.fuin.dsl.cqrs.cqrsDSL.impl.BooleanLiteralImpl <em>Boolean Literal</em>}' class.

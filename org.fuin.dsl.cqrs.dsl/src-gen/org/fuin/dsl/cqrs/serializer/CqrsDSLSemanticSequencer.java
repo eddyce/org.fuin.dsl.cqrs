@@ -14,14 +14,25 @@ import org.eclipse.xtext.serializer.sequencer.ISemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 import org.fuin.dsl.cqrs.cqrsDSL.BooleanLiteral;
+import org.fuin.dsl.cqrs.cqrsDSL.Command;
+import org.fuin.dsl.cqrs.cqrsDSL.CommandHandler;
+import org.fuin.dsl.cqrs.cqrsDSL.Context;
 import org.fuin.dsl.cqrs.cqrsDSL.CqrsDSLPackage;
 import org.fuin.dsl.cqrs.cqrsDSL.DomainModel;
-import org.fuin.dsl.cqrs.cqrsDSL.Import;
 import org.fuin.dsl.cqrs.cqrsDSL.Namespace;
 import org.fuin.dsl.cqrs.cqrsDSL.NullLiteral;
 import org.fuin.dsl.cqrs.cqrsDSL.NumberLiteral;
+import org.fuin.dsl.cqrs.cqrsDSL.Projection;
 import org.fuin.dsl.cqrs.cqrsDSL.StringLiteral;
+import org.fuin.dsl.cqrs.cqrsDSL.TypeMetaInfo;
+import org.fuin.dsl.cqrs.cqrsDSL.View;
 import org.fuin.dsl.cqrs.services.CqrsDSLGrammarAccess;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintCall;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Import;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Invariants;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.OverriddenTypeMetaInfo;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable;
 
 @SuppressWarnings("all")
 public class CqrsDSLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
@@ -38,15 +49,29 @@ public class CqrsDSLSemanticSequencer extends AbstractDelegatingSemanticSequence
 					return; 
 				}
 				else break;
-			case CqrsDSLPackage.DOMAIN_MODEL:
-				if(context == grammarAccess.getDomainModelRule()) {
-					sequence_DomainModel(context, (DomainModel) semanticObject); 
+			case CqrsDSLPackage.COMMAND:
+				if(context == grammarAccess.getAbstractElementRule() ||
+				   context == grammarAccess.getCommandRule()) {
+					sequence_Command(context, (Command) semanticObject); 
 					return; 
 				}
 				else break;
-			case CqrsDSLPackage.IMPORT:
-				if(context == grammarAccess.getImportRule()) {
-					sequence_Import(context, (Import) semanticObject); 
+			case CqrsDSLPackage.COMMAND_HANDLER:
+				if(context == grammarAccess.getAbstractElementRule() ||
+				   context == grammarAccess.getCommandHandlerRule()) {
+					sequence_CommandHandler(context, (CommandHandler) semanticObject); 
+					return; 
+				}
+				else break;
+			case CqrsDSLPackage.CONTEXT:
+				if(context == grammarAccess.getContextRule()) {
+					sequence_Context(context, (Context) semanticObject); 
+					return; 
+				}
+				else break;
+			case CqrsDSLPackage.DOMAIN_MODEL:
+				if(context == grammarAccess.getDomainModelRule()) {
+					sequence_DomainModel(context, (DomainModel) semanticObject); 
 					return; 
 				}
 				else break;
@@ -70,10 +95,62 @@ public class CqrsDSLSemanticSequencer extends AbstractDelegatingSemanticSequence
 					return; 
 				}
 				else break;
+			case CqrsDSLPackage.PROJECTION:
+				if(context == grammarAccess.getAbstractElementRule() ||
+				   context == grammarAccess.getProjectionRule()) {
+					sequence_Projection(context, (Projection) semanticObject); 
+					return; 
+				}
+				else break;
 			case CqrsDSLPackage.STRING_LITERAL:
 				if(context == grammarAccess.getLiteralRule() ||
 				   context == grammarAccess.getStringLiteralRule()) {
 					sequence_StringLiteral(context, (StringLiteral) semanticObject); 
+					return; 
+				}
+				else break;
+			case CqrsDSLPackage.TYPE_META_INFO:
+				if(context == grammarAccess.getTypeMetaInfoRule()) {
+					sequence_TypeMetaInfo(context, (TypeMetaInfo) semanticObject); 
+					return; 
+				}
+				else break;
+			case CqrsDSLPackage.VIEW:
+				if(context == grammarAccess.getAbstractElementRule() ||
+				   context == grammarAccess.getViewRule()) {
+					sequence_View(context, (View) semanticObject); 
+					return; 
+				}
+				else break;
+			}
+		else if(semanticObject.eClass().getEPackage() == DomainDrivenDesignDslPackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
+			case DomainDrivenDesignDslPackage.CONSTRAINT_CALL:
+				if(context == grammarAccess.getConstraintCallRule()) {
+					sequence_ConstraintCall(context, (ConstraintCall) semanticObject); 
+					return; 
+				}
+				else break;
+			case DomainDrivenDesignDslPackage.IMPORT:
+				if(context == grammarAccess.getImportRule()) {
+					sequence_Import(context, (Import) semanticObject); 
+					return; 
+				}
+				else break;
+			case DomainDrivenDesignDslPackage.INVARIANTS:
+				if(context == grammarAccess.getInvariantsRule()) {
+					sequence_Invariants(context, (Invariants) semanticObject); 
+					return; 
+				}
+				else break;
+			case DomainDrivenDesignDslPackage.OVERRIDDEN_TYPE_META_INFO:
+				if(context == grammarAccess.getOverriddenTypeMetaInfoRule()) {
+					sequence_OverriddenTypeMetaInfo(context, (OverriddenTypeMetaInfo) semanticObject); 
+					return; 
+				}
+				else break;
+			case DomainDrivenDesignDslPackage.VARIABLE:
+				if(context == grammarAccess.getVariableRule()) {
+					sequence_Variable(context, (Variable) semanticObject); 
 					return; 
 				}
 				else break;
@@ -92,17 +169,46 @@ public class CqrsDSLSemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Constraint:
-	 *     namespace=Namespace
+	 *     (doc=DOC? name=ID commands+=[Command|ID] commands+=[Command|ID]* (aggregates+=[Aggregate|ID] aggregates+=[Aggregate|ID]*)?)
+	 */
+	protected void sequence_CommandHandler(EObject context, CommandHandler semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (doc=DOC? name=ID variables+=Variable* message=STRING?)
+	 */
+	protected void sequence_Command(EObject context, Command semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (constraint=[Constraint|ID] (params+=Literal params+=Literal*)?)
+	 */
+	protected void sequence_ConstraintCall(EObject context, ConstraintCall semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (name=ID namespaces+=Namespace*)
+	 */
+	protected void sequence_Context(EObject context, Context semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     contexts+=Context*
 	 */
 	protected void sequence_DomainModel(EObject context, DomainModel semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, CqrsDSLPackage.Literals.DOMAIN_MODEL__NAMESPACE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CqrsDSLPackage.Literals.DOMAIN_MODEL__NAMESPACE));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getDomainModelAccess().getNamespaceNamespaceParserRuleCall_0(), semanticObject.getNamespace());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -117,7 +223,16 @@ public class CqrsDSLSemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Constraint:
-	 *     (name=FQN imports+=Import*)
+	 *     (calls+=ConstraintCall calls+=ConstraintCall*)
+	 */
+	protected void sequence_Invariants(EObject context, Invariants semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (name=FQN imports+=Import* elements+=AbstractElement*)
 	 */
 	protected void sequence_Namespace(EObject context, Namespace semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -130,8 +245,8 @@ public class CqrsDSLSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 */
 	protected void sequence_NullLiteral(EObject context, NullLiteral semanticObject) {
 		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, CqrsDSLPackage.Literals.LITERAL__VALUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CqrsDSLPackage.Literals.LITERAL__VALUE));
+			if(transientValues.isValueTransient(semanticObject, DomainDrivenDesignDslPackage.Literals.LITERAL__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DomainDrivenDesignDslPackage.Literals.LITERAL__VALUE));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
@@ -146,8 +261,8 @@ public class CqrsDSLSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 */
 	protected void sequence_NumberLiteral(EObject context, NumberLiteral semanticObject) {
 		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, CqrsDSLPackage.Literals.LITERAL__VALUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CqrsDSLPackage.Literals.LITERAL__VALUE));
+			if(transientValues.isValueTransient(semanticObject, DomainDrivenDesignDslPackage.Literals.LITERAL__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DomainDrivenDesignDslPackage.Literals.LITERAL__VALUE));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
@@ -158,16 +273,76 @@ public class CqrsDSLSemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Constraint:
+	 *     metaInfo=TypeMetaInfo
+	 */
+	protected void sequence_OverriddenTypeMetaInfo(EObject context, OverriddenTypeMetaInfo semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, DomainDrivenDesignDslPackage.Literals.OVERRIDDEN_TYPE_META_INFO__META_INFO) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DomainDrivenDesignDslPackage.Literals.OVERRIDDEN_TYPE_META_INFO__META_INFO));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getOverriddenTypeMetaInfoAccess().getMetaInfoTypeMetaInfoParserRuleCall_1_0(), semanticObject.getMetaInfo());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (doc=DOC? name=ID (events+=[Event|ID] events+=[Event|ID]*)?)
+	 */
+	protected void sequence_Projection(EObject context, Projection semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     value=STRING
 	 */
 	protected void sequence_StringLiteral(EObject context, StringLiteral semanticObject) {
 		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, CqrsDSLPackage.Literals.LITERAL__VALUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CqrsDSLPackage.Literals.LITERAL__VALUE));
+			if(transientValues.isValueTransient(semanticObject, DomainDrivenDesignDslPackage.Literals.LITERAL__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DomainDrivenDesignDslPackage.Literals.LITERAL__VALUE));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getStringLiteralAccess().getValueSTRINGTerminalRuleCall_1_0(), semanticObject.getValue());
 		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (slabel=STRING? label=STRING? tooltip=STRING? prompt=STRING? examples+=STRING*)
+	 */
+	protected void sequence_TypeMetaInfo(EObject context, TypeMetaInfo semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (
+	 *         doc=DOC? 
+	 *         nullable='nullable'? 
+	 *         type=[Type|ID] 
+	 *         multiplicity='*'? 
+	 *         name=ID 
+	 *         invariants=Invariants? 
+	 *         overridden=OverriddenTypeMetaInfo?
+	 *     )
+	 */
+	protected void sequence_Variable(EObject context, Variable semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (doc=DOC? name=ID projection=[Projection|ID])
+	 */
+	protected void sequence_View(EObject context, View semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 }

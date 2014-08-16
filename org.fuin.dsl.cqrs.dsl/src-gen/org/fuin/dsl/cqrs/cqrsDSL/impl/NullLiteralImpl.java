@@ -16,7 +16,7 @@ import org.fuin.dsl.cqrs.cqrsDSL.NullLiteral;
  *
  * @generated
  */
-public class NullLiteralImpl extends LiteralImpl implements NullLiteral
+public class NullLiteralImpl extends org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.NullLiteralImpl implements NullLiteral
 {
   /**
    * <!-- begin-user-doc -->

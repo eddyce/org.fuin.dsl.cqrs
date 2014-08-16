@@ -1,4 +1,4 @@
-grammar org.fuin.dsl.cqrs.CqrsDSL  hidden(WS, ML_COMMENT, SL_COMMENT)
+grammar org.fuin.dsl.cqrs.CqrsDSL hidden(WS, ML_COMMENT, SL_COMMENT)
 
 import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 import "http://www.fuin.org/dsl/ddd/DomainDrivenDesignDsl" as ddd
@@ -6,38 +6,88 @@ import "http://www.fuin.org/dsl/ddd/DomainDrivenDesignDsl" as ddd
 generate cqrsDSL "http://www.fuin.org/cqrs-dsl/CqrsDSL"
 
 DomainModel:
-	namespace=Namespace;
+	contexts+=Context*;
 
+Context:
+	'context' name=ID '{'
+		namespaces+=Namespace*
+	'}';
+	
 Namespace:
 	'namespace' name=FQN '{'
 		imports+=Import*
-		// elements+=AbstractElement*
+		elements+=AbstractElement*
 	'}';
 
-Import:
-	'import' importedNamespace=(FQN | FQNWithWildcard) ';';
+Import returns ddd::Import:
+	'import' importedNamespace=(FQN | FQNWithWildcard);
 
-	
-Literal:
+AbstractElement:
+	Command | CommandHandler | Projection | View;
+
+Command:
+	doc=DOC? 
+	'command' name=ID '{'
+		variables+=Variable*	
+		('message' message=STRING)?
+	'}';
+
+CommandHandler:
+	doc=DOC? 
+	'command-handler' name=ID 
+	    'handles' commands+=[Command] (',' commands+=[Command])*
+	   ('uses' aggregates+=[ddd::Aggregate] (',' aggregates+=[ddd::Aggregate])*)?;
+
+Projection:
+	doc=DOC? 
+	'projection' name=ID ('input' events+=[ddd::Event] (',' events+=[ddd::Event])*)?;
+
+View:
+	doc=DOC? 
+	'view' name=ID 'uses' projection=[Projection];
+
+TypeMetaInfo returns ddd::TypeMetaInfo:
+	{TypeMetaInfo}
+    	('slabel' (slabel=STRING))?
+    	('label' (label=STRING))?
+    	('tooltip' (tooltip=STRING))?
+    	('prompt' (prompt=STRING))?
+    	('examples' (examples+=STRING*))?;
+
+Variable returns ddd::Variable:
+	doc=DOC? 
+	(nullable='nullable')? 
+	type=[ddd::Type] (multiplicity='*')? name=ID (invariants=Invariants)? (overridden=OverriddenTypeMetaInfo)?;
+
+Invariants returns ddd::Invariants:
+	'invariants' calls+=ConstraintCall (',' calls+=ConstraintCall)*;
+
+OverriddenTypeMetaInfo returns ddd::OverriddenTypeMetaInfo:
+	'{' metaInfo=TypeMetaInfo '}';
+
+ConstraintCall returns ddd::ConstraintCall:
+	constraint=[ddd::Constraint] ('(' params+=Literal (',' params+=Literal)* ')')?;
+
+Literal returns ddd::Literal:
 	NullLiteral | BooleanLiteral | NumberLiteral | StringLiteral;
+
+BooleanLiteral returns ddd::BooleanLiteral:
+	{BooleanLiteral} value=('false' | 'true');
+
+NullLiteral returns ddd::NullLiteral:
+	{NullLiteral} value='null';
+
+NumberLiteral returns ddd::NumberLiteral:
+	{NumberLiteral} value=Number;
+
+StringLiteral returns ddd::StringLiteral:
+	{StringLiteral} value=STRING;
 
 FQN:
   ID ('.' ID)*;
 
-FQNWithWildcard :
+FQNWithWildcard:
 	FQN  '.' '*';
-
-BooleanLiteral:
-	{BooleanLiteral} value=('false' | 'true');
-
-NullLiteral:
-	{NullLiteral} value='null';
-
-NumberLiteral:
-	{NumberLiteral} value=Number;
-
-StringLiteral:
-	{StringLiteral} value=STRING;
 
 terminal ID:
 	('A'..'Z'|'a'..'z') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;

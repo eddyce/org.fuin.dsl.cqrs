@@ -5,25 +5,25 @@ package org.fuin.dsl.cqrs.cqrsDSL.impl;
 import org.eclipse.emf.ecore.EClass;
 
 import org.fuin.dsl.cqrs.cqrsDSL.CqrsDSLPackage;
-import org.fuin.dsl.cqrs.cqrsDSL.NumberLiteral;
+import org.fuin.dsl.cqrs.cqrsDSL.TypeMetaInfo;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Number Literal</b></em>'.
+ * An implementation of the model object '<em><b>Type Meta Info</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * </p>
  *
  * @generated
  */
-public class NumberLiteralImpl extends org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.NumberLiteralImpl implements NumberLiteral
+public class TypeMetaInfoImpl extends org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.TypeMetaInfoImpl implements TypeMetaInfo
 {
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected NumberLiteralImpl()
+  protected TypeMetaInfoImpl()
   {
     super();
   }
@@ -36,7 +36,7 @@ public class NumberLiteralImpl extends org.fuin.dsl.ddd.domainDrivenDesignDsl.im
   @Override
   protected EClass eStaticClass()
   {
-    return CqrsDSLPackage.Literals.NUMBER_LITERAL;
+    return CqrsDSLPackage.Literals.TYPE_META_INFO;
   }
 
-} //NumberLiteralImpl
+} //TypeMetaInfoImpl

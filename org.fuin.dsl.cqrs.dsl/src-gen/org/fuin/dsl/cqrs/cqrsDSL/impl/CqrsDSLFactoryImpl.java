@@ -65,9 +65,14 @@ public class CqrsDSLFactoryImpl extends EFactoryImpl implements CqrsDSLFactory
     switch (eClass.getClassifierID())
     {
       case CqrsDSLPackage.DOMAIN_MODEL: return createDomainModel();
+      case CqrsDSLPackage.CONTEXT: return createContext();
       case CqrsDSLPackage.NAMESPACE: return createNamespace();
-      case CqrsDSLPackage.IMPORT: return createImport();
-      case CqrsDSLPackage.LITERAL: return createLiteral();
+      case CqrsDSLPackage.ABSTRACT_ELEMENT: return createAbstractElement();
+      case CqrsDSLPackage.COMMAND: return createCommand();
+      case CqrsDSLPackage.COMMAND_HANDLER: return createCommandHandler();
+      case CqrsDSLPackage.PROJECTION: return createProjection();
+      case CqrsDSLPackage.VIEW: return createView();
+      case CqrsDSLPackage.TYPE_META_INFO: return createTypeMetaInfo();
       case CqrsDSLPackage.BOOLEAN_LITERAL: return createBooleanLiteral();
       case CqrsDSLPackage.NULL_LITERAL: return createNullLiteral();
       case CqrsDSLPackage.NUMBER_LITERAL: return createNumberLiteral();
@@ -93,6 +98,17 @@ public class CqrsDSLFactoryImpl extends EFactoryImpl implements CqrsDSLFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public Context createContext()
+  {
+    ContextImpl context = new ContextImpl();
+    return context;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public Namespace createNamespace()
   {
     NamespaceImpl namespace = new NamespaceImpl();
@@ -104,10 +120,10 @@ public class CqrsDSLFactoryImpl extends EFactoryImpl implements CqrsDSLFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Import createImport()
+  public AbstractElement createAbstractElement()
   {
-    ImportImpl import_ = new ImportImpl();
-    return import_;
+    AbstractElementImpl abstractElement = new AbstractElementImpl();
+    return abstractElement;
   }
 
   /**
@@ -115,10 +131,54 @@ public class CqrsDSLFactoryImpl extends EFactoryImpl implements CqrsDSLFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Literal createLiteral()
+  public Command createCommand()
   {
-    LiteralImpl literal = new LiteralImpl();
-    return literal;
+    CommandImpl command = new CommandImpl();
+    return command;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public CommandHandler createCommandHandler()
+  {
+    CommandHandlerImpl commandHandler = new CommandHandlerImpl();
+    return commandHandler;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Projection createProjection()
+  {
+    ProjectionImpl projection = new ProjectionImpl();
+    return projection;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public View createView()
+  {
+    ViewImpl view = new ViewImpl();
+    return view;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public TypeMetaInfo createTypeMetaInfo()
+  {
+    TypeMetaInfoImpl typeMetaInfo = new TypeMetaInfoImpl();
+    return typeMetaInfo;
   }
 
   /**

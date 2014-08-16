@@ -32,6 +32,15 @@ public interface CqrsDSLFactory extends EFactory
   DomainModel createDomainModel();
 
   /**
+   * Returns a new object of class '<em>Context</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Context</em>'.
+   * @generated
+   */
+  Context createContext();
+
+  /**
    * Returns a new object of class '<em>Namespace</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -41,22 +50,58 @@ public interface CqrsDSLFactory extends EFactory
   Namespace createNamespace();
 
   /**
-   * Returns a new object of class '<em>Import</em>'.
+   * Returns a new object of class '<em>Abstract Element</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Import</em>'.
+   * @return a new object of class '<em>Abstract Element</em>'.
    * @generated
    */
-  Import createImport();
+  AbstractElement createAbstractElement();
 
   /**
-   * Returns a new object of class '<em>Literal</em>'.
+   * Returns a new object of class '<em>Command</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Literal</em>'.
+   * @return a new object of class '<em>Command</em>'.
    * @generated
    */
-  Literal createLiteral();
+  Command createCommand();
+
+  /**
+   * Returns a new object of class '<em>Command Handler</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Command Handler</em>'.
+   * @generated
+   */
+  CommandHandler createCommandHandler();
+
+  /**
+   * Returns a new object of class '<em>Projection</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Projection</em>'.
+   * @generated
+   */
+  Projection createProjection();
+
+  /**
+   * Returns a new object of class '<em>View</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>View</em>'.
+   * @generated
+   */
+  View createView();
+
+  /**
+   * Returns a new object of class '<em>Type Meta Info</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Type Meta Info</em>'.
+   * @generated
+   */
+  TypeMetaInfo createTypeMetaInfo();
 
   /**
    * Returns a new object of class '<em>Boolean Literal</em>'.

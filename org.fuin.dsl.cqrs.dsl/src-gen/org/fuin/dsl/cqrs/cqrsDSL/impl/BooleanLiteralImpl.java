@@ -16,7 +16,7 @@ import org.fuin.dsl.cqrs.cqrsDSL.CqrsDSLPackage;
  *
  * @generated
  */
-public class BooleanLiteralImpl extends LiteralImpl implements BooleanLiteral
+public class BooleanLiteralImpl extends org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.BooleanLiteralImpl implements BooleanLiteral
 {
   /**
    * <!-- begin-user-doc -->

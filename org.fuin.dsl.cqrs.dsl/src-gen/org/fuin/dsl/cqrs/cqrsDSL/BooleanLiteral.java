@@ -13,6 +13,6 @@ package org.fuin.dsl.cqrs.cqrsDSL;
  * @model
  * @generated
  */
-public interface BooleanLiteral extends Literal
+public interface BooleanLiteral extends org.fuin.dsl.ddd.domainDrivenDesignDsl.BooleanLiteral
 {
 } // BooleanLiteral
