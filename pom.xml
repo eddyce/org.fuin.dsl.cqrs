@@ -83,6 +83,8 @@
     <module>org.fuin.dsl.cqrs.sdk</module>
     <module>org.fuin.dsl.cqrs.ui</module>
     <module>org.fuin.dsl.cqrs.tests</module>
+    <!-- Check why this does not work in Jenkins...  
     <module>org.fuin.dsl.cqrs.repository</module>
+    -->
   </modules>
 </project>
