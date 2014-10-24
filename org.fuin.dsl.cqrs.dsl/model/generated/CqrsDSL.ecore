@@ -13,7 +13,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="Namespace">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="imports" upperBound="-1"
-        eType="ecore:EClass ../../../org.fuin.dsl.ddd.dsl/model/generated/DomainDrivenDesignDsl.ecore#//Import"
+        eType="ecore:EClass platform:/resource/org.fuin.dsl.ddd.dsl/model/generated/DomainDrivenDesignDsl.ecore#//Import"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
         eType="#//AbstractElement" containment="true"/>
@@ -24,7 +24,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Command" eSuperTypes="#//AbstractElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="variables" upperBound="-1"
-        eType="ecore:EClass ../../../org.fuin.dsl.ddd.dsl/model/generated/DomainDrivenDesignDsl.ecore#//Variable"
+        eType="ecore:EClass platform:/resource/org.fuin.dsl.ddd.dsl/model/generated/DomainDrivenDesignDsl.ecore#//Variable"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="message" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
@@ -32,18 +32,18 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="commands" unique="false"
         upperBound="-1" eType="#//Command"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="aggregates" unique="false"
-        upperBound="-1" eType="ecore:EClass ../../../org.fuin.dsl.ddd.dsl/model/generated/DomainDrivenDesignDsl.ecore#//Aggregate"/>
+        upperBound="-1" eType="ecore:EClass platform:/resource/org.fuin.dsl.ddd.dsl/model/generated/DomainDrivenDesignDsl.ecore#//Aggregate"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Projection" eSuperTypes="#//AbstractElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="events" unique="false"
-        upperBound="-1" eType="ecore:EClass ../../../org.fuin.dsl.ddd.dsl/model/generated/DomainDrivenDesignDsl.ecore#//Event"/>
+        upperBound="-1" eType="ecore:EClass platform:/resource/org.fuin.dsl.ddd.dsl/model/generated/DomainDrivenDesignDsl.ecore#//Event"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="View" eSuperTypes="#//AbstractElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="projection" eType="#//Projection"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="TypeMetaInfo" eSuperTypes="../../../org.fuin.dsl.ddd.dsl/model/generated/DomainDrivenDesignDsl.ecore#//TypeMetaInfo"/>
-  <eClassifiers xsi:type="ecore:EClass" name="BooleanLiteral" eSuperTypes="../../../org.fuin.dsl.ddd.dsl/model/generated/DomainDrivenDesignDsl.ecore#//BooleanLiteral"/>
-  <eClassifiers xsi:type="ecore:EClass" name="NullLiteral" eSuperTypes="../../../org.fuin.dsl.ddd.dsl/model/generated/DomainDrivenDesignDsl.ecore#//NullLiteral"/>
-  <eClassifiers xsi:type="ecore:EClass" name="NumberLiteral" eSuperTypes="../../../org.fuin.dsl.ddd.dsl/model/generated/DomainDrivenDesignDsl.ecore#//NumberLiteral"/>
-  <eClassifiers xsi:type="ecore:EClass" name="StringLiteral" eSuperTypes="../../../org.fuin.dsl.ddd.dsl/model/generated/DomainDrivenDesignDsl.ecore#//StringLiteral"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TypeMetaInfo" eSuperTypes="platform:/resource/org.fuin.dsl.ddd.dsl/model/generated/DomainDrivenDesignDsl.ecore#//TypeMetaInfo"/>
+  <eClassifiers xsi:type="ecore:EClass" name="BooleanLiteral" eSuperTypes="platform:/resource/org.fuin.dsl.ddd.dsl/model/generated/DomainDrivenDesignDsl.ecore#//BooleanLiteral"/>
+  <eClassifiers xsi:type="ecore:EClass" name="NullLiteral" eSuperTypes="platform:/resource/org.fuin.dsl.ddd.dsl/model/generated/DomainDrivenDesignDsl.ecore#//NullLiteral"/>
+  <eClassifiers xsi:type="ecore:EClass" name="NumberLiteral" eSuperTypes="platform:/resource/org.fuin.dsl.ddd.dsl/model/generated/DomainDrivenDesignDsl.ecore#//NumberLiteral"/>
+  <eClassifiers xsi:type="ecore:EClass" name="StringLiteral" eSuperTypes="platform:/resource/org.fuin.dsl.ddd.dsl/model/generated/DomainDrivenDesignDsl.ecore#//StringLiteral"/>
 </ecore:EPackage>

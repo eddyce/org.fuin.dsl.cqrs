@@ -250,7 +250,9 @@
    <extension
          point="org.eclipse.xtext.builder.participant">
       <participant
-            class="org.fuin.dsl.cqrs.ui.CqrsDSLExecutableExtensionFactory:org.eclipse.xtext.builder.IXtextBuilderParticipant">
+            class="org.fuin.dsl.cqrs.ui.CqrsDSLExecutableExtensionFactory:org.eclipse.xtext.builder.IXtextBuilderParticipant"
+            fileExtensions="cqrs"
+            >
       </participant>
    </extension>
    <extension

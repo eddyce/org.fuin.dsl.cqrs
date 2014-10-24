@@ -1012,43 +1012,74 @@ public class CqrsDSLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	
-	private DomainModelElements pDomainModel;
-	private ContextElements pContext;
-	private NamespaceElements pNamespace;
-	private ImportElements pImport;
-	private AbstractElementElements pAbstractElement;
-	private CommandElements pCommand;
-	private CommandHandlerElements pCommandHandler;
-	private ProjectionElements pProjection;
-	private ViewElements pView;
-	private TypeMetaInfoElements pTypeMetaInfo;
-	private VariableElements pVariable;
-	private InvariantsElements pInvariants;
-	private OverriddenTypeMetaInfoElements pOverriddenTypeMetaInfo;
-	private ConstraintCallElements pConstraintCall;
-	private LiteralElements pLiteral;
-	private BooleanLiteralElements pBooleanLiteral;
-	private NullLiteralElements pNullLiteral;
-	private NumberLiteralElements pNumberLiteral;
-	private StringLiteralElements pStringLiteral;
-	private FQNElements pFQN;
-	private FQNWithWildcardElements pFQNWithWildcard;
-	private TerminalRule tID;
-	private TerminalRule tSTRING;
-	private NumberElements pNumber;
-	private TerminalRule tHEX;
-	private TerminalRule tINT;
-	private TerminalRule tDECIMAL;
-	private TerminalRule tDOC;
-	private TerminalRule tML_COMMENT;
-	private TerminalRule tSL_COMMENT;
-	private TerminalRule tWS;
+	private final DomainModelElements pDomainModel;
+	private final ContextElements pContext;
+	private final NamespaceElements pNamespace;
+	private final ImportElements pImport;
+	private final AbstractElementElements pAbstractElement;
+	private final CommandElements pCommand;
+	private final CommandHandlerElements pCommandHandler;
+	private final ProjectionElements pProjection;
+	private final ViewElements pView;
+	private final TypeMetaInfoElements pTypeMetaInfo;
+	private final VariableElements pVariable;
+	private final InvariantsElements pInvariants;
+	private final OverriddenTypeMetaInfoElements pOverriddenTypeMetaInfo;
+	private final ConstraintCallElements pConstraintCall;
+	private final LiteralElements pLiteral;
+	private final BooleanLiteralElements pBooleanLiteral;
+	private final NullLiteralElements pNullLiteral;
+	private final NumberLiteralElements pNumberLiteral;
+	private final StringLiteralElements pStringLiteral;
+	private final FQNElements pFQN;
+	private final FQNWithWildcardElements pFQNWithWildcard;
+	private final TerminalRule tID;
+	private final TerminalRule tSTRING;
+	private final NumberElements pNumber;
+	private final TerminalRule tHEX;
+	private final TerminalRule tINT;
+	private final TerminalRule tDECIMAL;
+	private final TerminalRule tDOC;
+	private final TerminalRule tML_COMMENT;
+	private final TerminalRule tSL_COMMENT;
+	private final TerminalRule tWS;
 	
 	private final Grammar grammar;
 
 	@Inject
 	public CqrsDSLGrammarAccess(GrammarProvider grammarProvider) {
 		this.grammar = internalFindGrammar(grammarProvider);
+		this.pDomainModel = new DomainModelElements();
+		this.pContext = new ContextElements();
+		this.pNamespace = new NamespaceElements();
+		this.pImport = new ImportElements();
+		this.pAbstractElement = new AbstractElementElements();
+		this.pCommand = new CommandElements();
+		this.pCommandHandler = new CommandHandlerElements();
+		this.pProjection = new ProjectionElements();
+		this.pView = new ViewElements();
+		this.pTypeMetaInfo = new TypeMetaInfoElements();
+		this.pVariable = new VariableElements();
+		this.pInvariants = new InvariantsElements();
+		this.pOverriddenTypeMetaInfo = new OverriddenTypeMetaInfoElements();
+		this.pConstraintCall = new ConstraintCallElements();
+		this.pLiteral = new LiteralElements();
+		this.pBooleanLiteral = new BooleanLiteralElements();
+		this.pNullLiteral = new NullLiteralElements();
+		this.pNumberLiteral = new NumberLiteralElements();
+		this.pStringLiteral = new StringLiteralElements();
+		this.pFQN = new FQNElements();
+		this.pFQNWithWildcard = new FQNWithWildcardElements();
+		this.tID = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "ID");
+		this.tSTRING = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "STRING");
+		this.pNumber = new NumberElements();
+		this.tHEX = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "HEX");
+		this.tINT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "INT");
+		this.tDECIMAL = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "DECIMAL");
+		this.tDOC = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "DOC");
+		this.tML_COMMENT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "ML_COMMENT");
+		this.tSL_COMMENT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "SL_COMMENT");
+		this.tWS = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "WS");
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -1077,7 +1108,7 @@ public class CqrsDSLGrammarAccess extends AbstractGrammarElementFinder {
 	//DomainModel:
 	//	contexts+=Context*;
 	public DomainModelElements getDomainModelAccess() {
-		return (pDomainModel != null) ? pDomainModel : (pDomainModel = new DomainModelElements());
+		return pDomainModel;
 	}
 	
 	public ParserRule getDomainModelRule() {
@@ -1087,7 +1118,7 @@ public class CqrsDSLGrammarAccess extends AbstractGrammarElementFinder {
 	//Context:
 	//	"context" name=ID "{" namespaces+=Namespace* "}";
 	public ContextElements getContextAccess() {
-		return (pContext != null) ? pContext : (pContext = new ContextElements());
+		return pContext;
 	}
 	
 	public ParserRule getContextRule() {
@@ -1097,7 +1128,7 @@ public class CqrsDSLGrammarAccess extends AbstractGrammarElementFinder {
 	//Namespace:
 	//	"namespace" name=FQN "{" imports+=Import* elements+=AbstractElement* "}";
 	public NamespaceElements getNamespaceAccess() {
-		return (pNamespace != null) ? pNamespace : (pNamespace = new NamespaceElements());
+		return pNamespace;
 	}
 	
 	public ParserRule getNamespaceRule() {
@@ -1107,7 +1138,7 @@ public class CqrsDSLGrammarAccess extends AbstractGrammarElementFinder {
 	//Import returns ddd::Import:
 	//	"import" importedNamespace=(FQN | FQNWithWildcard);
 	public ImportElements getImportAccess() {
-		return (pImport != null) ? pImport : (pImport = new ImportElements());
+		return pImport;
 	}
 	
 	public ParserRule getImportRule() {
@@ -1117,7 +1148,7 @@ public class CqrsDSLGrammarAccess extends AbstractGrammarElementFinder {
 	//AbstractElement:
 	//	Command | CommandHandler | Projection | View;
 	public AbstractElementElements getAbstractElementAccess() {
-		return (pAbstractElement != null) ? pAbstractElement : (pAbstractElement = new AbstractElementElements());
+		return pAbstractElement;
 	}
 	
 	public ParserRule getAbstractElementRule() {
@@ -1127,7 +1158,7 @@ public class CqrsDSLGrammarAccess extends AbstractGrammarElementFinder {
 	//Command:
 	//	doc=DOC? "command" name=ID "{" variables+=Variable* ("message" message=STRING)? "}";
 	public CommandElements getCommandAccess() {
-		return (pCommand != null) ? pCommand : (pCommand = new CommandElements());
+		return pCommand;
 	}
 	
 	public ParserRule getCommandRule() {
@@ -1138,7 +1169,7 @@ public class CqrsDSLGrammarAccess extends AbstractGrammarElementFinder {
 	//	doc=DOC? "command-handler" name=ID "handles" commands+=[Command] ("," commands+=[Command])* ("uses"
 	//	aggregates+=[ddd::Aggregate] ("," aggregates+=[ddd::Aggregate])*)?;
 	public CommandHandlerElements getCommandHandlerAccess() {
-		return (pCommandHandler != null) ? pCommandHandler : (pCommandHandler = new CommandHandlerElements());
+		return pCommandHandler;
 	}
 	
 	public ParserRule getCommandHandlerRule() {
@@ -1148,7 +1179,7 @@ public class CqrsDSLGrammarAccess extends AbstractGrammarElementFinder {
 	//Projection:
 	//	doc=DOC? "projection" name=ID ("input" events+=[ddd::Event] ("," events+=[ddd::Event])*)?;
 	public ProjectionElements getProjectionAccess() {
-		return (pProjection != null) ? pProjection : (pProjection = new ProjectionElements());
+		return pProjection;
 	}
 	
 	public ParserRule getProjectionRule() {
@@ -1158,7 +1189,7 @@ public class CqrsDSLGrammarAccess extends AbstractGrammarElementFinder {
 	//View:
 	//	doc=DOC? "view" name=ID "uses" projection=[Projection];
 	public ViewElements getViewAccess() {
-		return (pView != null) ? pView : (pView = new ViewElements());
+		return pView;
 	}
 	
 	public ParserRule getViewRule() {
@@ -1169,7 +1200,7 @@ public class CqrsDSLGrammarAccess extends AbstractGrammarElementFinder {
 	//	{TypeMetaInfo} ("slabel" slabel=STRING)? ("label" label=STRING)? ("tooltip" tooltip=STRING)? ("prompt" prompt=STRING)?
 	//	("examples" examples+=STRING*)?;
 	public TypeMetaInfoElements getTypeMetaInfoAccess() {
-		return (pTypeMetaInfo != null) ? pTypeMetaInfo : (pTypeMetaInfo = new TypeMetaInfoElements());
+		return pTypeMetaInfo;
 	}
 	
 	public ParserRule getTypeMetaInfoRule() {
@@ -1180,7 +1211,7 @@ public class CqrsDSLGrammarAccess extends AbstractGrammarElementFinder {
 	//	doc=DOC? nullable="nullable"? type=[ddd::Type] multiplicity="*"? name=ID invariants=Invariants?
 	//	overridden=OverriddenTypeMetaInfo?;
 	public VariableElements getVariableAccess() {
-		return (pVariable != null) ? pVariable : (pVariable = new VariableElements());
+		return pVariable;
 	}
 	
 	public ParserRule getVariableRule() {
@@ -1190,7 +1221,7 @@ public class CqrsDSLGrammarAccess extends AbstractGrammarElementFinder {
 	//Invariants returns ddd::Invariants:
 	//	"invariants" calls+=ConstraintCall ("," calls+=ConstraintCall)*;
 	public InvariantsElements getInvariantsAccess() {
-		return (pInvariants != null) ? pInvariants : (pInvariants = new InvariantsElements());
+		return pInvariants;
 	}
 	
 	public ParserRule getInvariantsRule() {
@@ -1200,7 +1231,7 @@ public class CqrsDSLGrammarAccess extends AbstractGrammarElementFinder {
 	//OverriddenTypeMetaInfo returns ddd::OverriddenTypeMetaInfo:
 	//	"{" metaInfo=TypeMetaInfo "}";
 	public OverriddenTypeMetaInfoElements getOverriddenTypeMetaInfoAccess() {
-		return (pOverriddenTypeMetaInfo != null) ? pOverriddenTypeMetaInfo : (pOverriddenTypeMetaInfo = new OverriddenTypeMetaInfoElements());
+		return pOverriddenTypeMetaInfo;
 	}
 	
 	public ParserRule getOverriddenTypeMetaInfoRule() {
@@ -1210,7 +1241,7 @@ public class CqrsDSLGrammarAccess extends AbstractGrammarElementFinder {
 	//ConstraintCall returns ddd::ConstraintCall:
 	//	constraint=[ddd::Constraint] ("(" params+=Literal ("," params+=Literal)* ")")?;
 	public ConstraintCallElements getConstraintCallAccess() {
-		return (pConstraintCall != null) ? pConstraintCall : (pConstraintCall = new ConstraintCallElements());
+		return pConstraintCall;
 	}
 	
 	public ParserRule getConstraintCallRule() {
@@ -1220,7 +1251,7 @@ public class CqrsDSLGrammarAccess extends AbstractGrammarElementFinder {
 	//Literal returns ddd::Literal:
 	//	NullLiteral | BooleanLiteral | NumberLiteral | StringLiteral;
 	public LiteralElements getLiteralAccess() {
-		return (pLiteral != null) ? pLiteral : (pLiteral = new LiteralElements());
+		return pLiteral;
 	}
 	
 	public ParserRule getLiteralRule() {
@@ -1230,7 +1261,7 @@ public class CqrsDSLGrammarAccess extends AbstractGrammarElementFinder {
 	//BooleanLiteral returns ddd::BooleanLiteral:
 	//	{BooleanLiteral} value=("false" | "true");
 	public BooleanLiteralElements getBooleanLiteralAccess() {
-		return (pBooleanLiteral != null) ? pBooleanLiteral : (pBooleanLiteral = new BooleanLiteralElements());
+		return pBooleanLiteral;
 	}
 	
 	public ParserRule getBooleanLiteralRule() {
@@ -1240,7 +1271,7 @@ public class CqrsDSLGrammarAccess extends AbstractGrammarElementFinder {
 	//NullLiteral returns ddd::NullLiteral:
 	//	{NullLiteral} value="null";
 	public NullLiteralElements getNullLiteralAccess() {
-		return (pNullLiteral != null) ? pNullLiteral : (pNullLiteral = new NullLiteralElements());
+		return pNullLiteral;
 	}
 	
 	public ParserRule getNullLiteralRule() {
@@ -1250,7 +1281,7 @@ public class CqrsDSLGrammarAccess extends AbstractGrammarElementFinder {
 	//NumberLiteral returns ddd::NumberLiteral:
 	//	{NumberLiteral} value=Number;
 	public NumberLiteralElements getNumberLiteralAccess() {
-		return (pNumberLiteral != null) ? pNumberLiteral : (pNumberLiteral = new NumberLiteralElements());
+		return pNumberLiteral;
 	}
 	
 	public ParserRule getNumberLiteralRule() {
@@ -1260,7 +1291,7 @@ public class CqrsDSLGrammarAccess extends AbstractGrammarElementFinder {
 	//StringLiteral returns ddd::StringLiteral:
 	//	{StringLiteral} value=STRING;
 	public StringLiteralElements getStringLiteralAccess() {
-		return (pStringLiteral != null) ? pStringLiteral : (pStringLiteral = new StringLiteralElements());
+		return pStringLiteral;
 	}
 	
 	public ParserRule getStringLiteralRule() {
@@ -1270,7 +1301,7 @@ public class CqrsDSLGrammarAccess extends AbstractGrammarElementFinder {
 	//FQN:
 	//	ID ("." ID)*;
 	public FQNElements getFQNAccess() {
-		return (pFQN != null) ? pFQN : (pFQN = new FQNElements());
+		return pFQN;
 	}
 	
 	public ParserRule getFQNRule() {
@@ -1280,7 +1311,7 @@ public class CqrsDSLGrammarAccess extends AbstractGrammarElementFinder {
 	//FQNWithWildcard:
 	//	FQN "." "*";
 	public FQNWithWildcardElements getFQNWithWildcardAccess() {
-		return (pFQNWithWildcard != null) ? pFQNWithWildcard : (pFQNWithWildcard = new FQNWithWildcardElements());
+		return pFQNWithWildcard;
 	}
 	
 	public ParserRule getFQNWithWildcardRule() {
@@ -1290,20 +1321,20 @@ public class CqrsDSLGrammarAccess extends AbstractGrammarElementFinder {
 	//terminal ID:
 	//	("A".."Z" | "a".."z") ("a".."z" | "A".."Z" | "_" | "0".."9")*;
 	public TerminalRule getIDRule() {
-		return (tID != null) ? tID : (tID = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "ID"));
+		return tID;
 	} 
 
 	//terminal STRING:
 	//	"\"" ("\\" ("b" | "t" | "n" | "f" | "r" | "u" | "\"" | "\'" | "\\") | !("\\" | "\""))* "\"" | "\'" ("\\" ("b" | "t" |
 	//	"n" | "f" | "r" | "u" | "\"" | "\'" | "\\") | !("\\" | "\'"))* "\'";
 	public TerminalRule getSTRINGRule() {
-		return (tSTRING != null) ? tSTRING : (tSTRING = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "STRING"));
+		return tSTRING;
 	} 
 
 	//Number hidden():
 	//	HEX | (INT | DECIMAL) ("." (INT | DECIMAL))?;
 	public NumberElements getNumberAccess() {
-		return (pNumber != null) ? pNumber : (pNumber = new NumberElements());
+		return pNumber;
 	}
 	
 	public ParserRule getNumberRule() {
@@ -1313,46 +1344,46 @@ public class CqrsDSLGrammarAccess extends AbstractGrammarElementFinder {
 	//terminal HEX:
 	//	("0x" | "0X") ("0".."9" | "a".."f" | "A".."F" | "_")+ ("#" (("b" | "B") ("i" | "I") | ("l" | "L")))?;
 	public TerminalRule getHEXRule() {
-		return (tHEX != null) ? tHEX : (tHEX = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "HEX"));
+		return tHEX;
 	} 
 
 	//terminal INT returns ecore::EInt:
 	//	"0".."9" ("0".."9" | "_")*;
 	public TerminalRule getINTRule() {
-		return (tINT != null) ? tINT : (tINT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "INT"));
+		return tINT;
 	} 
 
 	//terminal DECIMAL:
 	//	INT (("e" | "E") ("+" | "-")? INT)? (("b" | "B") ("i" | "I" | "d" | "D") | ("l" | "L" | "d" | "D" | "f" | "F"))?;
 	public TerminalRule getDECIMALRule() {
-		return (tDECIMAL != null) ? tDECIMAL : (tDECIMAL = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "DECIMAL"));
+		return tDECIMAL;
 	} 
 
 	//// Documentation
 	//terminal DOC:
 	//	"/ **"->"* /";
 	public TerminalRule getDOCRule() {
-		return (tDOC != null) ? tDOC : (tDOC = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "DOC"));
+		return tDOC;
 	} 
 
 	//// Multi line comment		 
 	//terminal ML_COMMENT:
 	//	"/ *" !"*"->"* /";
 	public TerminalRule getML_COMMENTRule() {
-		return (tML_COMMENT != null) ? tML_COMMENT : (tML_COMMENT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "ML_COMMENT"));
+		return tML_COMMENT;
 	} 
 
 	//// Single line comment
 	//terminal SL_COMMENT:
 	//	"//" !("\n" | "\r")* ("\r"? "\n")?;
 	public TerminalRule getSL_COMMENTRule() {
-		return (tSL_COMMENT != null) ? tSL_COMMENT : (tSL_COMMENT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "SL_COMMENT"));
+		return tSL_COMMENT;
 	} 
 
 	//// Whitespace - Anything that is ignored.
 	//terminal WS:
 	//	(" " | "\t" | "\r" | "\n")+;
 	public TerminalRule getWSRule() {
-		return (tWS != null) ? tWS : (tWS = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "WS"));
+		return tWS;
 	} 
 }

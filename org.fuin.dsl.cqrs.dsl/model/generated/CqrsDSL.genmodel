@@ -4,7 +4,7 @@
     editorDirectory="/org.fuin.dsl.cqrs.dsl.editor/src" modelPluginID="org.fuin.dsl.cqrs.dsl"
     forceOverwrite="true" modelName="CqrsDSL" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     complianceLevel="5.0" copyrightFields="false" editPluginID="org.fuin.dsl.cqrs.dsl.edit"
-    editorPluginID="org.fuin.dsl.cqrs.dsl.editor" runtimeVersion="2.9" usedGenPackages="../../../org.fuin.dsl.ddd.dsl/model/generated/DomainDrivenDesignDsl.genmodel#//domainDrivenDesignDsl">
+    editorPluginID="org.fuin.dsl.cqrs.dsl.editor" runtimeVersion="2.10" usedGenPackages="platform:/resource/org.fuin.dsl.ddd.dsl/model/generated/DomainDrivenDesignDsl.genmodel#//domainDrivenDesignDsl">
   <genPackages prefix="CqrsDSL" basePackage="org.fuin.dsl.cqrs" disposableProviderFactory="true"
       fileExtensions="cqrs" ecorePackage="CqrsDSL.ecore#/">
     <genClasses ecoreClass="CqrsDSL.ecore#//DomainModel">

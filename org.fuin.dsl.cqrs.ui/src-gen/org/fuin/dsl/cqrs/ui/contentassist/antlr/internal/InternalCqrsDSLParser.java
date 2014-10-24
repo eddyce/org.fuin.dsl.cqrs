@@ -13340,12 +13340,10 @@ public class InternalCqrsDSLParser extends AbstractInternalContentAssistParser {
         "\6\uffff}>";
     static final String[] DFA2_transitionS = {
             "\1\1",
-            "\1\3\10\uffff\1\3\1\uffff\2\3\1\uffff\1\3\3\uffff\1\3\1\uffff"+
-            "\1\3\10\uffff\1\2",
+            "\1\3\10\uffff\1\3\1\uffff\2\3\1\uffff\1\3\3\uffff\1\3\1\uffff\1\3\10\uffff\1\2",
             "\1\4\36\uffff\1\5",
             "",
-            "\1\3\10\uffff\1\3\1\uffff\2\3\1\uffff\1\3\3\uffff\1\3\1\uffff"+
-            "\1\3\10\uffff\1\2",
+            "\1\3\10\uffff\1\3\1\uffff\2\3\1\uffff\1\3\3\uffff\1\3\1\uffff\1\3\10\uffff\1\2",
             ""
     };
 
