@@ -1,18 +1,17 @@
-context sample {
+context samples {
 	
 	namespace a.b.c {
 		
-		import samples.tree.*
+		import samples.tree.HelloWorldEvent
+		import samples.tree.Tree.TreeCreatedEvent
 		
 		command DoSomethingCommand {
-			
 			message "Do something"
-			
 		}
 		
 		command-handler TheCommandHandler handles DoSomethingCommand 
 		
-		projection PrjX input TreeCreatedEvent
+		projection PrjX input HelloWorldEvent, TreeCreatedEvent
 		
 		view ViewZ uses PrjX
 		

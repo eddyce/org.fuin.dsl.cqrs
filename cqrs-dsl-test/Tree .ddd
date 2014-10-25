@@ -1,0 +1,30 @@
+context samples {
+
+	namespace tree {
+	
+		import samples.types.*
+
+		/** Event not related to an entity. */
+		event HelloWorldEvent {
+			message "Hello world!"
+		}
+
+		aggregate Tree identifier TreeId {
+			
+			constructor create fires TreeCreatedEvent, HelloWorldEvent {
+				TreeId id
+			}
+
+			/** A tree aggregate was created. */
+			event TreeCreatedEvent {
+				TreeId id
+				message "Tree ${id} was created"
+			}
+
+		}
+
+		aggregate-id TreeId identifies Tree base UUID {}
+	
+	}
+
+}
