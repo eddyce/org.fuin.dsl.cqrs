@@ -24,6 +24,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CqrsDSL.ecore#//AbstractElement/name"/>
     </genClasses>
     <genClasses ecoreClass="CqrsDSL.ecore#//Command">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CqrsDSL.ecore#//Command/target"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CqrsDSL.ecore#//Command/variables"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CqrsDSL.ecore#//Command/message"/>
     </genClasses>

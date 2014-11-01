@@ -235,13 +235,22 @@ public interface CqrsDSLPackage extends EPackage
   int COMMAND__NAME = ABSTRACT_ELEMENT__NAME;
 
   /**
+   * The feature id for the '<em><b>Target</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMMAND__TARGET = ABSTRACT_ELEMENT_FEATURE_COUNT + 0;
+
+  /**
    * The feature id for the '<em><b>Variables</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int COMMAND__VARIABLES = ABSTRACT_ELEMENT_FEATURE_COUNT + 0;
+  int COMMAND__VARIABLES = ABSTRACT_ELEMENT_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Message</b></em>' attribute.
@@ -250,7 +259,7 @@ public interface CqrsDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int COMMAND__MESSAGE = ABSTRACT_ELEMENT_FEATURE_COUNT + 1;
+  int COMMAND__MESSAGE = ABSTRACT_ELEMENT_FEATURE_COUNT + 2;
 
   /**
    * The number of structural features of the '<em>Command</em>' class.
@@ -259,7 +268,7 @@ public interface CqrsDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int COMMAND_FEATURE_COUNT = ABSTRACT_ELEMENT_FEATURE_COUNT + 2;
+  int COMMAND_FEATURE_COUNT = ABSTRACT_ELEMENT_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '{@link org.fuin.dsl.cqrs.cqrsDSL.impl.CommandHandlerImpl <em>Command Handler</em>}' class.
@@ -724,6 +733,17 @@ public interface CqrsDSLPackage extends EPackage
   EClass getCommand();
 
   /**
+   * Returns the meta object for the reference '{@link org.fuin.dsl.cqrs.cqrsDSL.Command#getTarget <em>Target</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Target</em>'.
+   * @see org.fuin.dsl.cqrs.cqrsDSL.Command#getTarget()
+   * @see #getCommand()
+   * @generated
+   */
+  EReference getCommand_Target();
+
+  /**
    * Returns the meta object for the containment reference list '{@link org.fuin.dsl.cqrs.cqrsDSL.Command#getVariables <em>Variables</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1005,6 +1025,14 @@ public interface CqrsDSLPackage extends EPackage
      * @generated
      */
     EClass COMMAND = eINSTANCE.getCommand();
+
+    /**
+     * The meta object literal for the '<em><b>Target</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference COMMAND__TARGET = eINSTANCE.getCommand_Target();
 
     /**
      * The meta object literal for the '<em><b>Variables</b></em>' containment reference list feature.

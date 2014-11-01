@@ -27,7 +27,7 @@ AbstractElement:
 
 Command:
 	doc=DOC? 
-	'command' name=ID '{'
+	'command' name=ID ('target' target=[ddd::AbstractMethod|FQN])?  '{'
 		variables+=Variable*	
 		('message' message=STRING)?
 	'}';
@@ -36,11 +36,11 @@ CommandHandler:
 	doc=DOC? 
 	'command-handler' name=ID 
 	    'handles' commands+=[Command] (',' commands+=[Command])*
-	   ('uses' aggregates+=[ddd::Aggregate] (',' aggregates+=[ddd::Aggregate])*)?;
+	   ('uses' aggregates+=[ddd::Aggregate|FQN] (',' aggregates+=[ddd::Aggregate|FQN])*)?;
 
 Projection:
 	doc=DOC? 
-	'projection' name=ID ('input' events+=[ddd::Event] (',' events+=[ddd::Event])*)?;
+	'projection' name=ID ('input' events+=[ddd::Event|FQN] (',' events+=[ddd::Event|FQN])*)?;
 
 View:
 	doc=DOC? 

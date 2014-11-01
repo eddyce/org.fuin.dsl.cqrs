@@ -48,7 +48,8 @@ public class CqrsDSLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getNamespaceAccess().getGroup(), "rule__Namespace__Group__0");
 					put(grammarAccess.getImportAccess().getGroup(), "rule__Import__Group__0");
 					put(grammarAccess.getCommandAccess().getGroup(), "rule__Command__Group__0");
-					put(grammarAccess.getCommandAccess().getGroup_5(), "rule__Command__Group_5__0");
+					put(grammarAccess.getCommandAccess().getGroup_3(), "rule__Command__Group_3__0");
+					put(grammarAccess.getCommandAccess().getGroup_6(), "rule__Command__Group_6__0");
 					put(grammarAccess.getCommandHandlerAccess().getGroup(), "rule__CommandHandler__Group__0");
 					put(grammarAccess.getCommandHandlerAccess().getGroup_5(), "rule__CommandHandler__Group_5__0");
 					put(grammarAccess.getCommandHandlerAccess().getGroup_6(), "rule__CommandHandler__Group_6__0");
@@ -88,8 +89,9 @@ public class CqrsDSLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getImportAccess().getImportedNamespaceAssignment_1(), "rule__Import__ImportedNamespaceAssignment_1");
 					put(grammarAccess.getCommandAccess().getDocAssignment_0(), "rule__Command__DocAssignment_0");
 					put(grammarAccess.getCommandAccess().getNameAssignment_2(), "rule__Command__NameAssignment_2");
-					put(grammarAccess.getCommandAccess().getVariablesAssignment_4(), "rule__Command__VariablesAssignment_4");
-					put(grammarAccess.getCommandAccess().getMessageAssignment_5_1(), "rule__Command__MessageAssignment_5_1");
+					put(grammarAccess.getCommandAccess().getTargetAssignment_3_1(), "rule__Command__TargetAssignment_3_1");
+					put(grammarAccess.getCommandAccess().getVariablesAssignment_5(), "rule__Command__VariablesAssignment_5");
+					put(grammarAccess.getCommandAccess().getMessageAssignment_6_1(), "rule__Command__MessageAssignment_6_1");
 					put(grammarAccess.getCommandHandlerAccess().getDocAssignment_0(), "rule__CommandHandler__DocAssignment_0");
 					put(grammarAccess.getCommandHandlerAccess().getNameAssignment_2(), "rule__CommandHandler__NameAssignment_2");
 					put(grammarAccess.getCommandHandlerAccess().getCommandsAssignment_4(), "rule__CommandHandler__CommandsAssignment_4");

@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import org.fuin.dsl.cqrs.cqrsDSL.Command;
 import org.fuin.dsl.cqrs.cqrsDSL.CqrsDSLPackage;
 
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractMethod;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable;
 
 /**
@@ -29,6 +30,7 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link org.fuin.dsl.cqrs.cqrsDSL.impl.CommandImpl#getTarget <em>Target</em>}</li>
  *   <li>{@link org.fuin.dsl.cqrs.cqrsDSL.impl.CommandImpl#getVariables <em>Variables</em>}</li>
  *   <li>{@link org.fuin.dsl.cqrs.cqrsDSL.impl.CommandImpl#getMessage <em>Message</em>}</li>
  * </ul>
@@ -38,6 +40,16 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable;
  */
 public class CommandImpl extends AbstractElementImpl implements Command
 {
+  /**
+   * The cached value of the '{@link #getTarget() <em>Target</em>}' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getTarget()
+   * @generated
+   * @ordered
+   */
+  protected AbstractMethod target;
+
   /**
    * The cached value of the '{@link #getVariables() <em>Variables</em>}' containment reference list.
    * <!-- begin-user-doc -->
@@ -87,6 +99,49 @@ public class CommandImpl extends AbstractElementImpl implements Command
   protected EClass eStaticClass()
   {
     return CqrsDSLPackage.Literals.COMMAND;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public AbstractMethod getTarget()
+  {
+    if (target != null && target.eIsProxy())
+    {
+      InternalEObject oldTarget = (InternalEObject)target;
+      target = (AbstractMethod)eResolveProxy(oldTarget);
+      if (target != oldTarget)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, CqrsDSLPackage.COMMAND__TARGET, oldTarget, target));
+      }
+    }
+    return target;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public AbstractMethod basicGetTarget()
+  {
+    return target;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setTarget(AbstractMethod newTarget)
+  {
+    AbstractMethod oldTarget = target;
+    target = newTarget;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, CqrsDSLPackage.COMMAND__TARGET, oldTarget, target));
   }
 
   /**
@@ -152,6 +207,9 @@ public class CommandImpl extends AbstractElementImpl implements Command
   {
     switch (featureID)
     {
+      case CqrsDSLPackage.COMMAND__TARGET:
+        if (resolve) return getTarget();
+        return basicGetTarget();
       case CqrsDSLPackage.COMMAND__VARIABLES:
         return getVariables();
       case CqrsDSLPackage.COMMAND__MESSAGE:
@@ -171,6 +229,9 @@ public class CommandImpl extends AbstractElementImpl implements Command
   {
     switch (featureID)
     {
+      case CqrsDSLPackage.COMMAND__TARGET:
+        setTarget((AbstractMethod)newValue);
+        return;
       case CqrsDSLPackage.COMMAND__VARIABLES:
         getVariables().clear();
         getVariables().addAll((Collection<? extends Variable>)newValue);
@@ -192,6 +253,9 @@ public class CommandImpl extends AbstractElementImpl implements Command
   {
     switch (featureID)
     {
+      case CqrsDSLPackage.COMMAND__TARGET:
+        setTarget((AbstractMethod)null);
+        return;
       case CqrsDSLPackage.COMMAND__VARIABLES:
         getVariables().clear();
         return;
@@ -212,6 +276,8 @@ public class CommandImpl extends AbstractElementImpl implements Command
   {
     switch (featureID)
     {
+      case CqrsDSLPackage.COMMAND__TARGET:
+        return target != null;
       case CqrsDSLPackage.COMMAND__VARIABLES:
         return variables != null && !variables.isEmpty();
       case CqrsDSLPackage.COMMAND__MESSAGE:

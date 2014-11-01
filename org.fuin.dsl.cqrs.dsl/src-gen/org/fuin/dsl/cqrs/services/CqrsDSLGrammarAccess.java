@@ -189,20 +189,27 @@ public class CqrsDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cCommandKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cNameIDTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cVariablesAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cVariablesVariableParserRuleCall_4_0 = (RuleCall)cVariablesAssignment_4.eContents().get(0);
-		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
-		private final Keyword cMessageKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
-		private final Assignment cMessageAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
-		private final RuleCall cMessageSTRINGTerminalRuleCall_5_1_0 = (RuleCall)cMessageAssignment_5_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
+		private final Keyword cTargetKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Assignment cTargetAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final CrossReference cTargetAbstractMethodCrossReference_3_1_0 = (CrossReference)cTargetAssignment_3_1.eContents().get(0);
+		private final RuleCall cTargetAbstractMethodFQNParserRuleCall_3_1_0_1 = (RuleCall)cTargetAbstractMethodCrossReference_3_1_0.eContents().get(1);
+		private final Keyword cLeftCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cVariablesAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cVariablesVariableParserRuleCall_5_0 = (RuleCall)cVariablesAssignment_5.eContents().get(0);
+		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
+		private final Keyword cMessageKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
+		private final Assignment cMessageAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
+		private final RuleCall cMessageSTRINGTerminalRuleCall_6_1_0 = (RuleCall)cMessageAssignment_6_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
 		//Command:
-		//	doc=DOC? "command" name=ID "{" variables+=Variable* ("message" message=STRING)? "}";
+		//	doc=DOC? "command" name=ID ("target" target=[ddd::AbstractMethod|FQN])? "{" variables+=Variable* ("message"
+		//	message=STRING)? "}";
 		public ParserRule getRule() { return rule; }
 
-		//doc=DOC? "command" name=ID "{" variables+=Variable* ("message" message=STRING)? "}"
+		//doc=DOC? "command" name=ID ("target" target=[ddd::AbstractMethod|FQN])? "{" variables+=Variable* ("message"
+		//message=STRING)? "}"
 		public Group getGroup() { return cGroup; }
 
 		//doc=DOC?
@@ -220,29 +227,44 @@ public class CqrsDSLGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_2_0() { return cNameIDTerminalRuleCall_2_0; }
 
+		//("target" target=[ddd::AbstractMethod|FQN])?
+		public Group getGroup_3() { return cGroup_3; }
+
+		//"target"
+		public Keyword getTargetKeyword_3_0() { return cTargetKeyword_3_0; }
+
+		//target=[ddd::AbstractMethod|FQN]
+		public Assignment getTargetAssignment_3_1() { return cTargetAssignment_3_1; }
+
+		//[ddd::AbstractMethod|FQN]
+		public CrossReference getTargetAbstractMethodCrossReference_3_1_0() { return cTargetAbstractMethodCrossReference_3_1_0; }
+
+		//FQN
+		public RuleCall getTargetAbstractMethodFQNParserRuleCall_3_1_0_1() { return cTargetAbstractMethodFQNParserRuleCall_3_1_0_1; }
+
 		//"{"
-		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
+		public Keyword getLeftCurlyBracketKeyword_4() { return cLeftCurlyBracketKeyword_4; }
 
 		//variables+=Variable*
-		public Assignment getVariablesAssignment_4() { return cVariablesAssignment_4; }
+		public Assignment getVariablesAssignment_5() { return cVariablesAssignment_5; }
 
 		//Variable
-		public RuleCall getVariablesVariableParserRuleCall_4_0() { return cVariablesVariableParserRuleCall_4_0; }
+		public RuleCall getVariablesVariableParserRuleCall_5_0() { return cVariablesVariableParserRuleCall_5_0; }
 
 		//("message" message=STRING)?
-		public Group getGroup_5() { return cGroup_5; }
+		public Group getGroup_6() { return cGroup_6; }
 
 		//"message"
-		public Keyword getMessageKeyword_5_0() { return cMessageKeyword_5_0; }
+		public Keyword getMessageKeyword_6_0() { return cMessageKeyword_6_0; }
 
 		//message=STRING
-		public Assignment getMessageAssignment_5_1() { return cMessageAssignment_5_1; }
+		public Assignment getMessageAssignment_6_1() { return cMessageAssignment_6_1; }
 
 		//STRING
-		public RuleCall getMessageSTRINGTerminalRuleCall_5_1_0() { return cMessageSTRINGTerminalRuleCall_5_1_0; }
+		public RuleCall getMessageSTRINGTerminalRuleCall_6_1_0() { return cMessageSTRINGTerminalRuleCall_6_1_0; }
 
 		//"}"
-		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
+		public Keyword getRightCurlyBracketKeyword_7() { return cRightCurlyBracketKeyword_7; }
 	}
 
 	public class CommandHandlerElements extends AbstractParserRuleElementFinder {
@@ -266,20 +288,20 @@ public class CqrsDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cUsesKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
 		private final Assignment cAggregatesAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
 		private final CrossReference cAggregatesAggregateCrossReference_6_1_0 = (CrossReference)cAggregatesAssignment_6_1.eContents().get(0);
-		private final RuleCall cAggregatesAggregateIDTerminalRuleCall_6_1_0_1 = (RuleCall)cAggregatesAggregateCrossReference_6_1_0.eContents().get(1);
+		private final RuleCall cAggregatesAggregateFQNParserRuleCall_6_1_0_1 = (RuleCall)cAggregatesAggregateCrossReference_6_1_0.eContents().get(1);
 		private final Group cGroup_6_2 = (Group)cGroup_6.eContents().get(2);
 		private final Keyword cCommaKeyword_6_2_0 = (Keyword)cGroup_6_2.eContents().get(0);
 		private final Assignment cAggregatesAssignment_6_2_1 = (Assignment)cGroup_6_2.eContents().get(1);
 		private final CrossReference cAggregatesAggregateCrossReference_6_2_1_0 = (CrossReference)cAggregatesAssignment_6_2_1.eContents().get(0);
-		private final RuleCall cAggregatesAggregateIDTerminalRuleCall_6_2_1_0_1 = (RuleCall)cAggregatesAggregateCrossReference_6_2_1_0.eContents().get(1);
+		private final RuleCall cAggregatesAggregateFQNParserRuleCall_6_2_1_0_1 = (RuleCall)cAggregatesAggregateCrossReference_6_2_1_0.eContents().get(1);
 		
 		//CommandHandler:
 		//	doc=DOC? "command-handler" name=ID "handles" commands+=[Command] ("," commands+=[Command])* ("uses"
-		//	aggregates+=[ddd::Aggregate] ("," aggregates+=[ddd::Aggregate])*)?;
+		//	aggregates+=[ddd::Aggregate|FQN] ("," aggregates+=[ddd::Aggregate|FQN])*)?;
 		public ParserRule getRule() { return rule; }
 
 		//doc=DOC? "command-handler" name=ID "handles" commands+=[Command] ("," commands+=[Command])* ("uses"
-		//aggregates+=[ddd::Aggregate] ("," aggregates+=[ddd::Aggregate])*)?
+		//aggregates+=[ddd::Aggregate|FQN] ("," aggregates+=[ddd::Aggregate|FQN])*)?
 		public Group getGroup() { return cGroup; }
 
 		//doc=DOC?
@@ -324,35 +346,35 @@ public class CqrsDSLGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getCommandsCommandIDTerminalRuleCall_5_1_0_1() { return cCommandsCommandIDTerminalRuleCall_5_1_0_1; }
 
-		//("uses" aggregates+=[ddd::Aggregate] ("," aggregates+=[ddd::Aggregate])*)?
+		//("uses" aggregates+=[ddd::Aggregate|FQN] ("," aggregates+=[ddd::Aggregate|FQN])*)?
 		public Group getGroup_6() { return cGroup_6; }
 
 		//"uses"
 		public Keyword getUsesKeyword_6_0() { return cUsesKeyword_6_0; }
 
-		//aggregates+=[ddd::Aggregate]
+		//aggregates+=[ddd::Aggregate|FQN]
 		public Assignment getAggregatesAssignment_6_1() { return cAggregatesAssignment_6_1; }
 
-		//[ddd::Aggregate]
+		//[ddd::Aggregate|FQN]
 		public CrossReference getAggregatesAggregateCrossReference_6_1_0() { return cAggregatesAggregateCrossReference_6_1_0; }
 
-		//ID
-		public RuleCall getAggregatesAggregateIDTerminalRuleCall_6_1_0_1() { return cAggregatesAggregateIDTerminalRuleCall_6_1_0_1; }
+		//FQN
+		public RuleCall getAggregatesAggregateFQNParserRuleCall_6_1_0_1() { return cAggregatesAggregateFQNParserRuleCall_6_1_0_1; }
 
-		//("," aggregates+=[ddd::Aggregate])*
+		//("," aggregates+=[ddd::Aggregate|FQN])*
 		public Group getGroup_6_2() { return cGroup_6_2; }
 
 		//","
 		public Keyword getCommaKeyword_6_2_0() { return cCommaKeyword_6_2_0; }
 
-		//aggregates+=[ddd::Aggregate]
+		//aggregates+=[ddd::Aggregate|FQN]
 		public Assignment getAggregatesAssignment_6_2_1() { return cAggregatesAssignment_6_2_1; }
 
-		//[ddd::Aggregate]
+		//[ddd::Aggregate|FQN]
 		public CrossReference getAggregatesAggregateCrossReference_6_2_1_0() { return cAggregatesAggregateCrossReference_6_2_1_0; }
 
-		//ID
-		public RuleCall getAggregatesAggregateIDTerminalRuleCall_6_2_1_0_1() { return cAggregatesAggregateIDTerminalRuleCall_6_2_1_0_1; }
+		//FQN
+		public RuleCall getAggregatesAggregateFQNParserRuleCall_6_2_1_0_1() { return cAggregatesAggregateFQNParserRuleCall_6_2_1_0_1; }
 	}
 
 	public class ProjectionElements extends AbstractParserRuleElementFinder {
@@ -367,18 +389,18 @@ public class CqrsDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cInputKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
 		private final Assignment cEventsAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
 		private final CrossReference cEventsEventCrossReference_3_1_0 = (CrossReference)cEventsAssignment_3_1.eContents().get(0);
-		private final RuleCall cEventsEventIDTerminalRuleCall_3_1_0_1 = (RuleCall)cEventsEventCrossReference_3_1_0.eContents().get(1);
+		private final RuleCall cEventsEventFQNParserRuleCall_3_1_0_1 = (RuleCall)cEventsEventCrossReference_3_1_0.eContents().get(1);
 		private final Group cGroup_3_2 = (Group)cGroup_3.eContents().get(2);
 		private final Keyword cCommaKeyword_3_2_0 = (Keyword)cGroup_3_2.eContents().get(0);
 		private final Assignment cEventsAssignment_3_2_1 = (Assignment)cGroup_3_2.eContents().get(1);
 		private final CrossReference cEventsEventCrossReference_3_2_1_0 = (CrossReference)cEventsAssignment_3_2_1.eContents().get(0);
-		private final RuleCall cEventsEventIDTerminalRuleCall_3_2_1_0_1 = (RuleCall)cEventsEventCrossReference_3_2_1_0.eContents().get(1);
+		private final RuleCall cEventsEventFQNParserRuleCall_3_2_1_0_1 = (RuleCall)cEventsEventCrossReference_3_2_1_0.eContents().get(1);
 		
 		//Projection:
-		//	doc=DOC? "projection" name=ID ("input" events+=[ddd::Event] ("," events+=[ddd::Event])*)?;
+		//	doc=DOC? "projection" name=ID ("input" events+=[ddd::Event|FQN] ("," events+=[ddd::Event|FQN])*)?;
 		public ParserRule getRule() { return rule; }
 
-		//doc=DOC? "projection" name=ID ("input" events+=[ddd::Event] ("," events+=[ddd::Event])*)?
+		//doc=DOC? "projection" name=ID ("input" events+=[ddd::Event|FQN] ("," events+=[ddd::Event|FQN])*)?
 		public Group getGroup() { return cGroup; }
 
 		//doc=DOC?
@@ -396,35 +418,35 @@ public class CqrsDSLGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_2_0() { return cNameIDTerminalRuleCall_2_0; }
 
-		//("input" events+=[ddd::Event] ("," events+=[ddd::Event])*)?
+		//("input" events+=[ddd::Event|FQN] ("," events+=[ddd::Event|FQN])*)?
 		public Group getGroup_3() { return cGroup_3; }
 
 		//"input"
 		public Keyword getInputKeyword_3_0() { return cInputKeyword_3_0; }
 
-		//events+=[ddd::Event]
+		//events+=[ddd::Event|FQN]
 		public Assignment getEventsAssignment_3_1() { return cEventsAssignment_3_1; }
 
-		//[ddd::Event]
+		//[ddd::Event|FQN]
 		public CrossReference getEventsEventCrossReference_3_1_0() { return cEventsEventCrossReference_3_1_0; }
 
-		//ID
-		public RuleCall getEventsEventIDTerminalRuleCall_3_1_0_1() { return cEventsEventIDTerminalRuleCall_3_1_0_1; }
+		//FQN
+		public RuleCall getEventsEventFQNParserRuleCall_3_1_0_1() { return cEventsEventFQNParserRuleCall_3_1_0_1; }
 
-		//("," events+=[ddd::Event])*
+		//("," events+=[ddd::Event|FQN])*
 		public Group getGroup_3_2() { return cGroup_3_2; }
 
 		//","
 		public Keyword getCommaKeyword_3_2_0() { return cCommaKeyword_3_2_0; }
 
-		//events+=[ddd::Event]
+		//events+=[ddd::Event|FQN]
 		public Assignment getEventsAssignment_3_2_1() { return cEventsAssignment_3_2_1; }
 
-		//[ddd::Event]
+		//[ddd::Event|FQN]
 		public CrossReference getEventsEventCrossReference_3_2_1_0() { return cEventsEventCrossReference_3_2_1_0; }
 
-		//ID
-		public RuleCall getEventsEventIDTerminalRuleCall_3_2_1_0_1() { return cEventsEventIDTerminalRuleCall_3_2_1_0_1; }
+		//FQN
+		public RuleCall getEventsEventFQNParserRuleCall_3_2_1_0_1() { return cEventsEventFQNParserRuleCall_3_2_1_0_1; }
 	}
 
 	public class ViewElements extends AbstractParserRuleElementFinder {
@@ -1156,7 +1178,8 @@ public class CqrsDSLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Command:
-	//	doc=DOC? "command" name=ID "{" variables+=Variable* ("message" message=STRING)? "}";
+	//	doc=DOC? "command" name=ID ("target" target=[ddd::AbstractMethod|FQN])? "{" variables+=Variable* ("message"
+	//	message=STRING)? "}";
 	public CommandElements getCommandAccess() {
 		return pCommand;
 	}
@@ -1167,7 +1190,7 @@ public class CqrsDSLGrammarAccess extends AbstractGrammarElementFinder {
 
 	//CommandHandler:
 	//	doc=DOC? "command-handler" name=ID "handles" commands+=[Command] ("," commands+=[Command])* ("uses"
-	//	aggregates+=[ddd::Aggregate] ("," aggregates+=[ddd::Aggregate])*)?;
+	//	aggregates+=[ddd::Aggregate|FQN] ("," aggregates+=[ddd::Aggregate|FQN])*)?;
 	public CommandHandlerElements getCommandHandlerAccess() {
 		return pCommandHandler;
 	}
@@ -1177,7 +1200,7 @@ public class CqrsDSLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Projection:
-	//	doc=DOC? "projection" name=ID ("input" events+=[ddd::Event] ("," events+=[ddd::Event])*)?;
+	//	doc=DOC? "projection" name=ID ("input" events+=[ddd::Event|FQN] ("," events+=[ddd::Event|FQN])*)?;
 	public ProjectionElements getProjectionAccess() {
 		return pProjection;
 	}

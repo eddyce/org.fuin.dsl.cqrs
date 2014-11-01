@@ -4,6 +4,7 @@ package org.fuin.dsl.cqrs.cqrsDSL;
 
 import org.eclipse.emf.common.util.EList;
 
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractMethod;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable;
 
 /**
@@ -14,6 +15,7 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable;
  * <p>
  * The following features are supported:
  * <ul>
+ *   <li>{@link org.fuin.dsl.cqrs.cqrsDSL.Command#getTarget <em>Target</em>}</li>
  *   <li>{@link org.fuin.dsl.cqrs.cqrsDSL.Command#getVariables <em>Variables</em>}</li>
  *   <li>{@link org.fuin.dsl.cqrs.cqrsDSL.Command#getMessage <em>Message</em>}</li>
  * </ul>
@@ -25,6 +27,32 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable;
  */
 public interface Command extends AbstractElement
 {
+  /**
+   * Returns the value of the '<em><b>Target</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Target</em>' reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Target</em>' reference.
+   * @see #setTarget(AbstractMethod)
+   * @see org.fuin.dsl.cqrs.cqrsDSL.CqrsDSLPackage#getCommand_Target()
+   * @model
+   * @generated
+   */
+  AbstractMethod getTarget();
+
+  /**
+   * Sets the value of the '{@link org.fuin.dsl.cqrs.cqrsDSL.Command#getTarget <em>Target</em>}' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Target</em>' reference.
+   * @see #getTarget()
+   * @generated
+   */
+  void setTarget(AbstractMethod value);
+
   /**
    * Returns the value of the '<em><b>Variables</b></em>' containment reference list.
    * The list contents are of type {@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable}.

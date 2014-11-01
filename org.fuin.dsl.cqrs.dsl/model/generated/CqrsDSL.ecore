@@ -23,6 +23,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Command" eSuperTypes="#//AbstractElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="ecore:EClass platform:/resource/org.fuin.dsl.ddd.dsl/model/generated/DomainDrivenDesignDsl.ecore#//AbstractMethod"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="variables" upperBound="-1"
         eType="ecore:EClass platform:/resource/org.fuin.dsl.ddd.dsl/model/generated/DomainDrivenDesignDsl.ecore#//Variable"
         containment="true"/>

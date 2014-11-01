@@ -169,7 +169,7 @@ public class CqrsDSLSemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Constraint:
-	 *     (doc=DOC? name=ID commands+=[Command|ID] commands+=[Command|ID]* (aggregates+=[Aggregate|ID] aggregates+=[Aggregate|ID]*)?)
+	 *     (doc=DOC? name=ID commands+=[Command|ID] commands+=[Command|ID]* (aggregates+=[Aggregate|FQN] aggregates+=[Aggregate|FQN]*)?)
 	 */
 	protected void sequence_CommandHandler(EObject context, CommandHandler semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -178,7 +178,7 @@ public class CqrsDSLSemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Constraint:
-	 *     (doc=DOC? name=ID variables+=Variable* message=STRING?)
+	 *     (doc=DOC? name=ID target=[AbstractMethod|FQN]? variables+=Variable* message=STRING?)
 	 */
 	protected void sequence_Command(EObject context, Command semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -289,7 +289,7 @@ public class CqrsDSLSemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Constraint:
-	 *     (doc=DOC? name=ID (events+=[Event|ID] events+=[Event|ID]*)?)
+	 *     (doc=DOC? name=ID (events+=[Event|FQN] events+=[Event|FQN]*)?)
 	 */
 	protected void sequence_Projection(EObject context, Projection semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
