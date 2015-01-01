@@ -464,7 +464,7 @@ public interface CqrsDSLPackage extends EPackage
   int TYPE_META_INFO__PROMPT = DomainDrivenDesignDslPackage.TYPE_META_INFO__PROMPT;
 
   /**
-   * The feature id for the '<em><b>Examples</b></em>' attribute list.
+   * The feature id for the '<em><b>Examples</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated

@@ -52,7 +52,7 @@ TypeMetaInfo returns ddd::TypeMetaInfo:
     	('label' (label=STRING))?
     	('tooltip' (tooltip=STRING))?
     	('prompt' (prompt=STRING))?
-    	('examples' (examples+=STRING*))?;
+    	('examples' (examples+=Literal*))?;
 
 Variable returns ddd::Variable:
 	doc=DOC? 

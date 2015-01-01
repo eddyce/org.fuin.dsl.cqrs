@@ -8205,7 +8205,7 @@ public class InternalCqrsDSLParser extends AbstractInternalContentAssistParser {
                 int alt29=2;
                 int LA29_0 = input.LA(1);
 
-                if ( (LA29_0==RULE_STRING) ) {
+                if ( ((LA29_0>=RULE_HEX && LA29_0<=RULE_DECIMAL)||LA29_0==RULE_STRING||(LA29_0>=13 && LA29_0<=14)||LA29_0==41) ) {
                     alt29=1;
                 }
 
@@ -12893,21 +12893,25 @@ public class InternalCqrsDSLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TypeMetaInfo__ExamplesAssignment_5_1"
-    // ../org.fuin.dsl.cqrs.ui/src-gen/org/fuin/dsl/cqrs/ui/contentassist/antlr/internal/InternalCqrsDSL.g:4828:1: rule__TypeMetaInfo__ExamplesAssignment_5_1 : ( RULE_STRING ) ;
+    // ../org.fuin.dsl.cqrs.ui/src-gen/org/fuin/dsl/cqrs/ui/contentassist/antlr/internal/InternalCqrsDSL.g:4828:1: rule__TypeMetaInfo__ExamplesAssignment_5_1 : ( ruleLiteral ) ;
     public final void rule__TypeMetaInfo__ExamplesAssignment_5_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.cqrs.ui/src-gen/org/fuin/dsl/cqrs/ui/contentassist/antlr/internal/InternalCqrsDSL.g:4832:1: ( ( RULE_STRING ) )
-            // ../org.fuin.dsl.cqrs.ui/src-gen/org/fuin/dsl/cqrs/ui/contentassist/antlr/internal/InternalCqrsDSL.g:4833:1: ( RULE_STRING )
+            // ../org.fuin.dsl.cqrs.ui/src-gen/org/fuin/dsl/cqrs/ui/contentassist/antlr/internal/InternalCqrsDSL.g:4832:1: ( ( ruleLiteral ) )
+            // ../org.fuin.dsl.cqrs.ui/src-gen/org/fuin/dsl/cqrs/ui/contentassist/antlr/internal/InternalCqrsDSL.g:4833:1: ( ruleLiteral )
             {
-            // ../org.fuin.dsl.cqrs.ui/src-gen/org/fuin/dsl/cqrs/ui/contentassist/antlr/internal/InternalCqrsDSL.g:4833:1: ( RULE_STRING )
-            // ../org.fuin.dsl.cqrs.ui/src-gen/org/fuin/dsl/cqrs/ui/contentassist/antlr/internal/InternalCqrsDSL.g:4834:1: RULE_STRING
+            // ../org.fuin.dsl.cqrs.ui/src-gen/org/fuin/dsl/cqrs/ui/contentassist/antlr/internal/InternalCqrsDSL.g:4833:1: ( ruleLiteral )
+            // ../org.fuin.dsl.cqrs.ui/src-gen/org/fuin/dsl/cqrs/ui/contentassist/antlr/internal/InternalCqrsDSL.g:4834:1: ruleLiteral
             {
-             before(grammarAccess.getTypeMetaInfoAccess().getExamplesSTRINGTerminalRuleCall_5_1_0()); 
-            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__TypeMetaInfo__ExamplesAssignment_5_19669); 
-             after(grammarAccess.getTypeMetaInfoAccess().getExamplesSTRINGTerminalRuleCall_5_1_0()); 
+             before(grammarAccess.getTypeMetaInfoAccess().getExamplesLiteralParserRuleCall_5_1_0()); 
+            pushFollow(FOLLOW_ruleLiteral_in_rule__TypeMetaInfo__ExamplesAssignment_5_19669);
+            ruleLiteral();
+
+            state._fsp--;
+
+             after(grammarAccess.getTypeMetaInfoAccess().getExamplesLiteralParserRuleCall_5_1_0()); 
 
             }
 
@@ -13964,11 +13968,11 @@ public class InternalCqrsDSLParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_33_in_rule__TypeMetaInfo__Group_4__0__Impl5894 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__TypeMetaInfo__Group_4__1__Impl_in_rule__TypeMetaInfo__Group_4__15925 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__TypeMetaInfo__PromptAssignment_4_1_in_rule__TypeMetaInfo__Group_4__1__Impl5952 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TypeMetaInfo__Group_5__0__Impl_in_rule__TypeMetaInfo__Group_5__05986 = new BitSet(new long[]{0x0000000000000200L});
+    public static final BitSet FOLLOW_rule__TypeMetaInfo__Group_5__0__Impl_in_rule__TypeMetaInfo__Group_5__05986 = new BitSet(new long[]{0x0000020000006270L});
     public static final BitSet FOLLOW_rule__TypeMetaInfo__Group_5__1_in_rule__TypeMetaInfo__Group_5__05989 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_34_in_rule__TypeMetaInfo__Group_5__0__Impl6017 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__TypeMetaInfo__Group_5__1__Impl_in_rule__TypeMetaInfo__Group_5__16048 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TypeMetaInfo__ExamplesAssignment_5_1_in_rule__TypeMetaInfo__Group_5__1__Impl6075 = new BitSet(new long[]{0x0000000000000202L});
+    public static final BitSet FOLLOW_rule__TypeMetaInfo__ExamplesAssignment_5_1_in_rule__TypeMetaInfo__Group_5__1__Impl6075 = new BitSet(new long[]{0x0000020000006272L});
     public static final BitSet FOLLOW_rule__Variable__Group__0__Impl_in_rule__Variable__Group__06110 = new BitSet(new long[]{0x0000010000000180L});
     public static final BitSet FOLLOW_rule__Variable__Group__1_in_rule__Variable__Group__06113 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Variable__DocAssignment_0_in_rule__Variable__Group__0__Impl6140 = new BitSet(new long[]{0x0000000000000002L});
@@ -14104,7 +14108,7 @@ public class InternalCqrsDSLParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_RULE_STRING_in_rule__TypeMetaInfo__LabelAssignment_2_19576 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_STRING_in_rule__TypeMetaInfo__TooltipAssignment_3_19607 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_STRING_in_rule__TypeMetaInfo__PromptAssignment_4_19638 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__TypeMetaInfo__ExamplesAssignment_5_19669 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleLiteral_in_rule__TypeMetaInfo__ExamplesAssignment_5_19669 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_DOC_in_rule__Variable__DocAssignment_09700 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_40_in_rule__Variable__NullableAssignment_19736 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_ID_in_rule__Variable__TypeAssignment_29779 = new BitSet(new long[]{0x0000000000000002L});

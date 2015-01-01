@@ -2042,7 +2042,7 @@ public class InternalCqrsDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTypeMetaInfo"
-    // ../org.fuin.dsl.cqrs.dsl/src-gen/org/fuin/dsl/cqrs/parser/antlr/internal/InternalCqrsDSL.g:830:1: ruleTypeMetaInfo returns [EObject current=null] : ( () (otherlv_1= 'slabel' ( (lv_slabel_2_0= RULE_STRING ) ) )? (otherlv_3= 'label' ( (lv_label_4_0= RULE_STRING ) ) )? (otherlv_5= 'tooltip' ( (lv_tooltip_6_0= RULE_STRING ) ) )? (otherlv_7= 'prompt' ( (lv_prompt_8_0= RULE_STRING ) ) )? (otherlv_9= 'examples' ( (lv_examples_10_0= RULE_STRING ) )* )? ) ;
+    // ../org.fuin.dsl.cqrs.dsl/src-gen/org/fuin/dsl/cqrs/parser/antlr/internal/InternalCqrsDSL.g:830:1: ruleTypeMetaInfo returns [EObject current=null] : ( () (otherlv_1= 'slabel' ( (lv_slabel_2_0= RULE_STRING ) ) )? (otherlv_3= 'label' ( (lv_label_4_0= RULE_STRING ) ) )? (otherlv_5= 'tooltip' ( (lv_tooltip_6_0= RULE_STRING ) ) )? (otherlv_7= 'prompt' ( (lv_prompt_8_0= RULE_STRING ) ) )? (otherlv_9= 'examples' ( (lv_examples_10_0= ruleLiteral ) )* )? ) ;
     public final EObject ruleTypeMetaInfo() throws RecognitionException {
         EObject current = null;
 
@@ -2055,16 +2055,17 @@ public class InternalCqrsDSLParser extends AbstractInternalAntlrParser {
         Token otherlv_7=null;
         Token lv_prompt_8_0=null;
         Token otherlv_9=null;
-        Token lv_examples_10_0=null;
+        EObject lv_examples_10_0 = null;
+
 
          enterRule(); 
             
         try {
-            // ../org.fuin.dsl.cqrs.dsl/src-gen/org/fuin/dsl/cqrs/parser/antlr/internal/InternalCqrsDSL.g:833:28: ( ( () (otherlv_1= 'slabel' ( (lv_slabel_2_0= RULE_STRING ) ) )? (otherlv_3= 'label' ( (lv_label_4_0= RULE_STRING ) ) )? (otherlv_5= 'tooltip' ( (lv_tooltip_6_0= RULE_STRING ) ) )? (otherlv_7= 'prompt' ( (lv_prompt_8_0= RULE_STRING ) ) )? (otherlv_9= 'examples' ( (lv_examples_10_0= RULE_STRING ) )* )? ) )
-            // ../org.fuin.dsl.cqrs.dsl/src-gen/org/fuin/dsl/cqrs/parser/antlr/internal/InternalCqrsDSL.g:834:1: ( () (otherlv_1= 'slabel' ( (lv_slabel_2_0= RULE_STRING ) ) )? (otherlv_3= 'label' ( (lv_label_4_0= RULE_STRING ) ) )? (otherlv_5= 'tooltip' ( (lv_tooltip_6_0= RULE_STRING ) ) )? (otherlv_7= 'prompt' ( (lv_prompt_8_0= RULE_STRING ) ) )? (otherlv_9= 'examples' ( (lv_examples_10_0= RULE_STRING ) )* )? )
+            // ../org.fuin.dsl.cqrs.dsl/src-gen/org/fuin/dsl/cqrs/parser/antlr/internal/InternalCqrsDSL.g:833:28: ( ( () (otherlv_1= 'slabel' ( (lv_slabel_2_0= RULE_STRING ) ) )? (otherlv_3= 'label' ( (lv_label_4_0= RULE_STRING ) ) )? (otherlv_5= 'tooltip' ( (lv_tooltip_6_0= RULE_STRING ) ) )? (otherlv_7= 'prompt' ( (lv_prompt_8_0= RULE_STRING ) ) )? (otherlv_9= 'examples' ( (lv_examples_10_0= ruleLiteral ) )* )? ) )
+            // ../org.fuin.dsl.cqrs.dsl/src-gen/org/fuin/dsl/cqrs/parser/antlr/internal/InternalCqrsDSL.g:834:1: ( () (otherlv_1= 'slabel' ( (lv_slabel_2_0= RULE_STRING ) ) )? (otherlv_3= 'label' ( (lv_label_4_0= RULE_STRING ) ) )? (otherlv_5= 'tooltip' ( (lv_tooltip_6_0= RULE_STRING ) ) )? (otherlv_7= 'prompt' ( (lv_prompt_8_0= RULE_STRING ) ) )? (otherlv_9= 'examples' ( (lv_examples_10_0= ruleLiteral ) )* )? )
             {
-            // ../org.fuin.dsl.cqrs.dsl/src-gen/org/fuin/dsl/cqrs/parser/antlr/internal/InternalCqrsDSL.g:834:1: ( () (otherlv_1= 'slabel' ( (lv_slabel_2_0= RULE_STRING ) ) )? (otherlv_3= 'label' ( (lv_label_4_0= RULE_STRING ) ) )? (otherlv_5= 'tooltip' ( (lv_tooltip_6_0= RULE_STRING ) ) )? (otherlv_7= 'prompt' ( (lv_prompt_8_0= RULE_STRING ) ) )? (otherlv_9= 'examples' ( (lv_examples_10_0= RULE_STRING ) )* )? )
-            // ../org.fuin.dsl.cqrs.dsl/src-gen/org/fuin/dsl/cqrs/parser/antlr/internal/InternalCqrsDSL.g:834:2: () (otherlv_1= 'slabel' ( (lv_slabel_2_0= RULE_STRING ) ) )? (otherlv_3= 'label' ( (lv_label_4_0= RULE_STRING ) ) )? (otherlv_5= 'tooltip' ( (lv_tooltip_6_0= RULE_STRING ) ) )? (otherlv_7= 'prompt' ( (lv_prompt_8_0= RULE_STRING ) ) )? (otherlv_9= 'examples' ( (lv_examples_10_0= RULE_STRING ) )* )?
+            // ../org.fuin.dsl.cqrs.dsl/src-gen/org/fuin/dsl/cqrs/parser/antlr/internal/InternalCqrsDSL.g:834:1: ( () (otherlv_1= 'slabel' ( (lv_slabel_2_0= RULE_STRING ) ) )? (otherlv_3= 'label' ( (lv_label_4_0= RULE_STRING ) ) )? (otherlv_5= 'tooltip' ( (lv_tooltip_6_0= RULE_STRING ) ) )? (otherlv_7= 'prompt' ( (lv_prompt_8_0= RULE_STRING ) ) )? (otherlv_9= 'examples' ( (lv_examples_10_0= ruleLiteral ) )* )? )
+            // ../org.fuin.dsl.cqrs.dsl/src-gen/org/fuin/dsl/cqrs/parser/antlr/internal/InternalCqrsDSL.g:834:2: () (otherlv_1= 'slabel' ( (lv_slabel_2_0= RULE_STRING ) ) )? (otherlv_3= 'label' ( (lv_label_4_0= RULE_STRING ) ) )? (otherlv_5= 'tooltip' ( (lv_tooltip_6_0= RULE_STRING ) ) )? (otherlv_7= 'prompt' ( (lv_prompt_8_0= RULE_STRING ) ) )? (otherlv_9= 'examples' ( (lv_examples_10_0= ruleLiteral ) )* )?
             {
             // ../org.fuin.dsl.cqrs.dsl/src-gen/org/fuin/dsl/cqrs/parser/antlr/internal/InternalCqrsDSL.g:834:2: ()
             // ../org.fuin.dsl.cqrs.dsl/src-gen/org/fuin/dsl/cqrs/parser/antlr/internal/InternalCqrsDSL.g:835:5: 
@@ -2265,7 +2266,7 @@ public class InternalCqrsDSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.fuin.dsl.cqrs.dsl/src-gen/org/fuin/dsl/cqrs/parser/antlr/internal/InternalCqrsDSL.g:928:4: (otherlv_9= 'examples' ( (lv_examples_10_0= RULE_STRING ) )* )?
+            // ../org.fuin.dsl.cqrs.dsl/src-gen/org/fuin/dsl/cqrs/parser/antlr/internal/InternalCqrsDSL.g:928:4: (otherlv_9= 'examples' ( (lv_examples_10_0= ruleLiteral ) )* )?
             int alt24=2;
             int LA24_0 = input.LA(1);
 
@@ -2274,43 +2275,48 @@ public class InternalCqrsDSLParser extends AbstractInternalAntlrParser {
             }
             switch (alt24) {
                 case 1 :
-                    // ../org.fuin.dsl.cqrs.dsl/src-gen/org/fuin/dsl/cqrs/parser/antlr/internal/InternalCqrsDSL.g:928:6: otherlv_9= 'examples' ( (lv_examples_10_0= RULE_STRING ) )*
+                    // ../org.fuin.dsl.cqrs.dsl/src-gen/org/fuin/dsl/cqrs/parser/antlr/internal/InternalCqrsDSL.g:928:6: otherlv_9= 'examples' ( (lv_examples_10_0= ruleLiteral ) )*
                     {
                     otherlv_9=(Token)match(input,32,FOLLOW_32_in_ruleTypeMetaInfo1879); 
 
                         	newLeafNode(otherlv_9, grammarAccess.getTypeMetaInfoAccess().getExamplesKeyword_5_0());
                         
-                    // ../org.fuin.dsl.cqrs.dsl/src-gen/org/fuin/dsl/cqrs/parser/antlr/internal/InternalCqrsDSL.g:932:1: ( (lv_examples_10_0= RULE_STRING ) )*
+                    // ../org.fuin.dsl.cqrs.dsl/src-gen/org/fuin/dsl/cqrs/parser/antlr/internal/InternalCqrsDSL.g:932:1: ( (lv_examples_10_0= ruleLiteral ) )*
                     loop23:
                     do {
                         int alt23=2;
                         int LA23_0 = input.LA(1);
 
-                        if ( (LA23_0==RULE_STRING) ) {
+                        if ( ((LA23_0>=RULE_STRING && LA23_0<=RULE_DECIMAL)||(LA23_0>=38 && LA23_0<=40)) ) {
                             alt23=1;
                         }
 
 
                         switch (alt23) {
                     	case 1 :
-                    	    // ../org.fuin.dsl.cqrs.dsl/src-gen/org/fuin/dsl/cqrs/parser/antlr/internal/InternalCqrsDSL.g:933:1: (lv_examples_10_0= RULE_STRING )
+                    	    // ../org.fuin.dsl.cqrs.dsl/src-gen/org/fuin/dsl/cqrs/parser/antlr/internal/InternalCqrsDSL.g:933:1: (lv_examples_10_0= ruleLiteral )
                     	    {
-                    	    // ../org.fuin.dsl.cqrs.dsl/src-gen/org/fuin/dsl/cqrs/parser/antlr/internal/InternalCqrsDSL.g:933:1: (lv_examples_10_0= RULE_STRING )
-                    	    // ../org.fuin.dsl.cqrs.dsl/src-gen/org/fuin/dsl/cqrs/parser/antlr/internal/InternalCqrsDSL.g:934:3: lv_examples_10_0= RULE_STRING
+                    	    // ../org.fuin.dsl.cqrs.dsl/src-gen/org/fuin/dsl/cqrs/parser/antlr/internal/InternalCqrsDSL.g:933:1: (lv_examples_10_0= ruleLiteral )
+                    	    // ../org.fuin.dsl.cqrs.dsl/src-gen/org/fuin/dsl/cqrs/parser/antlr/internal/InternalCqrsDSL.g:934:3: lv_examples_10_0= ruleLiteral
                     	    {
-                    	    lv_examples_10_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleTypeMetaInfo1896); 
+                    	     
+                    	    	        newCompositeNode(grammarAccess.getTypeMetaInfoAccess().getExamplesLiteralParserRuleCall_5_1_0()); 
+                    	    	    
+                    	    pushFollow(FOLLOW_ruleLiteral_in_ruleTypeMetaInfo1900);
+                    	    lv_examples_10_0=ruleLiteral();
 
-                    	    			newLeafNode(lv_examples_10_0, grammarAccess.getTypeMetaInfoAccess().getExamplesSTRINGTerminalRuleCall_5_1_0()); 
-                    	    		
+                    	    state._fsp--;
+
 
                     	    	        if (current==null) {
-                    	    	            current = createModelElement(grammarAccess.getTypeMetaInfoRule());
+                    	    	            current = createModelElementForParent(grammarAccess.getTypeMetaInfoRule());
                     	    	        }
-                    	           		addWithLastConsumed(
+                    	           		add(
                     	           			current, 
                     	           			"examples",
                     	            		lv_examples_10_0, 
-                    	            		"STRING");
+                    	            		"Literal");
+                    	    	        afterParserOrEnumRuleCall();
                     	    	    
 
                     	    }
@@ -2363,13 +2369,13 @@ public class InternalCqrsDSLParser extends AbstractInternalAntlrParser {
             // ../org.fuin.dsl.cqrs.dsl/src-gen/org/fuin/dsl/cqrs/parser/antlr/internal/InternalCqrsDSL.g:960:2: iv_ruleVariable= ruleVariable EOF
             {
              newCompositeNode(grammarAccess.getVariableRule()); 
-            pushFollow(FOLLOW_ruleVariable_in_entryRuleVariable1940);
+            pushFollow(FOLLOW_ruleVariable_in_entryRuleVariable1939);
             iv_ruleVariable=ruleVariable();
 
             state._fsp--;
 
              current =iv_ruleVariable; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleVariable1950); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleVariable1949); 
 
             }
 
@@ -2424,7 +2430,7 @@ public class InternalCqrsDSLParser extends AbstractInternalAntlrParser {
                     // ../org.fuin.dsl.cqrs.dsl/src-gen/org/fuin/dsl/cqrs/parser/antlr/internal/InternalCqrsDSL.g:972:1: (lv_doc_0_0= RULE_DOC )
                     // ../org.fuin.dsl.cqrs.dsl/src-gen/org/fuin/dsl/cqrs/parser/antlr/internal/InternalCqrsDSL.g:973:3: lv_doc_0_0= RULE_DOC
                     {
-                    lv_doc_0_0=(Token)match(input,RULE_DOC,FOLLOW_RULE_DOC_in_ruleVariable1992); 
+                    lv_doc_0_0=(Token)match(input,RULE_DOC,FOLLOW_RULE_DOC_in_ruleVariable1991); 
 
                     			newLeafNode(lv_doc_0_0, grammarAccess.getVariableAccess().getDocDOCTerminalRuleCall_0_0()); 
                     		
@@ -2461,7 +2467,7 @@ public class InternalCqrsDSLParser extends AbstractInternalAntlrParser {
                     // ../org.fuin.dsl.cqrs.dsl/src-gen/org/fuin/dsl/cqrs/parser/antlr/internal/InternalCqrsDSL.g:990:1: (lv_nullable_1_0= 'nullable' )
                     // ../org.fuin.dsl.cqrs.dsl/src-gen/org/fuin/dsl/cqrs/parser/antlr/internal/InternalCqrsDSL.g:991:3: lv_nullable_1_0= 'nullable'
                     {
-                    lv_nullable_1_0=(Token)match(input,33,FOLLOW_33_in_ruleVariable2016); 
+                    lv_nullable_1_0=(Token)match(input,33,FOLLOW_33_in_ruleVariable2015); 
 
                             newLeafNode(lv_nullable_1_0, grammarAccess.getVariableAccess().getNullableNullableKeyword_1_0());
                         
@@ -2491,7 +2497,7 @@ public class InternalCqrsDSLParser extends AbstractInternalAntlrParser {
             	            current = createModelElement(grammarAccess.getVariableRule());
             	        }
                     
-            otherlv_2=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleVariable2050); 
+            otherlv_2=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleVariable2049); 
 
             		newLeafNode(otherlv_2, grammarAccess.getVariableAccess().getTypeTypeCrossReference_2_0()); 
             	
@@ -2515,7 +2521,7 @@ public class InternalCqrsDSLParser extends AbstractInternalAntlrParser {
                     // ../org.fuin.dsl.cqrs.dsl/src-gen/org/fuin/dsl/cqrs/parser/antlr/internal/InternalCqrsDSL.g:1018:1: (lv_multiplicity_3_0= '*' )
                     // ../org.fuin.dsl.cqrs.dsl/src-gen/org/fuin/dsl/cqrs/parser/antlr/internal/InternalCqrsDSL.g:1019:3: lv_multiplicity_3_0= '*'
                     {
-                    lv_multiplicity_3_0=(Token)match(input,34,FOLLOW_34_in_ruleVariable2068); 
+                    lv_multiplicity_3_0=(Token)match(input,34,FOLLOW_34_in_ruleVariable2067); 
 
                             newLeafNode(lv_multiplicity_3_0, grammarAccess.getVariableAccess().getMultiplicityAsteriskKeyword_3_0());
                         
@@ -2540,7 +2546,7 @@ public class InternalCqrsDSLParser extends AbstractInternalAntlrParser {
             // ../org.fuin.dsl.cqrs.dsl/src-gen/org/fuin/dsl/cqrs/parser/antlr/internal/InternalCqrsDSL.g:1033:1: (lv_name_4_0= RULE_ID )
             // ../org.fuin.dsl.cqrs.dsl/src-gen/org/fuin/dsl/cqrs/parser/antlr/internal/InternalCqrsDSL.g:1034:3: lv_name_4_0= RULE_ID
             {
-            lv_name_4_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleVariable2099); 
+            lv_name_4_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleVariable2098); 
 
             			newLeafNode(lv_name_4_0, grammarAccess.getVariableAccess().getNameIDTerminalRuleCall_4_0()); 
             		
@@ -2577,7 +2583,7 @@ public class InternalCqrsDSLParser extends AbstractInternalAntlrParser {
                      
                     	        newCompositeNode(grammarAccess.getVariableAccess().getInvariantsInvariantsParserRuleCall_5_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleInvariants_in_ruleVariable2125);
+                    pushFollow(FOLLOW_ruleInvariants_in_ruleVariable2124);
                     lv_invariants_5_0=ruleInvariants();
 
                     state._fsp--;
@@ -2619,7 +2625,7 @@ public class InternalCqrsDSLParser extends AbstractInternalAntlrParser {
                      
                     	        newCompositeNode(grammarAccess.getVariableAccess().getOverriddenOverriddenTypeMetaInfoParserRuleCall_6_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleOverriddenTypeMetaInfo_in_ruleVariable2147);
+                    pushFollow(FOLLOW_ruleOverriddenTypeMetaInfo_in_ruleVariable2146);
                     lv_overridden_6_0=ruleOverriddenTypeMetaInfo();
 
                     state._fsp--;
@@ -2677,13 +2683,13 @@ public class InternalCqrsDSLParser extends AbstractInternalAntlrParser {
             // ../org.fuin.dsl.cqrs.dsl/src-gen/org/fuin/dsl/cqrs/parser/antlr/internal/InternalCqrsDSL.g:1096:2: iv_ruleInvariants= ruleInvariants EOF
             {
              newCompositeNode(grammarAccess.getInvariantsRule()); 
-            pushFollow(FOLLOW_ruleInvariants_in_entryRuleInvariants2184);
+            pushFollow(FOLLOW_ruleInvariants_in_entryRuleInvariants2183);
             iv_ruleInvariants=ruleInvariants();
 
             state._fsp--;
 
              current =iv_ruleInvariants; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleInvariants2194); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleInvariants2193); 
 
             }
 
@@ -2721,7 +2727,7 @@ public class InternalCqrsDSLParser extends AbstractInternalAntlrParser {
             // ../org.fuin.dsl.cqrs.dsl/src-gen/org/fuin/dsl/cqrs/parser/antlr/internal/InternalCqrsDSL.g:1107:1: (otherlv_0= 'invariants' ( (lv_calls_1_0= ruleConstraintCall ) ) (otherlv_2= ',' ( (lv_calls_3_0= ruleConstraintCall ) ) )* )
             // ../org.fuin.dsl.cqrs.dsl/src-gen/org/fuin/dsl/cqrs/parser/antlr/internal/InternalCqrsDSL.g:1107:3: otherlv_0= 'invariants' ( (lv_calls_1_0= ruleConstraintCall ) ) (otherlv_2= ',' ( (lv_calls_3_0= ruleConstraintCall ) ) )*
             {
-            otherlv_0=(Token)match(input,35,FOLLOW_35_in_ruleInvariants2231); 
+            otherlv_0=(Token)match(input,35,FOLLOW_35_in_ruleInvariants2230); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getInvariantsAccess().getInvariantsKeyword_0());
                 
@@ -2734,7 +2740,7 @@ public class InternalCqrsDSLParser extends AbstractInternalAntlrParser {
              
             	        newCompositeNode(grammarAccess.getInvariantsAccess().getCallsConstraintCallParserRuleCall_1_0()); 
             	    
-            pushFollow(FOLLOW_ruleConstraintCall_in_ruleInvariants2252);
+            pushFollow(FOLLOW_ruleConstraintCall_in_ruleInvariants2251);
             lv_calls_1_0=ruleConstraintCall();
 
             state._fsp--;
@@ -2771,7 +2777,7 @@ public class InternalCqrsDSLParser extends AbstractInternalAntlrParser {
             	case 1 :
             	    // ../org.fuin.dsl.cqrs.dsl/src-gen/org/fuin/dsl/cqrs/parser/antlr/internal/InternalCqrsDSL.g:1129:4: otherlv_2= ',' ( (lv_calls_3_0= ruleConstraintCall ) )
             	    {
-            	    otherlv_2=(Token)match(input,23,FOLLOW_23_in_ruleInvariants2265); 
+            	    otherlv_2=(Token)match(input,23,FOLLOW_23_in_ruleInvariants2264); 
 
             	        	newLeafNode(otherlv_2, grammarAccess.getInvariantsAccess().getCommaKeyword_2_0());
             	        
@@ -2784,7 +2790,7 @@ public class InternalCqrsDSLParser extends AbstractInternalAntlrParser {
             	     
             	    	        newCompositeNode(grammarAccess.getInvariantsAccess().getCallsConstraintCallParserRuleCall_2_1_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleConstraintCall_in_ruleInvariants2286);
+            	    pushFollow(FOLLOW_ruleConstraintCall_in_ruleInvariants2285);
             	    lv_calls_3_0=ruleConstraintCall();
 
             	    state._fsp--;
@@ -2848,13 +2854,13 @@ public class InternalCqrsDSLParser extends AbstractInternalAntlrParser {
             // ../org.fuin.dsl.cqrs.dsl/src-gen/org/fuin/dsl/cqrs/parser/antlr/internal/InternalCqrsDSL.g:1161:2: iv_ruleOverriddenTypeMetaInfo= ruleOverriddenTypeMetaInfo EOF
             {
              newCompositeNode(grammarAccess.getOverriddenTypeMetaInfoRule()); 
-            pushFollow(FOLLOW_ruleOverriddenTypeMetaInfo_in_entryRuleOverriddenTypeMetaInfo2324);
+            pushFollow(FOLLOW_ruleOverriddenTypeMetaInfo_in_entryRuleOverriddenTypeMetaInfo2323);
             iv_ruleOverriddenTypeMetaInfo=ruleOverriddenTypeMetaInfo();
 
             state._fsp--;
 
              current =iv_ruleOverriddenTypeMetaInfo; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleOverriddenTypeMetaInfo2334); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleOverriddenTypeMetaInfo2333); 
 
             }
 
@@ -2890,7 +2896,7 @@ public class InternalCqrsDSLParser extends AbstractInternalAntlrParser {
             // ../org.fuin.dsl.cqrs.dsl/src-gen/org/fuin/dsl/cqrs/parser/antlr/internal/InternalCqrsDSL.g:1172:1: (otherlv_0= '{' ( (lv_metaInfo_1_0= ruleTypeMetaInfo ) ) otherlv_2= '}' )
             // ../org.fuin.dsl.cqrs.dsl/src-gen/org/fuin/dsl/cqrs/parser/antlr/internal/InternalCqrsDSL.g:1172:3: otherlv_0= '{' ( (lv_metaInfo_1_0= ruleTypeMetaInfo ) ) otherlv_2= '}'
             {
-            otherlv_0=(Token)match(input,14,FOLLOW_14_in_ruleOverriddenTypeMetaInfo2371); 
+            otherlv_0=(Token)match(input,14,FOLLOW_14_in_ruleOverriddenTypeMetaInfo2370); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getOverriddenTypeMetaInfoAccess().getLeftCurlyBracketKeyword_0());
                 
@@ -2903,7 +2909,7 @@ public class InternalCqrsDSLParser extends AbstractInternalAntlrParser {
              
             	        newCompositeNode(grammarAccess.getOverriddenTypeMetaInfoAccess().getMetaInfoTypeMetaInfoParserRuleCall_1_0()); 
             	    
-            pushFollow(FOLLOW_ruleTypeMetaInfo_in_ruleOverriddenTypeMetaInfo2392);
+            pushFollow(FOLLOW_ruleTypeMetaInfo_in_ruleOverriddenTypeMetaInfo2391);
             lv_metaInfo_1_0=ruleTypeMetaInfo();
 
             state._fsp--;
@@ -2925,7 +2931,7 @@ public class InternalCqrsDSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,15,FOLLOW_15_in_ruleOverriddenTypeMetaInfo2404); 
+            otherlv_2=(Token)match(input,15,FOLLOW_15_in_ruleOverriddenTypeMetaInfo2403); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getOverriddenTypeMetaInfoAccess().getRightCurlyBracketKeyword_2());
                 
@@ -2962,13 +2968,13 @@ public class InternalCqrsDSLParser extends AbstractInternalAntlrParser {
             // ../org.fuin.dsl.cqrs.dsl/src-gen/org/fuin/dsl/cqrs/parser/antlr/internal/InternalCqrsDSL.g:1208:2: iv_ruleConstraintCall= ruleConstraintCall EOF
             {
              newCompositeNode(grammarAccess.getConstraintCallRule()); 
-            pushFollow(FOLLOW_ruleConstraintCall_in_entryRuleConstraintCall2440);
+            pushFollow(FOLLOW_ruleConstraintCall_in_entryRuleConstraintCall2439);
             iv_ruleConstraintCall=ruleConstraintCall();
 
             state._fsp--;
 
              current =iv_ruleConstraintCall; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleConstraintCall2450); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleConstraintCall2449); 
 
             }
 
@@ -3019,7 +3025,7 @@ public class InternalCqrsDSLParser extends AbstractInternalAntlrParser {
             	            current = createModelElement(grammarAccess.getConstraintCallRule());
             	        }
                     
-            otherlv_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleConstraintCall2495); 
+            otherlv_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleConstraintCall2494); 
 
             		newLeafNode(otherlv_0, grammarAccess.getConstraintCallAccess().getConstraintConstraintCrossReference_0_0()); 
             	
@@ -3040,7 +3046,7 @@ public class InternalCqrsDSLParser extends AbstractInternalAntlrParser {
                 case 1 :
                     // ../org.fuin.dsl.cqrs.dsl/src-gen/org/fuin/dsl/cqrs/parser/antlr/internal/InternalCqrsDSL.g:1232:4: otherlv_1= '(' ( (lv_params_2_0= ruleLiteral ) ) (otherlv_3= ',' ( (lv_params_4_0= ruleLiteral ) ) )* otherlv_5= ')'
                     {
-                    otherlv_1=(Token)match(input,36,FOLLOW_36_in_ruleConstraintCall2508); 
+                    otherlv_1=(Token)match(input,36,FOLLOW_36_in_ruleConstraintCall2507); 
 
                         	newLeafNode(otherlv_1, grammarAccess.getConstraintCallAccess().getLeftParenthesisKeyword_1_0());
                         
@@ -3053,7 +3059,7 @@ public class InternalCqrsDSLParser extends AbstractInternalAntlrParser {
                      
                     	        newCompositeNode(grammarAccess.getConstraintCallAccess().getParamsLiteralParserRuleCall_1_1_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleLiteral_in_ruleConstraintCall2529);
+                    pushFollow(FOLLOW_ruleLiteral_in_ruleConstraintCall2528);
                     lv_params_2_0=ruleLiteral();
 
                     state._fsp--;
@@ -3090,7 +3096,7 @@ public class InternalCqrsDSLParser extends AbstractInternalAntlrParser {
                     	case 1 :
                     	    // ../org.fuin.dsl.cqrs.dsl/src-gen/org/fuin/dsl/cqrs/parser/antlr/internal/InternalCqrsDSL.g:1254:4: otherlv_3= ',' ( (lv_params_4_0= ruleLiteral ) )
                     	    {
-                    	    otherlv_3=(Token)match(input,23,FOLLOW_23_in_ruleConstraintCall2542); 
+                    	    otherlv_3=(Token)match(input,23,FOLLOW_23_in_ruleConstraintCall2541); 
 
                     	        	newLeafNode(otherlv_3, grammarAccess.getConstraintCallAccess().getCommaKeyword_1_2_0());
                     	        
@@ -3103,7 +3109,7 @@ public class InternalCqrsDSLParser extends AbstractInternalAntlrParser {
                     	     
                     	    	        newCompositeNode(grammarAccess.getConstraintCallAccess().getParamsLiteralParserRuleCall_1_2_1_0()); 
                     	    	    
-                    	    pushFollow(FOLLOW_ruleLiteral_in_ruleConstraintCall2563);
+                    	    pushFollow(FOLLOW_ruleLiteral_in_ruleConstraintCall2562);
                     	    lv_params_4_0=ruleLiteral();
 
                     	    state._fsp--;
@@ -3134,7 +3140,7 @@ public class InternalCqrsDSLParser extends AbstractInternalAntlrParser {
                         }
                     } while (true);
 
-                    otherlv_5=(Token)match(input,37,FOLLOW_37_in_ruleConstraintCall2577); 
+                    otherlv_5=(Token)match(input,37,FOLLOW_37_in_ruleConstraintCall2576); 
 
                         	newLeafNode(otherlv_5, grammarAccess.getConstraintCallAccess().getRightParenthesisKeyword_1_3());
                         
@@ -3177,13 +3183,13 @@ public class InternalCqrsDSLParser extends AbstractInternalAntlrParser {
             // ../org.fuin.dsl.cqrs.dsl/src-gen/org/fuin/dsl/cqrs/parser/antlr/internal/InternalCqrsDSL.g:1290:2: iv_ruleLiteral= ruleLiteral EOF
             {
              newCompositeNode(grammarAccess.getLiteralRule()); 
-            pushFollow(FOLLOW_ruleLiteral_in_entryRuleLiteral2615);
+            pushFollow(FOLLOW_ruleLiteral_in_entryRuleLiteral2614);
             iv_ruleLiteral=ruleLiteral();
 
             state._fsp--;
 
              current =iv_ruleLiteral; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleLiteral2625); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleLiteral2624); 
 
             }
 
@@ -3260,7 +3266,7 @@ public class InternalCqrsDSLParser extends AbstractInternalAntlrParser {
                      
                             newCompositeNode(grammarAccess.getLiteralAccess().getNullLiteralParserRuleCall_0()); 
                         
-                    pushFollow(FOLLOW_ruleNullLiteral_in_ruleLiteral2672);
+                    pushFollow(FOLLOW_ruleNullLiteral_in_ruleLiteral2671);
                     this_NullLiteral_0=ruleNullLiteral();
 
                     state._fsp--;
@@ -3278,7 +3284,7 @@ public class InternalCqrsDSLParser extends AbstractInternalAntlrParser {
                      
                             newCompositeNode(grammarAccess.getLiteralAccess().getBooleanLiteralParserRuleCall_1()); 
                         
-                    pushFollow(FOLLOW_ruleBooleanLiteral_in_ruleLiteral2699);
+                    pushFollow(FOLLOW_ruleBooleanLiteral_in_ruleLiteral2698);
                     this_BooleanLiteral_1=ruleBooleanLiteral();
 
                     state._fsp--;
@@ -3296,7 +3302,7 @@ public class InternalCqrsDSLParser extends AbstractInternalAntlrParser {
                      
                             newCompositeNode(grammarAccess.getLiteralAccess().getNumberLiteralParserRuleCall_2()); 
                         
-                    pushFollow(FOLLOW_ruleNumberLiteral_in_ruleLiteral2726);
+                    pushFollow(FOLLOW_ruleNumberLiteral_in_ruleLiteral2725);
                     this_NumberLiteral_2=ruleNumberLiteral();
 
                     state._fsp--;
@@ -3314,7 +3320,7 @@ public class InternalCqrsDSLParser extends AbstractInternalAntlrParser {
                      
                             newCompositeNode(grammarAccess.getLiteralAccess().getStringLiteralParserRuleCall_3()); 
                         
-                    pushFollow(FOLLOW_ruleStringLiteral_in_ruleLiteral2753);
+                    pushFollow(FOLLOW_ruleStringLiteral_in_ruleLiteral2752);
                     this_StringLiteral_3=ruleStringLiteral();
 
                     state._fsp--;
@@ -3359,13 +3365,13 @@ public class InternalCqrsDSLParser extends AbstractInternalAntlrParser {
             // ../org.fuin.dsl.cqrs.dsl/src-gen/org/fuin/dsl/cqrs/parser/antlr/internal/InternalCqrsDSL.g:1350:2: iv_ruleBooleanLiteral= ruleBooleanLiteral EOF
             {
              newCompositeNode(grammarAccess.getBooleanLiteralRule()); 
-            pushFollow(FOLLOW_ruleBooleanLiteral_in_entryRuleBooleanLiteral2788);
+            pushFollow(FOLLOW_ruleBooleanLiteral_in_entryRuleBooleanLiteral2787);
             iv_ruleBooleanLiteral=ruleBooleanLiteral();
 
             state._fsp--;
 
              current =iv_ruleBooleanLiteral; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleBooleanLiteral2798); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleBooleanLiteral2797); 
 
             }
 
@@ -3436,7 +3442,7 @@ public class InternalCqrsDSLParser extends AbstractInternalAntlrParser {
                 case 1 :
                     // ../org.fuin.dsl.cqrs.dsl/src-gen/org/fuin/dsl/cqrs/parser/antlr/internal/InternalCqrsDSL.g:1370:3: lv_value_1_1= 'false'
                     {
-                    lv_value_1_1=(Token)match(input,38,FOLLOW_38_in_ruleBooleanLiteral2852); 
+                    lv_value_1_1=(Token)match(input,38,FOLLOW_38_in_ruleBooleanLiteral2851); 
 
                             newLeafNode(lv_value_1_1, grammarAccess.getBooleanLiteralAccess().getValueFalseKeyword_1_0_0());
                         
@@ -3452,7 +3458,7 @@ public class InternalCqrsDSLParser extends AbstractInternalAntlrParser {
                 case 2 :
                     // ../org.fuin.dsl.cqrs.dsl/src-gen/org/fuin/dsl/cqrs/parser/antlr/internal/InternalCqrsDSL.g:1382:8: lv_value_1_2= 'true'
                     {
-                    lv_value_1_2=(Token)match(input,39,FOLLOW_39_in_ruleBooleanLiteral2881); 
+                    lv_value_1_2=(Token)match(input,39,FOLLOW_39_in_ruleBooleanLiteral2880); 
 
                             newLeafNode(lv_value_1_2, grammarAccess.getBooleanLiteralAccess().getValueTrueKeyword_1_0_1());
                         
@@ -3507,13 +3513,13 @@ public class InternalCqrsDSLParser extends AbstractInternalAntlrParser {
             // ../org.fuin.dsl.cqrs.dsl/src-gen/org/fuin/dsl/cqrs/parser/antlr/internal/InternalCqrsDSL.g:1407:2: iv_ruleNullLiteral= ruleNullLiteral EOF
             {
              newCompositeNode(grammarAccess.getNullLiteralRule()); 
-            pushFollow(FOLLOW_ruleNullLiteral_in_entryRuleNullLiteral2933);
+            pushFollow(FOLLOW_ruleNullLiteral_in_entryRuleNullLiteral2932);
             iv_ruleNullLiteral=ruleNullLiteral();
 
             state._fsp--;
 
              current =iv_ruleNullLiteral; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleNullLiteral2943); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleNullLiteral2942); 
 
             }
 
@@ -3563,7 +3569,7 @@ public class InternalCqrsDSLParser extends AbstractInternalAntlrParser {
             // ../org.fuin.dsl.cqrs.dsl/src-gen/org/fuin/dsl/cqrs/parser/antlr/internal/InternalCqrsDSL.g:1425:1: (lv_value_1_0= 'null' )
             // ../org.fuin.dsl.cqrs.dsl/src-gen/org/fuin/dsl/cqrs/parser/antlr/internal/InternalCqrsDSL.g:1426:3: lv_value_1_0= 'null'
             {
-            lv_value_1_0=(Token)match(input,40,FOLLOW_40_in_ruleNullLiteral2995); 
+            lv_value_1_0=(Token)match(input,40,FOLLOW_40_in_ruleNullLiteral2994); 
 
                     newLeafNode(lv_value_1_0, grammarAccess.getNullLiteralAccess().getValueNullKeyword_1_0());
                 
@@ -3612,13 +3618,13 @@ public class InternalCqrsDSLParser extends AbstractInternalAntlrParser {
             // ../org.fuin.dsl.cqrs.dsl/src-gen/org/fuin/dsl/cqrs/parser/antlr/internal/InternalCqrsDSL.g:1449:2: iv_ruleNumberLiteral= ruleNumberLiteral EOF
             {
              newCompositeNode(grammarAccess.getNumberLiteralRule()); 
-            pushFollow(FOLLOW_ruleNumberLiteral_in_entryRuleNumberLiteral3044);
+            pushFollow(FOLLOW_ruleNumberLiteral_in_entryRuleNumberLiteral3043);
             iv_ruleNumberLiteral=ruleNumberLiteral();
 
             state._fsp--;
 
              current =iv_ruleNumberLiteral; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleNumberLiteral3054); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleNumberLiteral3053); 
 
             }
 
@@ -3672,7 +3678,7 @@ public class InternalCqrsDSLParser extends AbstractInternalAntlrParser {
              
             	        newCompositeNode(grammarAccess.getNumberLiteralAccess().getValueNumberParserRuleCall_1_0()); 
             	    
-            pushFollow(FOLLOW_ruleNumber_in_ruleNumberLiteral3109);
+            pushFollow(FOLLOW_ruleNumber_in_ruleNumberLiteral3108);
             lv_value_1_0=ruleNumber();
 
             state._fsp--;
@@ -3727,13 +3733,13 @@ public class InternalCqrsDSLParser extends AbstractInternalAntlrParser {
             // ../org.fuin.dsl.cqrs.dsl/src-gen/org/fuin/dsl/cqrs/parser/antlr/internal/InternalCqrsDSL.g:1494:2: iv_ruleStringLiteral= ruleStringLiteral EOF
             {
              newCompositeNode(grammarAccess.getStringLiteralRule()); 
-            pushFollow(FOLLOW_ruleStringLiteral_in_entryRuleStringLiteral3145);
+            pushFollow(FOLLOW_ruleStringLiteral_in_entryRuleStringLiteral3144);
             iv_ruleStringLiteral=ruleStringLiteral();
 
             state._fsp--;
 
              current =iv_ruleStringLiteral; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleStringLiteral3155); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleStringLiteral3154); 
 
             }
 
@@ -3783,7 +3789,7 @@ public class InternalCqrsDSLParser extends AbstractInternalAntlrParser {
             // ../org.fuin.dsl.cqrs.dsl/src-gen/org/fuin/dsl/cqrs/parser/antlr/internal/InternalCqrsDSL.g:1512:1: (lv_value_1_0= RULE_STRING )
             // ../org.fuin.dsl.cqrs.dsl/src-gen/org/fuin/dsl/cqrs/parser/antlr/internal/InternalCqrsDSL.g:1513:3: lv_value_1_0= RULE_STRING
             {
-            lv_value_1_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleStringLiteral3206); 
+            lv_value_1_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleStringLiteral3205); 
 
             			newLeafNode(lv_value_1_0, grammarAccess.getStringLiteralAccess().getValueSTRINGTerminalRuleCall_1_0()); 
             		
@@ -3836,13 +3842,13 @@ public class InternalCqrsDSLParser extends AbstractInternalAntlrParser {
             // ../org.fuin.dsl.cqrs.dsl/src-gen/org/fuin/dsl/cqrs/parser/antlr/internal/InternalCqrsDSL.g:1539:2: iv_ruleFQN= ruleFQN EOF
             {
              newCompositeNode(grammarAccess.getFQNRule()); 
-            pushFollow(FOLLOW_ruleFQN_in_entryRuleFQN3248);
+            pushFollow(FOLLOW_ruleFQN_in_entryRuleFQN3247);
             iv_ruleFQN=ruleFQN();
 
             state._fsp--;
 
              current =iv_ruleFQN.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleFQN3259); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleFQN3258); 
 
             }
 
@@ -3877,7 +3883,7 @@ public class InternalCqrsDSLParser extends AbstractInternalAntlrParser {
             // ../org.fuin.dsl.cqrs.dsl/src-gen/org/fuin/dsl/cqrs/parser/antlr/internal/InternalCqrsDSL.g:1550:1: (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* )
             // ../org.fuin.dsl.cqrs.dsl/src-gen/org/fuin/dsl/cqrs/parser/antlr/internal/InternalCqrsDSL.g:1550:6: this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )*
             {
-            this_ID_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleFQN3299); 
+            this_ID_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleFQN3298); 
 
             		current.merge(this_ID_0);
                 
@@ -3905,12 +3911,12 @@ public class InternalCqrsDSLParser extends AbstractInternalAntlrParser {
             	case 1 :
             	    // ../org.fuin.dsl.cqrs.dsl/src-gen/org/fuin/dsl/cqrs/parser/antlr/internal/InternalCqrsDSL.g:1558:2: kw= '.' this_ID_2= RULE_ID
             	    {
-            	    kw=(Token)match(input,41,FOLLOW_41_in_ruleFQN3318); 
+            	    kw=(Token)match(input,41,FOLLOW_41_in_ruleFQN3317); 
 
             	            current.merge(kw);
             	            newLeafNode(kw, grammarAccess.getFQNAccess().getFullStopKeyword_1_0()); 
             	        
-            	    this_ID_2=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleFQN3333); 
+            	    this_ID_2=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleFQN3332); 
 
             	    		current.merge(this_ID_2);
             	        
@@ -3959,13 +3965,13 @@ public class InternalCqrsDSLParser extends AbstractInternalAntlrParser {
             // ../org.fuin.dsl.cqrs.dsl/src-gen/org/fuin/dsl/cqrs/parser/antlr/internal/InternalCqrsDSL.g:1580:2: iv_ruleFQNWithWildcard= ruleFQNWithWildcard EOF
             {
              newCompositeNode(grammarAccess.getFQNWithWildcardRule()); 
-            pushFollow(FOLLOW_ruleFQNWithWildcard_in_entryRuleFQNWithWildcard3381);
+            pushFollow(FOLLOW_ruleFQNWithWildcard_in_entryRuleFQNWithWildcard3380);
             iv_ruleFQNWithWildcard=ruleFQNWithWildcard();
 
             state._fsp--;
 
              current =iv_ruleFQNWithWildcard.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleFQNWithWildcard3392); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleFQNWithWildcard3391); 
 
             }
 
@@ -4003,7 +4009,7 @@ public class InternalCqrsDSLParser extends AbstractInternalAntlrParser {
              
                     newCompositeNode(grammarAccess.getFQNWithWildcardAccess().getFQNParserRuleCall_0()); 
                 
-            pushFollow(FOLLOW_ruleFQN_in_ruleFQNWithWildcard3439);
+            pushFollow(FOLLOW_ruleFQN_in_ruleFQNWithWildcard3438);
             this_FQN_0=ruleFQN();
 
             state._fsp--;
@@ -4014,12 +4020,12 @@ public class InternalCqrsDSLParser extends AbstractInternalAntlrParser {
              
                     afterParserOrEnumRuleCall();
                 
-            kw=(Token)match(input,41,FOLLOW_41_in_ruleFQNWithWildcard3457); 
+            kw=(Token)match(input,41,FOLLOW_41_in_ruleFQNWithWildcard3456); 
 
                     current.merge(kw);
                     newLeafNode(kw, grammarAccess.getFQNWithWildcardAccess().getFullStopKeyword_1()); 
                 
-            kw=(Token)match(input,34,FOLLOW_34_in_ruleFQNWithWildcard3470); 
+            kw=(Token)match(input,34,FOLLOW_34_in_ruleFQNWithWildcard3469); 
 
                     current.merge(kw);
                     newLeafNode(kw, grammarAccess.getFQNWithWildcardAccess().getAsteriskKeyword_2()); 
@@ -4060,13 +4066,13 @@ public class InternalCqrsDSLParser extends AbstractInternalAntlrParser {
             // ../org.fuin.dsl.cqrs.dsl/src-gen/org/fuin/dsl/cqrs/parser/antlr/internal/InternalCqrsDSL.g:1627:2: iv_ruleNumber= ruleNumber EOF
             {
              newCompositeNode(grammarAccess.getNumberRule()); 
-            pushFollow(FOLLOW_ruleNumber_in_entryRuleNumber3517);
+            pushFollow(FOLLOW_ruleNumber_in_entryRuleNumber3516);
             iv_ruleNumber=ruleNumber();
 
             state._fsp--;
 
              current =iv_ruleNumber.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleNumber3528); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleNumber3527); 
 
             }
 
@@ -4125,7 +4131,7 @@ public class InternalCqrsDSLParser extends AbstractInternalAntlrParser {
                 case 1 :
                     // ../org.fuin.dsl.cqrs.dsl/src-gen/org/fuin/dsl/cqrs/parser/antlr/internal/InternalCqrsDSL.g:1642:6: this_HEX_0= RULE_HEX
                     {
-                    this_HEX_0=(Token)match(input,RULE_HEX,FOLLOW_RULE_HEX_in_ruleNumber3572); 
+                    this_HEX_0=(Token)match(input,RULE_HEX,FOLLOW_RULE_HEX_in_ruleNumber3571); 
 
                     		current.merge(this_HEX_0);
                         
@@ -4161,7 +4167,7 @@ public class InternalCqrsDSLParser extends AbstractInternalAntlrParser {
                         case 1 :
                             // ../org.fuin.dsl.cqrs.dsl/src-gen/org/fuin/dsl/cqrs/parser/antlr/internal/InternalCqrsDSL.g:1650:12: this_INT_1= RULE_INT
                             {
-                            this_INT_1=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleNumber3600); 
+                            this_INT_1=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleNumber3599); 
 
                             		current.merge(this_INT_1);
                                 
@@ -4174,7 +4180,7 @@ public class InternalCqrsDSLParser extends AbstractInternalAntlrParser {
                         case 2 :
                             // ../org.fuin.dsl.cqrs.dsl/src-gen/org/fuin/dsl/cqrs/parser/antlr/internal/InternalCqrsDSL.g:1658:10: this_DECIMAL_2= RULE_DECIMAL
                             {
-                            this_DECIMAL_2=(Token)match(input,RULE_DECIMAL,FOLLOW_RULE_DECIMAL_in_ruleNumber3626); 
+                            this_DECIMAL_2=(Token)match(input,RULE_DECIMAL,FOLLOW_RULE_DECIMAL_in_ruleNumber3625); 
 
                             		current.merge(this_DECIMAL_2);
                                 
@@ -4198,7 +4204,7 @@ public class InternalCqrsDSLParser extends AbstractInternalAntlrParser {
                         case 1 :
                             // ../org.fuin.dsl.cqrs.dsl/src-gen/org/fuin/dsl/cqrs/parser/antlr/internal/InternalCqrsDSL.g:1666:2: kw= '.' (this_INT_4= RULE_INT | this_DECIMAL_5= RULE_DECIMAL )
                             {
-                            kw=(Token)match(input,41,FOLLOW_41_in_ruleNumber3646); 
+                            kw=(Token)match(input,41,FOLLOW_41_in_ruleNumber3645); 
 
                                     current.merge(kw);
                                     newLeafNode(kw, grammarAccess.getNumberAccess().getFullStopKeyword_1_1_0()); 
@@ -4223,7 +4229,7 @@ public class InternalCqrsDSLParser extends AbstractInternalAntlrParser {
                                 case 1 :
                                     // ../org.fuin.dsl.cqrs.dsl/src-gen/org/fuin/dsl/cqrs/parser/antlr/internal/InternalCqrsDSL.g:1671:6: this_INT_4= RULE_INT
                                     {
-                                    this_INT_4=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleNumber3662); 
+                                    this_INT_4=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleNumber3661); 
 
                                     		current.merge(this_INT_4);
                                         
@@ -4236,7 +4242,7 @@ public class InternalCqrsDSLParser extends AbstractInternalAntlrParser {
                                 case 2 :
                                     // ../org.fuin.dsl.cqrs.dsl/src-gen/org/fuin/dsl/cqrs/parser/antlr/internal/InternalCqrsDSL.g:1679:10: this_DECIMAL_5= RULE_DECIMAL
                                     {
-                                    this_DECIMAL_5=(Token)match(input,RULE_DECIMAL,FOLLOW_RULE_DECIMAL_in_ruleNumber3688); 
+                                    this_DECIMAL_5=(Token)match(input,RULE_DECIMAL,FOLLOW_RULE_DECIMAL_in_ruleNumber3687); 
 
                                     		current.merge(this_DECIMAL_5);
                                         
@@ -4423,72 +4429,72 @@ public class InternalCqrsDSLParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_RULE_STRING_in_ruleTypeMetaInfo1822 = new BitSet(new long[]{0x0000000180000002L});
     public static final BitSet FOLLOW_31_in_ruleTypeMetaInfo1842 = new BitSet(new long[]{0x0000000000000040L});
     public static final BitSet FOLLOW_RULE_STRING_in_ruleTypeMetaInfo1859 = new BitSet(new long[]{0x0000000100000002L});
-    public static final BitSet FOLLOW_32_in_ruleTypeMetaInfo1879 = new BitSet(new long[]{0x0000000000000042L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleTypeMetaInfo1896 = new BitSet(new long[]{0x0000000000000042L});
-    public static final BitSet FOLLOW_ruleVariable_in_entryRuleVariable1940 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleVariable1950 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_DOC_in_ruleVariable1992 = new BitSet(new long[]{0x0000000200000010L});
-    public static final BitSet FOLLOW_33_in_ruleVariable2016 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleVariable2050 = new BitSet(new long[]{0x0000000400000010L});
-    public static final BitSet FOLLOW_34_in_ruleVariable2068 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleVariable2099 = new BitSet(new long[]{0x0000000800004002L});
-    public static final BitSet FOLLOW_ruleInvariants_in_ruleVariable2125 = new BitSet(new long[]{0x0000000000004002L});
-    public static final BitSet FOLLOW_ruleOverriddenTypeMetaInfo_in_ruleVariable2147 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleInvariants_in_entryRuleInvariants2184 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleInvariants2194 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_35_in_ruleInvariants2231 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ruleConstraintCall_in_ruleInvariants2252 = new BitSet(new long[]{0x0000000000800002L});
-    public static final BitSet FOLLOW_23_in_ruleInvariants2265 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ruleConstraintCall_in_ruleInvariants2286 = new BitSet(new long[]{0x0000000000800002L});
-    public static final BitSet FOLLOW_ruleOverriddenTypeMetaInfo_in_entryRuleOverriddenTypeMetaInfo2324 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleOverriddenTypeMetaInfo2334 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_14_in_ruleOverriddenTypeMetaInfo2371 = new BitSet(new long[]{0x00000001F0008000L});
-    public static final BitSet FOLLOW_ruleTypeMetaInfo_in_ruleOverriddenTypeMetaInfo2392 = new BitSet(new long[]{0x0000000000008000L});
-    public static final BitSet FOLLOW_15_in_ruleOverriddenTypeMetaInfo2404 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleConstraintCall_in_entryRuleConstraintCall2440 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleConstraintCall2450 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleConstraintCall2495 = new BitSet(new long[]{0x0000001000000002L});
-    public static final BitSet FOLLOW_36_in_ruleConstraintCall2508 = new BitSet(new long[]{0x000001C0000003C0L});
-    public static final BitSet FOLLOW_ruleLiteral_in_ruleConstraintCall2529 = new BitSet(new long[]{0x0000002000800000L});
-    public static final BitSet FOLLOW_23_in_ruleConstraintCall2542 = new BitSet(new long[]{0x000001C0000003C0L});
-    public static final BitSet FOLLOW_ruleLiteral_in_ruleConstraintCall2563 = new BitSet(new long[]{0x0000002000800000L});
-    public static final BitSet FOLLOW_37_in_ruleConstraintCall2577 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleLiteral_in_entryRuleLiteral2615 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleLiteral2625 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNullLiteral_in_ruleLiteral2672 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleBooleanLiteral_in_ruleLiteral2699 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNumberLiteral_in_ruleLiteral2726 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleStringLiteral_in_ruleLiteral2753 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleBooleanLiteral_in_entryRuleBooleanLiteral2788 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleBooleanLiteral2798 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_38_in_ruleBooleanLiteral2852 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_39_in_ruleBooleanLiteral2881 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNullLiteral_in_entryRuleNullLiteral2933 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleNullLiteral2943 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_40_in_ruleNullLiteral2995 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNumberLiteral_in_entryRuleNumberLiteral3044 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleNumberLiteral3054 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNumber_in_ruleNumberLiteral3109 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleStringLiteral_in_entryRuleStringLiteral3145 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleStringLiteral3155 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleStringLiteral3206 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFQN_in_entryRuleFQN3248 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleFQN3259 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleFQN3299 = new BitSet(new long[]{0x0000020000000002L});
-    public static final BitSet FOLLOW_41_in_ruleFQN3318 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleFQN3333 = new BitSet(new long[]{0x0000020000000002L});
-    public static final BitSet FOLLOW_ruleFQNWithWildcard_in_entryRuleFQNWithWildcard3381 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleFQNWithWildcard3392 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFQN_in_ruleFQNWithWildcard3439 = new BitSet(new long[]{0x0000020000000000L});
-    public static final BitSet FOLLOW_41_in_ruleFQNWithWildcard3457 = new BitSet(new long[]{0x0000000400000000L});
-    public static final BitSet FOLLOW_34_in_ruleFQNWithWildcard3470 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNumber_in_entryRuleNumber3517 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleNumber3528 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_HEX_in_ruleNumber3572 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleNumber3600 = new BitSet(new long[]{0x0000020000000002L});
-    public static final BitSet FOLLOW_RULE_DECIMAL_in_ruleNumber3626 = new BitSet(new long[]{0x0000020000000002L});
-    public static final BitSet FOLLOW_41_in_ruleNumber3646 = new BitSet(new long[]{0x0000000000000300L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleNumber3662 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_DECIMAL_in_ruleNumber3688 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_32_in_ruleTypeMetaInfo1879 = new BitSet(new long[]{0x000001C0000003C2L});
+    public static final BitSet FOLLOW_ruleLiteral_in_ruleTypeMetaInfo1900 = new BitSet(new long[]{0x000001C0000003C2L});
+    public static final BitSet FOLLOW_ruleVariable_in_entryRuleVariable1939 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleVariable1949 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_DOC_in_ruleVariable1991 = new BitSet(new long[]{0x0000000200000010L});
+    public static final BitSet FOLLOW_33_in_ruleVariable2015 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleVariable2049 = new BitSet(new long[]{0x0000000400000010L});
+    public static final BitSet FOLLOW_34_in_ruleVariable2067 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleVariable2098 = new BitSet(new long[]{0x0000000800004002L});
+    public static final BitSet FOLLOW_ruleInvariants_in_ruleVariable2124 = new BitSet(new long[]{0x0000000000004002L});
+    public static final BitSet FOLLOW_ruleOverriddenTypeMetaInfo_in_ruleVariable2146 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleInvariants_in_entryRuleInvariants2183 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleInvariants2193 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_35_in_ruleInvariants2230 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_ruleConstraintCall_in_ruleInvariants2251 = new BitSet(new long[]{0x0000000000800002L});
+    public static final BitSet FOLLOW_23_in_ruleInvariants2264 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_ruleConstraintCall_in_ruleInvariants2285 = new BitSet(new long[]{0x0000000000800002L});
+    public static final BitSet FOLLOW_ruleOverriddenTypeMetaInfo_in_entryRuleOverriddenTypeMetaInfo2323 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleOverriddenTypeMetaInfo2333 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_14_in_ruleOverriddenTypeMetaInfo2370 = new BitSet(new long[]{0x00000001F0008000L});
+    public static final BitSet FOLLOW_ruleTypeMetaInfo_in_ruleOverriddenTypeMetaInfo2391 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_15_in_ruleOverriddenTypeMetaInfo2403 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleConstraintCall_in_entryRuleConstraintCall2439 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleConstraintCall2449 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleConstraintCall2494 = new BitSet(new long[]{0x0000001000000002L});
+    public static final BitSet FOLLOW_36_in_ruleConstraintCall2507 = new BitSet(new long[]{0x000001C0000003C0L});
+    public static final BitSet FOLLOW_ruleLiteral_in_ruleConstraintCall2528 = new BitSet(new long[]{0x0000002000800000L});
+    public static final BitSet FOLLOW_23_in_ruleConstraintCall2541 = new BitSet(new long[]{0x000001C0000003C0L});
+    public static final BitSet FOLLOW_ruleLiteral_in_ruleConstraintCall2562 = new BitSet(new long[]{0x0000002000800000L});
+    public static final BitSet FOLLOW_37_in_ruleConstraintCall2576 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleLiteral_in_entryRuleLiteral2614 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleLiteral2624 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNullLiteral_in_ruleLiteral2671 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleBooleanLiteral_in_ruleLiteral2698 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNumberLiteral_in_ruleLiteral2725 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleStringLiteral_in_ruleLiteral2752 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleBooleanLiteral_in_entryRuleBooleanLiteral2787 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleBooleanLiteral2797 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_38_in_ruleBooleanLiteral2851 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_39_in_ruleBooleanLiteral2880 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNullLiteral_in_entryRuleNullLiteral2932 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleNullLiteral2942 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_40_in_ruleNullLiteral2994 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNumberLiteral_in_entryRuleNumberLiteral3043 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleNumberLiteral3053 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNumber_in_ruleNumberLiteral3108 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleStringLiteral_in_entryRuleStringLiteral3144 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleStringLiteral3154 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleStringLiteral3205 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFQN_in_entryRuleFQN3247 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleFQN3258 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleFQN3298 = new BitSet(new long[]{0x0000020000000002L});
+    public static final BitSet FOLLOW_41_in_ruleFQN3317 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleFQN3332 = new BitSet(new long[]{0x0000020000000002L});
+    public static final BitSet FOLLOW_ruleFQNWithWildcard_in_entryRuleFQNWithWildcard3380 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleFQNWithWildcard3391 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFQN_in_ruleFQNWithWildcard3438 = new BitSet(new long[]{0x0000020000000000L});
+    public static final BitSet FOLLOW_41_in_ruleFQNWithWildcard3456 = new BitSet(new long[]{0x0000000400000000L});
+    public static final BitSet FOLLOW_34_in_ruleFQNWithWildcard3469 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNumber_in_entryRuleNumber3516 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleNumber3527 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_HEX_in_ruleNumber3571 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleNumber3599 = new BitSet(new long[]{0x0000020000000002L});
+    public static final BitSet FOLLOW_RULE_DECIMAL_in_ruleNumber3625 = new BitSet(new long[]{0x0000020000000002L});
+    public static final BitSet FOLLOW_41_in_ruleNumber3645 = new BitSet(new long[]{0x0000000000000300L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleNumber3661 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_DECIMAL_in_ruleNumber3687 = new BitSet(new long[]{0x0000000000000002L});
 
 }

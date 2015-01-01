@@ -4831,8 +4831,8 @@ rule__TypeMetaInfo__ExamplesAssignment_5_1
     }
 :
 (
-{ before(grammarAccess.getTypeMetaInfoAccess().getExamplesSTRINGTerminalRuleCall_5_1_0()); }
-	RULE_STRING{ after(grammarAccess.getTypeMetaInfoAccess().getExamplesSTRINGTerminalRuleCall_5_1_0()); }
+{ before(grammarAccess.getTypeMetaInfoAccess().getExamplesLiteralParserRuleCall_5_1_0()); }
+	ruleLiteral{ after(grammarAccess.getTypeMetaInfoAccess().getExamplesLiteralParserRuleCall_5_1_0()); }
 )
 
 ;

@@ -520,15 +520,15 @@ public class CqrsDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
 		private final Keyword cExamplesKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
 		private final Assignment cExamplesAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
-		private final RuleCall cExamplesSTRINGTerminalRuleCall_5_1_0 = (RuleCall)cExamplesAssignment_5_1.eContents().get(0);
+		private final RuleCall cExamplesLiteralParserRuleCall_5_1_0 = (RuleCall)cExamplesAssignment_5_1.eContents().get(0);
 		
 		//TypeMetaInfo returns ddd::TypeMetaInfo:
 		//	{TypeMetaInfo} ("slabel" slabel=STRING)? ("label" label=STRING)? ("tooltip" tooltip=STRING)? ("prompt" prompt=STRING)?
-		//	("examples" examples+=STRING*)?;
+		//	("examples" examples+=Literal*)?;
 		public ParserRule getRule() { return rule; }
 
 		//{TypeMetaInfo} ("slabel" slabel=STRING)? ("label" label=STRING)? ("tooltip" tooltip=STRING)? ("prompt" prompt=STRING)?
-		//("examples" examples+=STRING*)?
+		//("examples" examples+=Literal*)?
 		public Group getGroup() { return cGroup; }
 
 		//{TypeMetaInfo}
@@ -582,17 +582,17 @@ public class CqrsDSLGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getPromptSTRINGTerminalRuleCall_4_1_0() { return cPromptSTRINGTerminalRuleCall_4_1_0; }
 
-		//("examples" examples+=STRING*)?
+		//("examples" examples+=Literal*)?
 		public Group getGroup_5() { return cGroup_5; }
 
 		//"examples"
 		public Keyword getExamplesKeyword_5_0() { return cExamplesKeyword_5_0; }
 
-		//examples+=STRING*
+		//examples+=Literal*
 		public Assignment getExamplesAssignment_5_1() { return cExamplesAssignment_5_1; }
 
-		//STRING
-		public RuleCall getExamplesSTRINGTerminalRuleCall_5_1_0() { return cExamplesSTRINGTerminalRuleCall_5_1_0; }
+		//Literal
+		public RuleCall getExamplesLiteralParserRuleCall_5_1_0() { return cExamplesLiteralParserRuleCall_5_1_0; }
 	}
 
 	public class VariableElements extends AbstractParserRuleElementFinder {
@@ -1221,7 +1221,7 @@ public class CqrsDSLGrammarAccess extends AbstractGrammarElementFinder {
 
 	//TypeMetaInfo returns ddd::TypeMetaInfo:
 	//	{TypeMetaInfo} ("slabel" slabel=STRING)? ("label" label=STRING)? ("tooltip" tooltip=STRING)? ("prompt" prompt=STRING)?
-	//	("examples" examples+=STRING*)?;
+	//	("examples" examples+=Literal*)?;
 	public TypeMetaInfoElements getTypeMetaInfoAccess() {
 		return pTypeMetaInfo;
 	}
