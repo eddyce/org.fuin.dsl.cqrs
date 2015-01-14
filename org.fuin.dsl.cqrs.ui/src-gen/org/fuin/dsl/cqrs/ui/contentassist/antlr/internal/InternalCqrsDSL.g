@@ -420,25 +420,25 @@ finally {
 
 
 
-// Entry rule entryRuleConstraintCall
-entryRuleConstraintCall 
+// Entry rule entryRuleConstraintInstance
+entryRuleConstraintInstance 
 :
-{ before(grammarAccess.getConstraintCallRule()); }
-	 ruleConstraintCall
-{ after(grammarAccess.getConstraintCallRule()); } 
+{ before(grammarAccess.getConstraintInstanceRule()); }
+	 ruleConstraintInstance
+{ after(grammarAccess.getConstraintInstanceRule()); } 
 	 EOF 
 ;
 
-// Rule ConstraintCall
-ruleConstraintCall
+// Rule ConstraintInstance
+ruleConstraintInstance
     @init {
 		int stackSize = keepStackSize();
     }
 	:
 (
-{ before(grammarAccess.getConstraintCallAccess().getGroup()); }
-(rule__ConstraintCall__Group__0)
-{ after(grammarAccess.getConstraintCallAccess().getGroup()); }
+{ before(grammarAccess.getConstraintInstanceAccess().getGroup()); }
+(rule__ConstraintInstance__Group__0)
+{ after(grammarAccess.getConstraintInstanceAccess().getGroup()); }
 )
 
 ;
@@ -3305,9 +3305,9 @@ rule__Invariants__Group__1__Impl
     }
 :
 (
-{ before(grammarAccess.getInvariantsAccess().getCallsAssignment_1()); }
-(rule__Invariants__CallsAssignment_1)
-{ after(grammarAccess.getInvariantsAccess().getCallsAssignment_1()); }
+{ before(grammarAccess.getInvariantsAccess().getInstancesAssignment_1()); }
+(rule__Invariants__InstancesAssignment_1)
+{ after(grammarAccess.getInvariantsAccess().getInstancesAssignment_1()); }
 )
 
 ;
@@ -3398,9 +3398,9 @@ rule__Invariants__Group_2__1__Impl
     }
 :
 (
-{ before(grammarAccess.getInvariantsAccess().getCallsAssignment_2_1()); }
-(rule__Invariants__CallsAssignment_2_1)
-{ after(grammarAccess.getInvariantsAccess().getCallsAssignment_2_1()); }
+{ before(grammarAccess.getInvariantsAccess().getInstancesAssignment_2_1()); }
+(rule__Invariants__InstancesAssignment_2_1)
+{ after(grammarAccess.getInvariantsAccess().getInstancesAssignment_2_1()); }
 )
 
 ;
@@ -3509,27 +3509,27 @@ finally {
 
 
 
-rule__ConstraintCall__Group__0
+rule__ConstraintInstance__Group__0
     @init {
 		int stackSize = keepStackSize();
     }
 :
-	rule__ConstraintCall__Group__0__Impl
-	rule__ConstraintCall__Group__1
+	rule__ConstraintInstance__Group__0__Impl
+	rule__ConstraintInstance__Group__1
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__ConstraintCall__Group__0__Impl
+rule__ConstraintInstance__Group__0__Impl
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getConstraintCallAccess().getConstraintAssignment_0()); }
-(rule__ConstraintCall__ConstraintAssignment_0)
-{ after(grammarAccess.getConstraintCallAccess().getConstraintAssignment_0()); }
+{ before(grammarAccess.getConstraintInstanceAccess().getConstraintAssignment_0()); }
+(rule__ConstraintInstance__ConstraintAssignment_0)
+{ after(grammarAccess.getConstraintInstanceAccess().getConstraintAssignment_0()); }
 )
 
 ;
@@ -3538,26 +3538,26 @@ finally {
 }
 
 
-rule__ConstraintCall__Group__1
+rule__ConstraintInstance__Group__1
     @init {
 		int stackSize = keepStackSize();
     }
 :
-	rule__ConstraintCall__Group__1__Impl
+	rule__ConstraintInstance__Group__1__Impl
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__ConstraintCall__Group__1__Impl
+rule__ConstraintInstance__Group__1__Impl
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getConstraintCallAccess().getGroup_1()); }
-(rule__ConstraintCall__Group_1__0)?
-{ after(grammarAccess.getConstraintCallAccess().getGroup_1()); }
+{ before(grammarAccess.getConstraintInstanceAccess().getGroup_1()); }
+(rule__ConstraintInstance__Group_1__0)?
+{ after(grammarAccess.getConstraintInstanceAccess().getGroup_1()); }
 )
 
 ;
@@ -3570,29 +3570,29 @@ finally {
 
 
 
-rule__ConstraintCall__Group_1__0
+rule__ConstraintInstance__Group_1__0
     @init {
 		int stackSize = keepStackSize();
     }
 :
-	rule__ConstraintCall__Group_1__0__Impl
-	rule__ConstraintCall__Group_1__1
+	rule__ConstraintInstance__Group_1__0__Impl
+	rule__ConstraintInstance__Group_1__1
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__ConstraintCall__Group_1__0__Impl
+rule__ConstraintInstance__Group_1__0__Impl
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getConstraintCallAccess().getLeftParenthesisKeyword_1_0()); }
+{ before(grammarAccess.getConstraintInstanceAccess().getLeftParenthesisKeyword_1_0()); }
 
 	'(' 
 
-{ after(grammarAccess.getConstraintCallAccess().getLeftParenthesisKeyword_1_0()); }
+{ after(grammarAccess.getConstraintInstanceAccess().getLeftParenthesisKeyword_1_0()); }
 )
 
 ;
@@ -3601,27 +3601,27 @@ finally {
 }
 
 
-rule__ConstraintCall__Group_1__1
+rule__ConstraintInstance__Group_1__1
     @init {
 		int stackSize = keepStackSize();
     }
 :
-	rule__ConstraintCall__Group_1__1__Impl
-	rule__ConstraintCall__Group_1__2
+	rule__ConstraintInstance__Group_1__1__Impl
+	rule__ConstraintInstance__Group_1__2
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__ConstraintCall__Group_1__1__Impl
+rule__ConstraintInstance__Group_1__1__Impl
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getConstraintCallAccess().getParamsAssignment_1_1()); }
-(rule__ConstraintCall__ParamsAssignment_1_1)
-{ after(grammarAccess.getConstraintCallAccess().getParamsAssignment_1_1()); }
+{ before(grammarAccess.getConstraintInstanceAccess().getParamsAssignment_1_1()); }
+(rule__ConstraintInstance__ParamsAssignment_1_1)
+{ after(grammarAccess.getConstraintInstanceAccess().getParamsAssignment_1_1()); }
 )
 
 ;
@@ -3630,27 +3630,27 @@ finally {
 }
 
 
-rule__ConstraintCall__Group_1__2
+rule__ConstraintInstance__Group_1__2
     @init {
 		int stackSize = keepStackSize();
     }
 :
-	rule__ConstraintCall__Group_1__2__Impl
-	rule__ConstraintCall__Group_1__3
+	rule__ConstraintInstance__Group_1__2__Impl
+	rule__ConstraintInstance__Group_1__3
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__ConstraintCall__Group_1__2__Impl
+rule__ConstraintInstance__Group_1__2__Impl
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getConstraintCallAccess().getGroup_1_2()); }
-(rule__ConstraintCall__Group_1_2__0)*
-{ after(grammarAccess.getConstraintCallAccess().getGroup_1_2()); }
+{ before(grammarAccess.getConstraintInstanceAccess().getGroup_1_2()); }
+(rule__ConstraintInstance__Group_1_2__0)*
+{ after(grammarAccess.getConstraintInstanceAccess().getGroup_1_2()); }
 )
 
 ;
@@ -3659,28 +3659,28 @@ finally {
 }
 
 
-rule__ConstraintCall__Group_1__3
+rule__ConstraintInstance__Group_1__3
     @init {
 		int stackSize = keepStackSize();
     }
 :
-	rule__ConstraintCall__Group_1__3__Impl
+	rule__ConstraintInstance__Group_1__3__Impl
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__ConstraintCall__Group_1__3__Impl
+rule__ConstraintInstance__Group_1__3__Impl
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getConstraintCallAccess().getRightParenthesisKeyword_1_3()); }
+{ before(grammarAccess.getConstraintInstanceAccess().getRightParenthesisKeyword_1_3()); }
 
 	')' 
 
-{ after(grammarAccess.getConstraintCallAccess().getRightParenthesisKeyword_1_3()); }
+{ after(grammarAccess.getConstraintInstanceAccess().getRightParenthesisKeyword_1_3()); }
 )
 
 ;
@@ -3697,29 +3697,29 @@ finally {
 
 
 
-rule__ConstraintCall__Group_1_2__0
+rule__ConstraintInstance__Group_1_2__0
     @init {
 		int stackSize = keepStackSize();
     }
 :
-	rule__ConstraintCall__Group_1_2__0__Impl
-	rule__ConstraintCall__Group_1_2__1
+	rule__ConstraintInstance__Group_1_2__0__Impl
+	rule__ConstraintInstance__Group_1_2__1
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__ConstraintCall__Group_1_2__0__Impl
+rule__ConstraintInstance__Group_1_2__0__Impl
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getConstraintCallAccess().getCommaKeyword_1_2_0()); }
+{ before(grammarAccess.getConstraintInstanceAccess().getCommaKeyword_1_2_0()); }
 
 	',' 
 
-{ after(grammarAccess.getConstraintCallAccess().getCommaKeyword_1_2_0()); }
+{ after(grammarAccess.getConstraintInstanceAccess().getCommaKeyword_1_2_0()); }
 )
 
 ;
@@ -3728,26 +3728,26 @@ finally {
 }
 
 
-rule__ConstraintCall__Group_1_2__1
+rule__ConstraintInstance__Group_1_2__1
     @init {
 		int stackSize = keepStackSize();
     }
 :
-	rule__ConstraintCall__Group_1_2__1__Impl
+	rule__ConstraintInstance__Group_1_2__1__Impl
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__ConstraintCall__Group_1_2__1__Impl
+rule__ConstraintInstance__Group_1_2__1__Impl
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getConstraintCallAccess().getParamsAssignment_1_2_1()); }
-(rule__ConstraintCall__ParamsAssignment_1_2_1)
-{ after(grammarAccess.getConstraintCallAccess().getParamsAssignment_1_2_1()); }
+{ before(grammarAccess.getConstraintInstanceAccess().getParamsAssignment_1_2_1()); }
+(rule__ConstraintInstance__ParamsAssignment_1_2_1)
+{ after(grammarAccess.getConstraintInstanceAccess().getParamsAssignment_1_2_1()); }
 )
 
 ;
@@ -4965,14 +4965,14 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Invariants__CallsAssignment_1
+rule__Invariants__InstancesAssignment_1
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getInvariantsAccess().getCallsConstraintCallParserRuleCall_1_0()); }
-	ruleConstraintCall{ after(grammarAccess.getInvariantsAccess().getCallsConstraintCallParserRuleCall_1_0()); }
+{ before(grammarAccess.getInvariantsAccess().getInstancesConstraintInstanceParserRuleCall_1_0()); }
+	ruleConstraintInstance{ after(grammarAccess.getInvariantsAccess().getInstancesConstraintInstanceParserRuleCall_1_0()); }
 )
 
 ;
@@ -4980,14 +4980,14 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Invariants__CallsAssignment_2_1
+rule__Invariants__InstancesAssignment_2_1
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getInvariantsAccess().getCallsConstraintCallParserRuleCall_2_1_0()); }
-	ruleConstraintCall{ after(grammarAccess.getInvariantsAccess().getCallsConstraintCallParserRuleCall_2_1_0()); }
+{ before(grammarAccess.getInvariantsAccess().getInstancesConstraintInstanceParserRuleCall_2_1_0()); }
+	ruleConstraintInstance{ after(grammarAccess.getInvariantsAccess().getInstancesConstraintInstanceParserRuleCall_2_1_0()); }
 )
 
 ;
@@ -5010,33 +5010,18 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__ConstraintCall__ConstraintAssignment_0
+rule__ConstraintInstance__ConstraintAssignment_0
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getConstraintCallAccess().getConstraintConstraintCrossReference_0_0()); }
+{ before(grammarAccess.getConstraintInstanceAccess().getConstraintConstraintCrossReference_0_0()); }
 (
-{ before(grammarAccess.getConstraintCallAccess().getConstraintConstraintIDTerminalRuleCall_0_0_1()); }
-	RULE_ID{ after(grammarAccess.getConstraintCallAccess().getConstraintConstraintIDTerminalRuleCall_0_0_1()); }
+{ before(grammarAccess.getConstraintInstanceAccess().getConstraintConstraintIDTerminalRuleCall_0_0_1()); }
+	RULE_ID{ after(grammarAccess.getConstraintInstanceAccess().getConstraintConstraintIDTerminalRuleCall_0_0_1()); }
 )
-{ after(grammarAccess.getConstraintCallAccess().getConstraintConstraintCrossReference_0_0()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__ConstraintCall__ParamsAssignment_1_1
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getConstraintCallAccess().getParamsLiteralParserRuleCall_1_1_0()); }
-	ruleLiteral{ after(grammarAccess.getConstraintCallAccess().getParamsLiteralParserRuleCall_1_1_0()); }
+{ after(grammarAccess.getConstraintInstanceAccess().getConstraintConstraintCrossReference_0_0()); }
 )
 
 ;
@@ -5044,14 +5029,29 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__ConstraintCall__ParamsAssignment_1_2_1
+rule__ConstraintInstance__ParamsAssignment_1_1
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getConstraintCallAccess().getParamsLiteralParserRuleCall_1_2_1_0()); }
-	ruleLiteral{ after(grammarAccess.getConstraintCallAccess().getParamsLiteralParserRuleCall_1_2_1_0()); }
+{ before(grammarAccess.getConstraintInstanceAccess().getParamsLiteralParserRuleCall_1_1_0()); }
+	ruleLiteral{ after(grammarAccess.getConstraintInstanceAccess().getParamsLiteralParserRuleCall_1_1_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__ConstraintInstance__ParamsAssignment_1_2_1
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getConstraintInstanceAccess().getParamsLiteralParserRuleCall_1_2_1_0()); }
+	ruleLiteral{ after(grammarAccess.getConstraintInstanceAccess().getParamsLiteralParserRuleCall_1_2_1_0()); }
 )
 
 ;

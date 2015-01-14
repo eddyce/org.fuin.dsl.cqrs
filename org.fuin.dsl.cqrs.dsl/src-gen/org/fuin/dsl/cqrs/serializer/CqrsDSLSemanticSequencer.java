@@ -27,7 +27,7 @@ import org.fuin.dsl.cqrs.cqrsDSL.StringLiteral;
 import org.fuin.dsl.cqrs.cqrsDSL.TypeMetaInfo;
 import org.fuin.dsl.cqrs.cqrsDSL.View;
 import org.fuin.dsl.cqrs.services.CqrsDSLGrammarAccess;
-import org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintCall;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintInstance;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Import;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Invariants;
@@ -124,9 +124,9 @@ public class CqrsDSLSemanticSequencer extends AbstractDelegatingSemanticSequence
 				else break;
 			}
 		else if(semanticObject.eClass().getEPackage() == DomainDrivenDesignDslPackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
-			case DomainDrivenDesignDslPackage.CONSTRAINT_CALL:
-				if(context == grammarAccess.getConstraintCallRule()) {
-					sequence_ConstraintCall(context, (ConstraintCall) semanticObject); 
+			case DomainDrivenDesignDslPackage.CONSTRAINT_INSTANCE:
+				if(context == grammarAccess.getConstraintInstanceRule()) {
+					sequence_ConstraintInstance(context, (ConstraintInstance) semanticObject); 
 					return; 
 				}
 				else break;
@@ -189,7 +189,7 @@ public class CqrsDSLSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 * Constraint:
 	 *     (constraint=[Constraint|ID] (params+=Literal params+=Literal*)?)
 	 */
-	protected void sequence_ConstraintCall(EObject context, ConstraintCall semanticObject) {
+	protected void sequence_ConstraintInstance(EObject context, ConstraintInstance semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -223,7 +223,7 @@ public class CqrsDSLSemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Constraint:
-	 *     (calls+=ConstraintCall calls+=ConstraintCall*)
+	 *     (instances+=ConstraintInstance instances+=ConstraintInstance*)
 	 */
 	protected void sequence_Invariants(EObject context, Invariants semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

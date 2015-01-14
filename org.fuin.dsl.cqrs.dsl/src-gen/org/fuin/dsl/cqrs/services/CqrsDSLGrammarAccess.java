@@ -673,40 +673,40 @@ public class CqrsDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Invariants");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cInvariantsKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cCallsAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cCallsConstraintCallParserRuleCall_1_0 = (RuleCall)cCallsAssignment_1.eContents().get(0);
+		private final Assignment cInstancesAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cInstancesConstraintInstanceParserRuleCall_1_0 = (RuleCall)cInstancesAssignment_1.eContents().get(0);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
 		private final Keyword cCommaKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
-		private final Assignment cCallsAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
-		private final RuleCall cCallsConstraintCallParserRuleCall_2_1_0 = (RuleCall)cCallsAssignment_2_1.eContents().get(0);
+		private final Assignment cInstancesAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final RuleCall cInstancesConstraintInstanceParserRuleCall_2_1_0 = (RuleCall)cInstancesAssignment_2_1.eContents().get(0);
 		
 		//Invariants returns ddd::Invariants:
-		//	"invariants" calls+=ConstraintCall ("," calls+=ConstraintCall)*;
+		//	"invariants" instances+=ConstraintInstance ("," instances+=ConstraintInstance)*;
 		public ParserRule getRule() { return rule; }
 
-		//"invariants" calls+=ConstraintCall ("," calls+=ConstraintCall)*
+		//"invariants" instances+=ConstraintInstance ("," instances+=ConstraintInstance)*
 		public Group getGroup() { return cGroup; }
 
 		//"invariants"
 		public Keyword getInvariantsKeyword_0() { return cInvariantsKeyword_0; }
 
-		//calls+=ConstraintCall
-		public Assignment getCallsAssignment_1() { return cCallsAssignment_1; }
+		//instances+=ConstraintInstance
+		public Assignment getInstancesAssignment_1() { return cInstancesAssignment_1; }
 
-		//ConstraintCall
-		public RuleCall getCallsConstraintCallParserRuleCall_1_0() { return cCallsConstraintCallParserRuleCall_1_0; }
+		//ConstraintInstance
+		public RuleCall getInstancesConstraintInstanceParserRuleCall_1_0() { return cInstancesConstraintInstanceParserRuleCall_1_0; }
 
-		//("," calls+=ConstraintCall)*
+		//("," instances+=ConstraintInstance)*
 		public Group getGroup_2() { return cGroup_2; }
 
 		//","
 		public Keyword getCommaKeyword_2_0() { return cCommaKeyword_2_0; }
 
-		//calls+=ConstraintCall
-		public Assignment getCallsAssignment_2_1() { return cCallsAssignment_2_1; }
+		//instances+=ConstraintInstance
+		public Assignment getInstancesAssignment_2_1() { return cInstancesAssignment_2_1; }
 
-		//ConstraintCall
-		public RuleCall getCallsConstraintCallParserRuleCall_2_1_0() { return cCallsConstraintCallParserRuleCall_2_1_0; }
+		//ConstraintInstance
+		public RuleCall getInstancesConstraintInstanceParserRuleCall_2_1_0() { return cInstancesConstraintInstanceParserRuleCall_2_1_0; }
 	}
 
 	public class OverriddenTypeMetaInfoElements extends AbstractParserRuleElementFinder {
@@ -737,8 +737,8 @@ public class CqrsDSLGrammarAccess extends AbstractGrammarElementFinder {
 		public Keyword getRightCurlyBracketKeyword_2() { return cRightCurlyBracketKeyword_2; }
 	}
 
-	public class ConstraintCallElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ConstraintCall");
+	public class ConstraintInstanceElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ConstraintInstance");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cConstraintAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final CrossReference cConstraintConstraintCrossReference_0_0 = (CrossReference)cConstraintAssignment_0.eContents().get(0);
@@ -753,7 +753,7 @@ public class CqrsDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cParamsLiteralParserRuleCall_1_2_1_0 = (RuleCall)cParamsAssignment_1_2_1.eContents().get(0);
 		private final Keyword cRightParenthesisKeyword_1_3 = (Keyword)cGroup_1.eContents().get(3);
 		
-		//ConstraintCall returns ddd::ConstraintCall:
+		//ConstraintInstance returns ddd::ConstraintInstance:
 		//	constraint=[ddd::Constraint] ("(" params+=Literal ("," params+=Literal)* ")")?;
 		public ParserRule getRule() { return rule; }
 
@@ -1047,7 +1047,7 @@ public class CqrsDSLGrammarAccess extends AbstractGrammarElementFinder {
 	private final VariableElements pVariable;
 	private final InvariantsElements pInvariants;
 	private final OverriddenTypeMetaInfoElements pOverriddenTypeMetaInfo;
-	private final ConstraintCallElements pConstraintCall;
+	private final ConstraintInstanceElements pConstraintInstance;
 	private final LiteralElements pLiteral;
 	private final BooleanLiteralElements pBooleanLiteral;
 	private final NullLiteralElements pNullLiteral;
@@ -1084,7 +1084,7 @@ public class CqrsDSLGrammarAccess extends AbstractGrammarElementFinder {
 		this.pVariable = new VariableElements();
 		this.pInvariants = new InvariantsElements();
 		this.pOverriddenTypeMetaInfo = new OverriddenTypeMetaInfoElements();
-		this.pConstraintCall = new ConstraintCallElements();
+		this.pConstraintInstance = new ConstraintInstanceElements();
 		this.pLiteral = new LiteralElements();
 		this.pBooleanLiteral = new BooleanLiteralElements();
 		this.pNullLiteral = new NullLiteralElements();
@@ -1242,7 +1242,7 @@ public class CqrsDSLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Invariants returns ddd::Invariants:
-	//	"invariants" calls+=ConstraintCall ("," calls+=ConstraintCall)*;
+	//	"invariants" instances+=ConstraintInstance ("," instances+=ConstraintInstance)*;
 	public InvariantsElements getInvariantsAccess() {
 		return pInvariants;
 	}
@@ -1261,14 +1261,14 @@ public class CqrsDSLGrammarAccess extends AbstractGrammarElementFinder {
 		return getOverriddenTypeMetaInfoAccess().getRule();
 	}
 
-	//ConstraintCall returns ddd::ConstraintCall:
+	//ConstraintInstance returns ddd::ConstraintInstance:
 	//	constraint=[ddd::Constraint] ("(" params+=Literal ("," params+=Literal)* ")")?;
-	public ConstraintCallElements getConstraintCallAccess() {
-		return pConstraintCall;
+	public ConstraintInstanceElements getConstraintInstanceAccess() {
+		return pConstraintInstance;
 	}
 	
-	public ParserRule getConstraintCallRule() {
-		return getConstraintCallAccess().getRule();
+	public ParserRule getConstraintInstanceRule() {
+		return getConstraintInstanceAccess().getRule();
 	}
 
 	//Literal returns ddd::Literal:

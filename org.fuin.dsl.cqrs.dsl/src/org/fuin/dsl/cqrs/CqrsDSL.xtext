@@ -60,12 +60,12 @@ Variable returns ddd::Variable:
 	type=[ddd::Type] (multiplicity='*')? name=ID (invariants=Invariants)? (overridden=OverriddenTypeMetaInfo)?;
 
 Invariants returns ddd::Invariants:
-	'invariants' calls+=ConstraintCall (',' calls+=ConstraintCall)*;
+	'invariants' instances+=ConstraintInstance (',' instances+=ConstraintInstance)*;
 
 OverriddenTypeMetaInfo returns ddd::OverriddenTypeMetaInfo:
 	'{' metaInfo=TypeMetaInfo '}';
 
-ConstraintCall returns ddd::ConstraintCall:
+ConstraintInstance returns ddd::ConstraintInstance:
 	constraint=[ddd::Constraint] ('(' params+=Literal (',' params+=Literal)* ')')?;
 
 Literal returns ddd::Literal:
