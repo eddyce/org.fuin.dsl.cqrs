@@ -21,7 +21,7 @@ import org.fuin.dsl.cqrs.cqrsDSL.Command;
 import org.fuin.dsl.cqrs.cqrsDSL.CqrsDSLPackage;
 
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractMethod;
-import org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Attribute;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,7 +31,7 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable;
  * The following features are implemented:
  * <ul>
  *   <li>{@link org.fuin.dsl.cqrs.cqrsDSL.impl.CommandImpl#getTarget <em>Target</em>}</li>
- *   <li>{@link org.fuin.dsl.cqrs.cqrsDSL.impl.CommandImpl#getVariables <em>Variables</em>}</li>
+ *   <li>{@link org.fuin.dsl.cqrs.cqrsDSL.impl.CommandImpl#getAttributes <em>Attributes</em>}</li>
  *   <li>{@link org.fuin.dsl.cqrs.cqrsDSL.impl.CommandImpl#getMessage <em>Message</em>}</li>
  * </ul>
  * </p>
@@ -51,14 +51,14 @@ public class CommandImpl extends AbstractElementImpl implements Command
   protected AbstractMethod target;
 
   /**
-   * The cached value of the '{@link #getVariables() <em>Variables</em>}' containment reference list.
+   * The cached value of the '{@link #getAttributes() <em>Attributes</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getVariables()
+   * @see #getAttributes()
    * @generated
    * @ordered
    */
-  protected EList<Variable> variables;
+  protected EList<Attribute> attributes;
 
   /**
    * The default value of the '{@link #getMessage() <em>Message</em>}' attribute.
@@ -149,13 +149,13 @@ public class CommandImpl extends AbstractElementImpl implements Command
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Variable> getVariables()
+  public EList<Attribute> getAttributes()
   {
-    if (variables == null)
+    if (attributes == null)
     {
-      variables = new EObjectContainmentEList<Variable>(Variable.class, this, CqrsDSLPackage.COMMAND__VARIABLES);
+      attributes = new EObjectContainmentEList<Attribute>(Attribute.class, this, CqrsDSLPackage.COMMAND__ATTRIBUTES);
     }
-    return variables;
+    return attributes;
   }
 
   /**
@@ -191,8 +191,8 @@ public class CommandImpl extends AbstractElementImpl implements Command
   {
     switch (featureID)
     {
-      case CqrsDSLPackage.COMMAND__VARIABLES:
-        return ((InternalEList<?>)getVariables()).basicRemove(otherEnd, msgs);
+      case CqrsDSLPackage.COMMAND__ATTRIBUTES:
+        return ((InternalEList<?>)getAttributes()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -210,8 +210,8 @@ public class CommandImpl extends AbstractElementImpl implements Command
       case CqrsDSLPackage.COMMAND__TARGET:
         if (resolve) return getTarget();
         return basicGetTarget();
-      case CqrsDSLPackage.COMMAND__VARIABLES:
-        return getVariables();
+      case CqrsDSLPackage.COMMAND__ATTRIBUTES:
+        return getAttributes();
       case CqrsDSLPackage.COMMAND__MESSAGE:
         return getMessage();
     }
@@ -232,9 +232,9 @@ public class CommandImpl extends AbstractElementImpl implements Command
       case CqrsDSLPackage.COMMAND__TARGET:
         setTarget((AbstractMethod)newValue);
         return;
-      case CqrsDSLPackage.COMMAND__VARIABLES:
-        getVariables().clear();
-        getVariables().addAll((Collection<? extends Variable>)newValue);
+      case CqrsDSLPackage.COMMAND__ATTRIBUTES:
+        getAttributes().clear();
+        getAttributes().addAll((Collection<? extends Attribute>)newValue);
         return;
       case CqrsDSLPackage.COMMAND__MESSAGE:
         setMessage((String)newValue);
@@ -256,8 +256,8 @@ public class CommandImpl extends AbstractElementImpl implements Command
       case CqrsDSLPackage.COMMAND__TARGET:
         setTarget((AbstractMethod)null);
         return;
-      case CqrsDSLPackage.COMMAND__VARIABLES:
-        getVariables().clear();
+      case CqrsDSLPackage.COMMAND__ATTRIBUTES:
+        getAttributes().clear();
         return;
       case CqrsDSLPackage.COMMAND__MESSAGE:
         setMessage(MESSAGE_EDEFAULT);
@@ -278,8 +278,8 @@ public class CommandImpl extends AbstractElementImpl implements Command
     {
       case CqrsDSLPackage.COMMAND__TARGET:
         return target != null;
-      case CqrsDSLPackage.COMMAND__VARIABLES:
-        return variables != null && !variables.isEmpty();
+      case CqrsDSLPackage.COMMAND__ATTRIBUTES:
+        return attributes != null && !attributes.isEmpty();
       case CqrsDSLPackage.COMMAND__MESSAGE:
         return MESSAGE_EDEFAULT == null ? message != null : !MESSAGE_EDEFAULT.equals(message);
     }

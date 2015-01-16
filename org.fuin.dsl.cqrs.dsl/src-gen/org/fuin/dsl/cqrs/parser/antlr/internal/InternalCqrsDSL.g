@@ -459,17 +459,17 @@ ruleCommand returns [EObject current=null]
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getCommandAccess().getVariablesVariableParserRuleCall_5_0()); 
+	        newCompositeNode(grammarAccess.getCommandAccess().getAttributesAttributeParserRuleCall_5_0()); 
 	    }
-		lv_variables_6_0=ruleVariable		{
+		lv_attributes_6_0=ruleAttribute		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getCommandRule());
 	        }
        		add(
        			$current, 
-       			"variables",
-        		lv_variables_6_0, 
-        		"Variable");
+       			"attributes",
+        		lv_attributes_6_0, 
+        		"Attribute");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -954,17 +954,17 @@ ruleTypeMetaInfo returns [EObject current=null]
 
 
 
-// Entry rule entryRuleVariable
-entryRuleVariable returns [EObject current=null] 
+// Entry rule entryRuleAttribute
+entryRuleAttribute returns [EObject current=null] 
 	:
-	{ newCompositeNode(grammarAccess.getVariableRule()); }
-	 iv_ruleVariable=ruleVariable 
-	 { $current=$iv_ruleVariable.current; } 
+	{ newCompositeNode(grammarAccess.getAttributeRule()); }
+	 iv_ruleAttribute=ruleAttribute 
+	 { $current=$iv_ruleAttribute.current; } 
 	 EOF 
 ;
 
-// Rule Variable
-ruleVariable returns [EObject current=null] 
+// Rule Attribute
+ruleAttribute returns [EObject current=null] 
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
@@ -972,11 +972,11 @@ ruleVariable returns [EObject current=null]
 (
 		lv_doc_0_0=RULE_DOC
 		{
-			newLeafNode(lv_doc_0_0, grammarAccess.getVariableAccess().getDocDOCTerminalRuleCall_0_0()); 
+			newLeafNode(lv_doc_0_0, grammarAccess.getAttributeAccess().getDocDOCTerminalRuleCall_0_0()); 
 		}
 		{
 	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getVariableRule());
+	            $current = createModelElement(grammarAccess.getAttributeRule());
 	        }
        		setWithLastConsumed(
        			$current, 
@@ -990,12 +990,12 @@ ruleVariable returns [EObject current=null]
 (
 		lv_nullable_1_0=	'nullable' 
     {
-        newLeafNode(lv_nullable_1_0, grammarAccess.getVariableAccess().getNullableNullableKeyword_1_0());
+        newLeafNode(lv_nullable_1_0, grammarAccess.getAttributeAccess().getNullableNullableKeyword_1_0());
     }
  
 	    {
 	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getVariableRule());
+	            $current = createModelElement(grammarAccess.getAttributeRule());
 	        }
        		setWithLastConsumed($current, "nullable", lv_nullable_1_0, "nullable");
 	    }
@@ -1005,12 +1005,12 @@ ruleVariable returns [EObject current=null]
 (
 		{
 			if ($current==null) {
-	            $current = createModelElement(grammarAccess.getVariableRule());
+	            $current = createModelElement(grammarAccess.getAttributeRule());
 	        }
         }
 	otherlv_2=RULE_ID
 	{
-		newLeafNode(otherlv_2, grammarAccess.getVariableAccess().getTypeTypeCrossReference_2_0()); 
+		newLeafNode(otherlv_2, grammarAccess.getAttributeAccess().getTypeTypeCrossReference_2_0()); 
 	}
 
 )
@@ -1018,12 +1018,12 @@ ruleVariable returns [EObject current=null]
 (
 		lv_multiplicity_3_0=	'*' 
     {
-        newLeafNode(lv_multiplicity_3_0, grammarAccess.getVariableAccess().getMultiplicityAsteriskKeyword_3_0());
+        newLeafNode(lv_multiplicity_3_0, grammarAccess.getAttributeAccess().getMultiplicityAsteriskKeyword_3_0());
     }
  
 	    {
 	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getVariableRule());
+	            $current = createModelElement(grammarAccess.getAttributeRule());
 	        }
        		setWithLastConsumed($current, "multiplicity", lv_multiplicity_3_0, "*");
 	    }
@@ -1033,11 +1033,11 @@ ruleVariable returns [EObject current=null]
 (
 		lv_name_4_0=RULE_ID
 		{
-			newLeafNode(lv_name_4_0, grammarAccess.getVariableAccess().getNameIDTerminalRuleCall_4_0()); 
+			newLeafNode(lv_name_4_0, grammarAccess.getAttributeAccess().getNameIDTerminalRuleCall_4_0()); 
 		}
 		{
 	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getVariableRule());
+	            $current = createModelElement(grammarAccess.getAttributeRule());
 	        }
        		setWithLastConsumed(
        			$current, 
@@ -1050,11 +1050,11 @@ ruleVariable returns [EObject current=null]
 )(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getVariableAccess().getInvariantsInvariantsParserRuleCall_5_0()); 
+	        newCompositeNode(grammarAccess.getAttributeAccess().getInvariantsInvariantsParserRuleCall_5_0()); 
 	    }
 		lv_invariants_5_0=ruleInvariants		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getVariableRule());
+	            $current = createModelElementForParent(grammarAccess.getAttributeRule());
 	        }
        		set(
        			$current, 
@@ -1068,11 +1068,11 @@ ruleVariable returns [EObject current=null]
 )?(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getVariableAccess().getOverriddenOverriddenTypeMetaInfoParserRuleCall_6_0()); 
+	        newCompositeNode(grammarAccess.getAttributeAccess().getOverriddenOverriddenTypeMetaInfoParserRuleCall_6_0()); 
 	    }
 		lv_overridden_6_0=ruleOverriddenTypeMetaInfo		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getVariableRule());
+	            $current = createModelElementForParent(grammarAccess.getAttributeRule());
 	        }
        		set(
        			$current, 
@@ -1111,16 +1111,16 @@ ruleInvariants returns [EObject current=null]
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getInvariantsAccess().getInstancesConstraintInstanceParserRuleCall_1_0()); 
+	        newCompositeNode(grammarAccess.getInvariantsAccess().getConstraintInstancesConstraintInstanceParserRuleCall_1_0()); 
 	    }
-		lv_instances_1_0=ruleConstraintInstance		{
+		lv_constraintInstances_1_0=ruleConstraintInstance		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getInvariantsRule());
 	        }
        		add(
        			$current, 
-       			"instances",
-        		lv_instances_1_0, 
+       			"constraintInstances",
+        		lv_constraintInstances_1_0, 
         		"ConstraintInstance");
 	        afterParserOrEnumRuleCall();
 	    }
@@ -1133,16 +1133,16 @@ ruleInvariants returns [EObject current=null]
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getInvariantsAccess().getInstancesConstraintInstanceParserRuleCall_2_1_0()); 
+	        newCompositeNode(grammarAccess.getInvariantsAccess().getConstraintInstancesConstraintInstanceParserRuleCall_2_1_0()); 
 	    }
-		lv_instances_3_0=ruleConstraintInstance		{
+		lv_constraintInstances_3_0=ruleConstraintInstance		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getInvariantsRule());
 	        }
        		add(
        			$current, 
-       			"instances",
-        		lv_instances_3_0, 
+       			"constraintInstances",
+        		lv_constraintInstances_3_0, 
         		"ConstraintInstance");
 	        afterParserOrEnumRuleCall();
 	    }

@@ -27,12 +27,12 @@ import org.fuin.dsl.cqrs.cqrsDSL.StringLiteral;
 import org.fuin.dsl.cqrs.cqrsDSL.TypeMetaInfo;
 import org.fuin.dsl.cqrs.cqrsDSL.View;
 import org.fuin.dsl.cqrs.services.CqrsDSLGrammarAccess;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Attribute;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintInstance;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Import;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Invariants;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.OverriddenTypeMetaInfo;
-import org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable;
 
 @SuppressWarnings("all")
 public class CqrsDSLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
@@ -124,6 +124,12 @@ public class CqrsDSLSemanticSequencer extends AbstractDelegatingSemanticSequence
 				else break;
 			}
 		else if(semanticObject.eClass().getEPackage() == DomainDrivenDesignDslPackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
+			case DomainDrivenDesignDslPackage.ATTRIBUTE:
+				if(context == grammarAccess.getAttributeRule()) {
+					sequence_Attribute(context, (Attribute) semanticObject); 
+					return; 
+				}
+				else break;
 			case DomainDrivenDesignDslPackage.CONSTRAINT_INSTANCE:
 				if(context == grammarAccess.getConstraintInstanceRule()) {
 					sequence_ConstraintInstance(context, (ConstraintInstance) semanticObject); 
@@ -148,15 +154,26 @@ public class CqrsDSLSemanticSequencer extends AbstractDelegatingSemanticSequence
 					return; 
 				}
 				else break;
-			case DomainDrivenDesignDslPackage.VARIABLE:
-				if(context == grammarAccess.getVariableRule()) {
-					sequence_Variable(context, (Variable) semanticObject); 
-					return; 
-				}
-				else break;
 			}
 		if (errorAcceptor != null) errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
 	}
+	
+	/**
+	 * Constraint:
+	 *     (
+	 *         doc=DOC? 
+	 *         nullable='nullable'? 
+	 *         type=[Type|ID] 
+	 *         multiplicity='*'? 
+	 *         name=ID 
+	 *         invariants=Invariants? 
+	 *         overridden=OverriddenTypeMetaInfo?
+	 *     )
+	 */
+	protected void sequence_Attribute(EObject context, Attribute semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
 	
 	/**
 	 * Constraint:
@@ -178,7 +195,7 @@ public class CqrsDSLSemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Constraint:
-	 *     (doc=DOC? name=ID target=[AbstractMethod|FQN]? variables+=Variable* message=STRING?)
+	 *     (doc=DOC? name=ID target=[AbstractMethod|FQN]? attributes+=Attribute* message=STRING?)
 	 */
 	protected void sequence_Command(EObject context, Command semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -223,7 +240,7 @@ public class CqrsDSLSemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Constraint:
-	 *     (instances+=ConstraintInstance instances+=ConstraintInstance*)
+	 *     (constraintInstances+=ConstraintInstance constraintInstances+=ConstraintInstance*)
 	 */
 	protected void sequence_Invariants(EObject context, Invariants semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -317,23 +334,6 @@ public class CqrsDSLSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     (slabel=STRING? label=STRING? tooltip=STRING? prompt=STRING? examples+=Literal*)
 	 */
 	protected void sequence_TypeMetaInfo(EObject context, TypeMetaInfo semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (
-	 *         doc=DOC? 
-	 *         nullable='nullable'? 
-	 *         type=[Type|ID] 
-	 *         multiplicity='*'? 
-	 *         name=ID 
-	 *         invariants=Invariants? 
-	 *         overridden=OverriddenTypeMetaInfo?
-	 *     )
-	 */
-	protected void sequence_Variable(EObject context, Variable semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

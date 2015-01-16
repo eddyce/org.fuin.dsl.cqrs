@@ -337,7 +337,7 @@ public class CqrsDSLPackageImpl extends EPackageImpl implements CqrsDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getCommand_Variables()
+  public EReference getCommand_Attributes()
   {
     return (EReference)commandEClass.getEStructuralFeatures().get(1);
   }
@@ -520,7 +520,7 @@ public class CqrsDSLPackageImpl extends EPackageImpl implements CqrsDSLPackage
 
     commandEClass = createEClass(COMMAND);
     createEReference(commandEClass, COMMAND__TARGET);
-    createEReference(commandEClass, COMMAND__VARIABLES);
+    createEReference(commandEClass, COMMAND__ATTRIBUTES);
     createEAttribute(commandEClass, COMMAND__MESSAGE);
 
     commandHandlerEClass = createEClass(COMMAND_HANDLER);
@@ -605,7 +605,7 @@ public class CqrsDSLPackageImpl extends EPackageImpl implements CqrsDSLPackage
 
     initEClass(commandEClass, Command.class, "Command", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getCommand_Target(), theDomainDrivenDesignDslPackage.getAbstractMethod(), null, "target", null, 0, 1, Command.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getCommand_Variables(), theDomainDrivenDesignDslPackage.getVariable(), null, "variables", null, 0, -1, Command.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getCommand_Attributes(), theDomainDrivenDesignDslPackage.getAttribute(), null, "attributes", null, 0, -1, Command.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getCommand_Message(), ecorePackage.getEString(), "message", null, 0, 1, Command.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(commandHandlerEClass, CommandHandler.class, "CommandHandler", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

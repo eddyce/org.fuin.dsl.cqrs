@@ -244,13 +244,13 @@ public interface CqrsDSLPackage extends EPackage
   int COMMAND__TARGET = ABSTRACT_ELEMENT_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Variables</b></em>' containment reference list.
+   * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int COMMAND__VARIABLES = ABSTRACT_ELEMENT_FEATURE_COUNT + 1;
+  int COMMAND__ATTRIBUTES = ABSTRACT_ELEMENT_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Message</b></em>' attribute.
@@ -744,15 +744,15 @@ public interface CqrsDSLPackage extends EPackage
   EReference getCommand_Target();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.fuin.dsl.cqrs.cqrsDSL.Command#getVariables <em>Variables</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.fuin.dsl.cqrs.cqrsDSL.Command#getAttributes <em>Attributes</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Variables</em>'.
-   * @see org.fuin.dsl.cqrs.cqrsDSL.Command#getVariables()
+   * @return the meta object for the containment reference list '<em>Attributes</em>'.
+   * @see org.fuin.dsl.cqrs.cqrsDSL.Command#getAttributes()
    * @see #getCommand()
    * @generated
    */
-  EReference getCommand_Variables();
+  EReference getCommand_Attributes();
 
   /**
    * Returns the meta object for the attribute '{@link org.fuin.dsl.cqrs.cqrsDSL.Command#getMessage <em>Message</em>}'.
@@ -1035,12 +1035,12 @@ public interface CqrsDSLPackage extends EPackage
     EReference COMMAND__TARGET = eINSTANCE.getCommand_Target();
 
     /**
-     * The meta object literal for the '<em><b>Variables</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Attributes</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference COMMAND__VARIABLES = eINSTANCE.getCommand_Variables();
+    EReference COMMAND__ATTRIBUTES = eINSTANCE.getCommand_Attributes();
 
     /**
      * The meta object literal for the '<em><b>Message</b></em>' attribute feature.

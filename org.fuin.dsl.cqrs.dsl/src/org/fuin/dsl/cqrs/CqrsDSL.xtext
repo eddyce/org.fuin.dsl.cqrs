@@ -28,7 +28,7 @@ AbstractElement:
 Command:
 	doc=DOC? 
 	'command' name=ID ('target' target=[ddd::AbstractMethod|FQN])?  '{'
-		variables+=Variable*	
+		attributes+=Attribute*	
 		('message' message=STRING)?
 	'}';
 
@@ -54,13 +54,13 @@ TypeMetaInfo returns ddd::TypeMetaInfo:
     	('prompt' (prompt=STRING))?
     	('examples' (examples+=Literal*))?;
 
-Variable returns ddd::Variable:
+Attribute returns ddd::Attribute:
 	doc=DOC? 
 	(nullable='nullable')? 
 	type=[ddd::Type] (multiplicity='*')? name=ID (invariants=Invariants)? (overridden=OverriddenTypeMetaInfo)?;
 
 Invariants returns ddd::Invariants:
-	'invariants' instances+=ConstraintInstance (',' instances+=ConstraintInstance)*;
+	'invariants' constraintInstances+=ConstraintInstance (',' constraintInstances+=ConstraintInstance)*;
 
 OverriddenTypeMetaInfo returns ddd::OverriddenTypeMetaInfo:
 	'{' metaInfo=TypeMetaInfo '}';

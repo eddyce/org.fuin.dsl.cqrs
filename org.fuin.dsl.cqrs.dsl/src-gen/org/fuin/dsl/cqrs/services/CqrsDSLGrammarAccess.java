@@ -195,8 +195,8 @@ public class CqrsDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final CrossReference cTargetAbstractMethodCrossReference_3_1_0 = (CrossReference)cTargetAssignment_3_1.eContents().get(0);
 		private final RuleCall cTargetAbstractMethodFQNParserRuleCall_3_1_0_1 = (RuleCall)cTargetAbstractMethodCrossReference_3_1_0.eContents().get(1);
 		private final Keyword cLeftCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Assignment cVariablesAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cVariablesVariableParserRuleCall_5_0 = (RuleCall)cVariablesAssignment_5.eContents().get(0);
+		private final Assignment cAttributesAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cAttributesAttributeParserRuleCall_5_0 = (RuleCall)cAttributesAssignment_5.eContents().get(0);
 		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
 		private final Keyword cMessageKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
 		private final Assignment cMessageAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
@@ -204,11 +204,11 @@ public class CqrsDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
 		//Command:
-		//	doc=DOC? "command" name=ID ("target" target=[ddd::AbstractMethod|FQN])? "{" variables+=Variable* ("message"
+		//	doc=DOC? "command" name=ID ("target" target=[ddd::AbstractMethod|FQN])? "{" attributes+=Attribute* ("message"
 		//	message=STRING)? "}";
 		public ParserRule getRule() { return rule; }
 
-		//doc=DOC? "command" name=ID ("target" target=[ddd::AbstractMethod|FQN])? "{" variables+=Variable* ("message"
+		//doc=DOC? "command" name=ID ("target" target=[ddd::AbstractMethod|FQN])? "{" attributes+=Attribute* ("message"
 		//message=STRING)? "}"
 		public Group getGroup() { return cGroup; }
 
@@ -245,11 +245,11 @@ public class CqrsDSLGrammarAccess extends AbstractGrammarElementFinder {
 		//"{"
 		public Keyword getLeftCurlyBracketKeyword_4() { return cLeftCurlyBracketKeyword_4; }
 
-		//variables+=Variable*
-		public Assignment getVariablesAssignment_5() { return cVariablesAssignment_5; }
+		//attributes+=Attribute*
+		public Assignment getAttributesAssignment_5() { return cAttributesAssignment_5; }
 
-		//Variable
-		public RuleCall getVariablesVariableParserRuleCall_5_0() { return cVariablesVariableParserRuleCall_5_0; }
+		//Attribute
+		public RuleCall getAttributesAttributeParserRuleCall_5_0() { return cAttributesAttributeParserRuleCall_5_0; }
 
 		//("message" message=STRING)?
 		public Group getGroup_6() { return cGroup_6; }
@@ -595,8 +595,8 @@ public class CqrsDSLGrammarAccess extends AbstractGrammarElementFinder {
 		public RuleCall getExamplesLiteralParserRuleCall_5_1_0() { return cExamplesLiteralParserRuleCall_5_1_0; }
 	}
 
-	public class VariableElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Variable");
+	public class AttributeElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Attribute");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cDocAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final RuleCall cDocDOCTerminalRuleCall_0_0 = (RuleCall)cDocAssignment_0.eContents().get(0);
@@ -614,7 +614,7 @@ public class CqrsDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cOverriddenAssignment_6 = (Assignment)cGroup.eContents().get(6);
 		private final RuleCall cOverriddenOverriddenTypeMetaInfoParserRuleCall_6_0 = (RuleCall)cOverriddenAssignment_6.eContents().get(0);
 		
-		//Variable returns ddd::Variable:
+		//Attribute returns ddd::Attribute:
 		//	doc=DOC? nullable="nullable"? type=[ddd::Type] multiplicity="*"? name=ID invariants=Invariants?
 		//	overridden=OverriddenTypeMetaInfo?;
 		public ParserRule getRule() { return rule; }
@@ -673,40 +673,40 @@ public class CqrsDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Invariants");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cInvariantsKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cInstancesAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cInstancesConstraintInstanceParserRuleCall_1_0 = (RuleCall)cInstancesAssignment_1.eContents().get(0);
+		private final Assignment cConstraintInstancesAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cConstraintInstancesConstraintInstanceParserRuleCall_1_0 = (RuleCall)cConstraintInstancesAssignment_1.eContents().get(0);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
 		private final Keyword cCommaKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
-		private final Assignment cInstancesAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
-		private final RuleCall cInstancesConstraintInstanceParserRuleCall_2_1_0 = (RuleCall)cInstancesAssignment_2_1.eContents().get(0);
+		private final Assignment cConstraintInstancesAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final RuleCall cConstraintInstancesConstraintInstanceParserRuleCall_2_1_0 = (RuleCall)cConstraintInstancesAssignment_2_1.eContents().get(0);
 		
 		//Invariants returns ddd::Invariants:
-		//	"invariants" instances+=ConstraintInstance ("," instances+=ConstraintInstance)*;
+		//	"invariants" constraintInstances+=ConstraintInstance ("," constraintInstances+=ConstraintInstance)*;
 		public ParserRule getRule() { return rule; }
 
-		//"invariants" instances+=ConstraintInstance ("," instances+=ConstraintInstance)*
+		//"invariants" constraintInstances+=ConstraintInstance ("," constraintInstances+=ConstraintInstance)*
 		public Group getGroup() { return cGroup; }
 
 		//"invariants"
 		public Keyword getInvariantsKeyword_0() { return cInvariantsKeyword_0; }
 
-		//instances+=ConstraintInstance
-		public Assignment getInstancesAssignment_1() { return cInstancesAssignment_1; }
+		//constraintInstances+=ConstraintInstance
+		public Assignment getConstraintInstancesAssignment_1() { return cConstraintInstancesAssignment_1; }
 
 		//ConstraintInstance
-		public RuleCall getInstancesConstraintInstanceParserRuleCall_1_0() { return cInstancesConstraintInstanceParserRuleCall_1_0; }
+		public RuleCall getConstraintInstancesConstraintInstanceParserRuleCall_1_0() { return cConstraintInstancesConstraintInstanceParserRuleCall_1_0; }
 
-		//("," instances+=ConstraintInstance)*
+		//("," constraintInstances+=ConstraintInstance)*
 		public Group getGroup_2() { return cGroup_2; }
 
 		//","
 		public Keyword getCommaKeyword_2_0() { return cCommaKeyword_2_0; }
 
-		//instances+=ConstraintInstance
-		public Assignment getInstancesAssignment_2_1() { return cInstancesAssignment_2_1; }
+		//constraintInstances+=ConstraintInstance
+		public Assignment getConstraintInstancesAssignment_2_1() { return cConstraintInstancesAssignment_2_1; }
 
 		//ConstraintInstance
-		public RuleCall getInstancesConstraintInstanceParserRuleCall_2_1_0() { return cInstancesConstraintInstanceParserRuleCall_2_1_0; }
+		public RuleCall getConstraintInstancesConstraintInstanceParserRuleCall_2_1_0() { return cConstraintInstancesConstraintInstanceParserRuleCall_2_1_0; }
 	}
 
 	public class OverriddenTypeMetaInfoElements extends AbstractParserRuleElementFinder {
@@ -1044,7 +1044,7 @@ public class CqrsDSLGrammarAccess extends AbstractGrammarElementFinder {
 	private final ProjectionElements pProjection;
 	private final ViewElements pView;
 	private final TypeMetaInfoElements pTypeMetaInfo;
-	private final VariableElements pVariable;
+	private final AttributeElements pAttribute;
 	private final InvariantsElements pInvariants;
 	private final OverriddenTypeMetaInfoElements pOverriddenTypeMetaInfo;
 	private final ConstraintInstanceElements pConstraintInstance;
@@ -1081,7 +1081,7 @@ public class CqrsDSLGrammarAccess extends AbstractGrammarElementFinder {
 		this.pProjection = new ProjectionElements();
 		this.pView = new ViewElements();
 		this.pTypeMetaInfo = new TypeMetaInfoElements();
-		this.pVariable = new VariableElements();
+		this.pAttribute = new AttributeElements();
 		this.pInvariants = new InvariantsElements();
 		this.pOverriddenTypeMetaInfo = new OverriddenTypeMetaInfoElements();
 		this.pConstraintInstance = new ConstraintInstanceElements();
@@ -1178,7 +1178,7 @@ public class CqrsDSLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Command:
-	//	doc=DOC? "command" name=ID ("target" target=[ddd::AbstractMethod|FQN])? "{" variables+=Variable* ("message"
+	//	doc=DOC? "command" name=ID ("target" target=[ddd::AbstractMethod|FQN])? "{" attributes+=Attribute* ("message"
 	//	message=STRING)? "}";
 	public CommandElements getCommandAccess() {
 		return pCommand;
@@ -1230,19 +1230,19 @@ public class CqrsDSLGrammarAccess extends AbstractGrammarElementFinder {
 		return getTypeMetaInfoAccess().getRule();
 	}
 
-	//Variable returns ddd::Variable:
+	//Attribute returns ddd::Attribute:
 	//	doc=DOC? nullable="nullable"? type=[ddd::Type] multiplicity="*"? name=ID invariants=Invariants?
 	//	overridden=OverriddenTypeMetaInfo?;
-	public VariableElements getVariableAccess() {
-		return pVariable;
+	public AttributeElements getAttributeAccess() {
+		return pAttribute;
 	}
 	
-	public ParserRule getVariableRule() {
-		return getVariableAccess().getRule();
+	public ParserRule getAttributeRule() {
+		return getAttributeAccess().getRule();
 	}
 
 	//Invariants returns ddd::Invariants:
-	//	"invariants" instances+=ConstraintInstance ("," instances+=ConstraintInstance)*;
+	//	"invariants" constraintInstances+=ConstraintInstance ("," constraintInstances+=ConstraintInstance)*;
 	public InvariantsElements getInvariantsAccess() {
 		return pInvariants;
 	}
