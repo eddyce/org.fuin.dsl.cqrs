@@ -181,6 +181,34 @@ public class CqrsDSLGrammarAccess extends AbstractGrammarElementFinder {
 		public RuleCall getViewParserRuleCall_3() { return cViewParserRuleCall_3; }
 	}
 
+	public class DurationElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Duration");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cTimeAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cTimeINTTerminalRuleCall_0_0 = (RuleCall)cTimeAssignment_0.eContents().get(0);
+		private final Assignment cUnitAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cUnitTimeUnitEnumRuleCall_1_0 = (RuleCall)cUnitAssignment_1.eContents().get(0);
+		
+		//Duration returns ddd::Duration:
+		//	time=INT unit=TimeUnit;
+		public ParserRule getRule() { return rule; }
+
+		//time=INT unit=TimeUnit
+		public Group getGroup() { return cGroup; }
+
+		//time=INT
+		public Assignment getTimeAssignment_0() { return cTimeAssignment_0; }
+
+		//INT
+		public RuleCall getTimeINTTerminalRuleCall_0_0() { return cTimeINTTerminalRuleCall_0_0; }
+
+		//unit=TimeUnit
+		public Assignment getUnitAssignment_1() { return cUnitAssignment_1; }
+
+		//TimeUnit
+		public RuleCall getUnitTimeUnitEnumRuleCall_1_0() { return cUnitTimeUnitEnumRuleCall_1_0; }
+	}
+
 	public class CommandElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Command");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -194,22 +222,26 @@ public class CqrsDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cTargetAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
 		private final CrossReference cTargetAbstractMethodCrossReference_3_1_0 = (CrossReference)cTargetAssignment_3_1.eContents().get(0);
 		private final RuleCall cTargetAbstractMethodFQNParserRuleCall_3_1_0_1 = (RuleCall)cTargetAbstractMethodCrossReference_3_1_0.eContents().get(1);
-		private final Keyword cLeftCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Assignment cAttributesAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cAttributesAttributeParserRuleCall_5_0 = (RuleCall)cAttributesAssignment_5.eContents().get(0);
-		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
-		private final Keyword cMessageKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
-		private final Assignment cMessageAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
-		private final RuleCall cMessageSTRINGTerminalRuleCall_6_1_0 = (RuleCall)cMessageAssignment_6_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final Keyword cSlaKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Assignment cAcceptableAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
+		private final RuleCall cAcceptableDurationParserRuleCall_4_1_0 = (RuleCall)cAcceptableAssignment_4_1.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cAttributesAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cAttributesAttributeParserRuleCall_6_0 = (RuleCall)cAttributesAssignment_6.eContents().get(0);
+		private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
+		private final Keyword cMessageKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
+		private final Assignment cMessageAssignment_7_1 = (Assignment)cGroup_7.eContents().get(1);
+		private final RuleCall cMessageSTRINGTerminalRuleCall_7_1_0 = (RuleCall)cMessageAssignment_7_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
 		
 		//Command:
-		//	doc=DOC? "command" name=ID ("target" target=[ddd::AbstractMethod|FQN])? "{" attributes+=Attribute* ("message"
-		//	message=STRING)? "}";
+		//	doc=DOC? "command" name=ID ("target" target=[ddd::AbstractMethod|FQN])? ("sla" acceptable=Duration)? "{"
+		//	attributes+=Attribute* ("message" message=STRING)? "}";
 		public ParserRule getRule() { return rule; }
 
-		//doc=DOC? "command" name=ID ("target" target=[ddd::AbstractMethod|FQN])? "{" attributes+=Attribute* ("message"
-		//message=STRING)? "}"
+		//doc=DOC? "command" name=ID ("target" target=[ddd::AbstractMethod|FQN])? ("sla" acceptable=Duration)? "{"
+		//attributes+=Attribute* ("message" message=STRING)? "}"
 		public Group getGroup() { return cGroup; }
 
 		//doc=DOC?
@@ -242,29 +274,41 @@ public class CqrsDSLGrammarAccess extends AbstractGrammarElementFinder {
 		//FQN
 		public RuleCall getTargetAbstractMethodFQNParserRuleCall_3_1_0_1() { return cTargetAbstractMethodFQNParserRuleCall_3_1_0_1; }
 
+		//("sla" acceptable=Duration)?
+		public Group getGroup_4() { return cGroup_4; }
+
+		//"sla"
+		public Keyword getSlaKeyword_4_0() { return cSlaKeyword_4_0; }
+
+		//acceptable=Duration
+		public Assignment getAcceptableAssignment_4_1() { return cAcceptableAssignment_4_1; }
+
+		//Duration
+		public RuleCall getAcceptableDurationParserRuleCall_4_1_0() { return cAcceptableDurationParserRuleCall_4_1_0; }
+
 		//"{"
-		public Keyword getLeftCurlyBracketKeyword_4() { return cLeftCurlyBracketKeyword_4; }
+		public Keyword getLeftCurlyBracketKeyword_5() { return cLeftCurlyBracketKeyword_5; }
 
 		//attributes+=Attribute*
-		public Assignment getAttributesAssignment_5() { return cAttributesAssignment_5; }
+		public Assignment getAttributesAssignment_6() { return cAttributesAssignment_6; }
 
 		//Attribute
-		public RuleCall getAttributesAttributeParserRuleCall_5_0() { return cAttributesAttributeParserRuleCall_5_0; }
+		public RuleCall getAttributesAttributeParserRuleCall_6_0() { return cAttributesAttributeParserRuleCall_6_0; }
 
 		//("message" message=STRING)?
-		public Group getGroup_6() { return cGroup_6; }
+		public Group getGroup_7() { return cGroup_7; }
 
 		//"message"
-		public Keyword getMessageKeyword_6_0() { return cMessageKeyword_6_0; }
+		public Keyword getMessageKeyword_7_0() { return cMessageKeyword_7_0; }
 
 		//message=STRING
-		public Assignment getMessageAssignment_6_1() { return cMessageAssignment_6_1; }
+		public Assignment getMessageAssignment_7_1() { return cMessageAssignment_7_1; }
 
 		//STRING
-		public RuleCall getMessageSTRINGTerminalRuleCall_6_1_0() { return cMessageSTRINGTerminalRuleCall_6_1_0; }
+		public RuleCall getMessageSTRINGTerminalRuleCall_7_1_0() { return cMessageSTRINGTerminalRuleCall_7_1_0; }
 
 		//"}"
-		public Keyword getRightCurlyBracketKeyword_7() { return cRightCurlyBracketKeyword_7; }
+		public Keyword getRightCurlyBracketKeyword_8() { return cRightCurlyBracketKeyword_8; }
 	}
 
 	public class CommandHandlerElements extends AbstractParserRuleElementFinder {
@@ -1034,11 +1078,65 @@ public class CqrsDSLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	
+	public class TimeUnitElements extends AbstractEnumRuleElementFinder {
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "TimeUnit");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final EnumLiteralDeclaration cMillisEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
+		private final Keyword cMillisMillisKeyword_0_0 = (Keyword)cMillisEnumLiteralDeclaration_0.eContents().get(0);
+		private final EnumLiteralDeclaration cSecondsEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
+		private final Keyword cSecondsSecondsKeyword_1_0 = (Keyword)cSecondsEnumLiteralDeclaration_1.eContents().get(0);
+		private final EnumLiteralDeclaration cMinutesEnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
+		private final Keyword cMinutesMinutesKeyword_2_0 = (Keyword)cMinutesEnumLiteralDeclaration_2.eContents().get(0);
+		private final EnumLiteralDeclaration cHoursEnumLiteralDeclaration_3 = (EnumLiteralDeclaration)cAlternatives.eContents().get(3);
+		private final Keyword cHoursHoursKeyword_3_0 = (Keyword)cHoursEnumLiteralDeclaration_3.eContents().get(0);
+		private final EnumLiteralDeclaration cDaysEnumLiteralDeclaration_4 = (EnumLiteralDeclaration)cAlternatives.eContents().get(4);
+		private final Keyword cDaysDaysKeyword_4_0 = (Keyword)cDaysEnumLiteralDeclaration_4.eContents().get(0);
+		
+		//enum TimeUnit returns ddd::TimeUnit:
+		//	millis | seconds | minutes | hours | days;
+		public EnumRule getRule() { return rule; }
+
+		//millis | seconds | minutes | hours | days
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//millis
+		public EnumLiteralDeclaration getMillisEnumLiteralDeclaration_0() { return cMillisEnumLiteralDeclaration_0; }
+
+		//"millis"
+		public Keyword getMillisMillisKeyword_0_0() { return cMillisMillisKeyword_0_0; }
+
+		//seconds
+		public EnumLiteralDeclaration getSecondsEnumLiteralDeclaration_1() { return cSecondsEnumLiteralDeclaration_1; }
+
+		//"seconds"
+		public Keyword getSecondsSecondsKeyword_1_0() { return cSecondsSecondsKeyword_1_0; }
+
+		//minutes
+		public EnumLiteralDeclaration getMinutesEnumLiteralDeclaration_2() { return cMinutesEnumLiteralDeclaration_2; }
+
+		//"minutes"
+		public Keyword getMinutesMinutesKeyword_2_0() { return cMinutesMinutesKeyword_2_0; }
+
+		//hours
+		public EnumLiteralDeclaration getHoursEnumLiteralDeclaration_3() { return cHoursEnumLiteralDeclaration_3; }
+
+		//"hours"
+		public Keyword getHoursHoursKeyword_3_0() { return cHoursHoursKeyword_3_0; }
+
+		//days
+		public EnumLiteralDeclaration getDaysEnumLiteralDeclaration_4() { return cDaysEnumLiteralDeclaration_4; }
+
+		//"days"
+		public Keyword getDaysDaysKeyword_4_0() { return cDaysDaysKeyword_4_0; }
+	}
+	
 	private final DomainModelElements pDomainModel;
 	private final ContextElements pContext;
 	private final NamespaceElements pNamespace;
 	private final ImportElements pImport;
 	private final AbstractElementElements pAbstractElement;
+	private final TimeUnitElements unknownRuleTimeUnit;
+	private final DurationElements pDuration;
 	private final CommandElements pCommand;
 	private final CommandHandlerElements pCommandHandler;
 	private final ProjectionElements pProjection;
@@ -1076,6 +1174,8 @@ public class CqrsDSLGrammarAccess extends AbstractGrammarElementFinder {
 		this.pNamespace = new NamespaceElements();
 		this.pImport = new ImportElements();
 		this.pAbstractElement = new AbstractElementElements();
+		this.unknownRuleTimeUnit = new TimeUnitElements();
+		this.pDuration = new DurationElements();
 		this.pCommand = new CommandElements();
 		this.pCommandHandler = new CommandHandlerElements();
 		this.pProjection = new ProjectionElements();
@@ -1177,9 +1277,29 @@ public class CqrsDSLGrammarAccess extends AbstractGrammarElementFinder {
 		return getAbstractElementAccess().getRule();
 	}
 
+	//enum TimeUnit returns ddd::TimeUnit:
+	//	millis | seconds | minutes | hours | days;
+	public TimeUnitElements getTimeUnitAccess() {
+		return unknownRuleTimeUnit;
+	}
+	
+	public EnumRule getTimeUnitRule() {
+		return getTimeUnitAccess().getRule();
+	}
+
+	//Duration returns ddd::Duration:
+	//	time=INT unit=TimeUnit;
+	public DurationElements getDurationAccess() {
+		return pDuration;
+	}
+	
+	public ParserRule getDurationRule() {
+		return getDurationAccess().getRule();
+	}
+
 	//Command:
-	//	doc=DOC? "command" name=ID ("target" target=[ddd::AbstractMethod|FQN])? "{" attributes+=Attribute* ("message"
-	//	message=STRING)? "}";
+	//	doc=DOC? "command" name=ID ("target" target=[ddd::AbstractMethod|FQN])? ("sla" acceptable=Duration)? "{"
+	//	attributes+=Attribute* ("message" message=STRING)? "}";
 	public CommandElements getCommandAccess() {
 		return pCommand;
 	}

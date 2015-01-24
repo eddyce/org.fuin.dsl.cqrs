@@ -30,6 +30,7 @@ import org.fuin.dsl.cqrs.services.CqrsDSLGrammarAccess;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Attribute;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintInstance;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Duration;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Import;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Invariants;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.OverriddenTypeMetaInfo;
@@ -136,6 +137,12 @@ public class CqrsDSLSemanticSequencer extends AbstractDelegatingSemanticSequence
 					return; 
 				}
 				else break;
+			case DomainDrivenDesignDslPackage.DURATION:
+				if(context == grammarAccess.getDurationRule()) {
+					sequence_Duration(context, (Duration) semanticObject); 
+					return; 
+				}
+				else break;
 			case DomainDrivenDesignDslPackage.IMPORT:
 				if(context == grammarAccess.getImportRule()) {
 					sequence_Import(context, (Import) semanticObject); 
@@ -195,7 +202,14 @@ public class CqrsDSLSemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Constraint:
-	 *     (doc=DOC? name=ID target=[AbstractMethod|FQN]? attributes+=Attribute* message=STRING?)
+	 *     (
+	 *         doc=DOC? 
+	 *         name=ID 
+	 *         target=[AbstractMethod|FQN]? 
+	 *         acceptable=Duration? 
+	 *         attributes+=Attribute* 
+	 *         message=STRING?
+	 *     )
 	 */
 	protected void sequence_Command(EObject context, Command semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -226,6 +240,25 @@ public class CqrsDSLSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 */
 	protected void sequence_DomainModel(EObject context, DomainModel semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (time=INT unit=TimeUnit)
+	 */
+	protected void sequence_Duration(EObject context, Duration semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, DomainDrivenDesignDslPackage.Literals.DURATION__TIME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DomainDrivenDesignDslPackage.Literals.DURATION__TIME));
+			if(transientValues.isValueTransient(semanticObject, DomainDrivenDesignDslPackage.Literals.DURATION__UNIT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DomainDrivenDesignDslPackage.Literals.DURATION__UNIT));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getDurationAccess().getTimeINTTerminalRuleCall_0_0(), semanticObject.getTime());
+		feeder.accept(grammarAccess.getDurationAccess().getUnitTimeUnitEnumRuleCall_1_0(), semanticObject.getUnit());
+		feeder.finish();
 	}
 	
 	

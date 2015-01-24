@@ -337,7 +337,7 @@ public class CqrsDSLPackageImpl extends EPackageImpl implements CqrsDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getCommand_Attributes()
+  public EReference getCommand_Acceptable()
   {
     return (EReference)commandEClass.getEStructuralFeatures().get(1);
   }
@@ -347,9 +347,19 @@ public class CqrsDSLPackageImpl extends EPackageImpl implements CqrsDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EReference getCommand_Attributes()
+  {
+    return (EReference)commandEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EAttribute getCommand_Message()
   {
-    return (EAttribute)commandEClass.getEStructuralFeatures().get(2);
+    return (EAttribute)commandEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -520,6 +530,7 @@ public class CqrsDSLPackageImpl extends EPackageImpl implements CqrsDSLPackage
 
     commandEClass = createEClass(COMMAND);
     createEReference(commandEClass, COMMAND__TARGET);
+    createEReference(commandEClass, COMMAND__ACCEPTABLE);
     createEReference(commandEClass, COMMAND__ATTRIBUTES);
     createEAttribute(commandEClass, COMMAND__MESSAGE);
 
@@ -605,6 +616,7 @@ public class CqrsDSLPackageImpl extends EPackageImpl implements CqrsDSLPackage
 
     initEClass(commandEClass, Command.class, "Command", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getCommand_Target(), theDomainDrivenDesignDslPackage.getAbstractMethod(), null, "target", null, 0, 1, Command.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getCommand_Acceptable(), theDomainDrivenDesignDslPackage.getDuration(), null, "acceptable", null, 0, 1, Command.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getCommand_Attributes(), theDomainDrivenDesignDslPackage.getAttribute(), null, "attributes", null, 0, -1, Command.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getCommand_Message(), ecorePackage.getEString(), "message", null, 0, 1, Command.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 

@@ -6,6 +6,7 @@ import org.eclipse.emf.common.util.EList;
 
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractMethod;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Attribute;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Duration;
 
 /**
  * <!-- begin-user-doc -->
@@ -16,6 +17,7 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.Attribute;
  * The following features are supported:
  * <ul>
  *   <li>{@link org.fuin.dsl.cqrs.cqrsDSL.Command#getTarget <em>Target</em>}</li>
+ *   <li>{@link org.fuin.dsl.cqrs.cqrsDSL.Command#getAcceptable <em>Acceptable</em>}</li>
  *   <li>{@link org.fuin.dsl.cqrs.cqrsDSL.Command#getAttributes <em>Attributes</em>}</li>
  *   <li>{@link org.fuin.dsl.cqrs.cqrsDSL.Command#getMessage <em>Message</em>}</li>
  * </ul>
@@ -52,6 +54,32 @@ public interface Command extends AbstractElement
    * @generated
    */
   void setTarget(AbstractMethod value);
+
+  /**
+   * Returns the value of the '<em><b>Acceptable</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Acceptable</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Acceptable</em>' containment reference.
+   * @see #setAcceptable(Duration)
+   * @see org.fuin.dsl.cqrs.cqrsDSL.CqrsDSLPackage#getCommand_Acceptable()
+   * @model containment="true"
+   * @generated
+   */
+  Duration getAcceptable();
+
+  /**
+   * Sets the value of the '{@link org.fuin.dsl.cqrs.cqrsDSL.Command#getAcceptable <em>Acceptable</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Acceptable</em>' containment reference.
+   * @see #getAcceptable()
+   * @generated
+   */
+  void setAcceptable(Duration value);
 
   /**
    * Returns the value of the '<em><b>Attributes</b></em>' containment reference list.

@@ -24,6 +24,7 @@ import org.eclipse.xtext.parser.*;
 import org.eclipse.xtext.parser.impl.*;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.xtext.parser.antlr.AbstractInternalAntlrParser;
 import org.eclipse.xtext.parser.antlr.XtextTokenStream;
 import org.eclipse.xtext.parser.antlr.XtextTokenStream.HiddenTokens;
@@ -379,6 +380,63 @@ ruleAbstractElement returns [EObject current=null]
 
 
 
+// Entry rule entryRuleDuration
+entryRuleDuration returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getDurationRule()); }
+	 iv_ruleDuration=ruleDuration 
+	 { $current=$iv_ruleDuration.current; } 
+	 EOF 
+;
+
+// Rule Duration
+ruleDuration returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+((
+(
+		lv_time_0_0=RULE_INT
+		{
+			newLeafNode(lv_time_0_0, grammarAccess.getDurationAccess().getTimeINTTerminalRuleCall_0_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getDurationRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"time",
+        		lv_time_0_0, 
+        		"INT");
+	    }
+
+)
+)(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getDurationAccess().getUnitTimeUnitEnumRuleCall_1_0()); 
+	    }
+		lv_unit_1_0=ruleTimeUnit		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getDurationRule());
+	        }
+       		set(
+       			$current, 
+       			"unit",
+        		lv_unit_1_0, 
+        		"TimeUnit");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))
+;
+
+
+
+
+
 // Entry rule entryRuleCommand
 entryRuleCommand returns [EObject current=null] 
 	:
@@ -452,37 +510,59 @@ ruleCommand returns [EObject current=null]
 	    }
 
 )
-))?	otherlv_5='{' 
+))?(	otherlv_5='sla' 
     {
-    	newLeafNode(otherlv_5, grammarAccess.getCommandAccess().getLeftCurlyBracketKeyword_4());
+    	newLeafNode(otherlv_5, grammarAccess.getCommandAccess().getSlaKeyword_4_0());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getCommandAccess().getAttributesAttributeParserRuleCall_5_0()); 
+	        newCompositeNode(grammarAccess.getCommandAccess().getAcceptableDurationParserRuleCall_4_1_0()); 
 	    }
-		lv_attributes_6_0=ruleAttribute		{
+		lv_acceptable_6_0=ruleDuration		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getCommandRule());
+	        }
+       		set(
+       			$current, 
+       			"acceptable",
+        		lv_acceptable_6_0, 
+        		"Duration");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))?	otherlv_7='{' 
+    {
+    	newLeafNode(otherlv_7, grammarAccess.getCommandAccess().getLeftCurlyBracketKeyword_5());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getCommandAccess().getAttributesAttributeParserRuleCall_6_0()); 
+	    }
+		lv_attributes_8_0=ruleAttribute		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getCommandRule());
 	        }
        		add(
        			$current, 
        			"attributes",
-        		lv_attributes_6_0, 
+        		lv_attributes_8_0, 
         		"Attribute");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)*(	otherlv_7='message' 
+)*(	otherlv_9='message' 
     {
-    	newLeafNode(otherlv_7, grammarAccess.getCommandAccess().getMessageKeyword_6_0());
+    	newLeafNode(otherlv_9, grammarAccess.getCommandAccess().getMessageKeyword_7_0());
     }
 (
 (
-		lv_message_8_0=RULE_STRING
+		lv_message_10_0=RULE_STRING
 		{
-			newLeafNode(lv_message_8_0, grammarAccess.getCommandAccess().getMessageSTRINGTerminalRuleCall_6_1_0()); 
+			newLeafNode(lv_message_10_0, grammarAccess.getCommandAccess().getMessageSTRINGTerminalRuleCall_7_1_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -491,14 +571,14 @@ ruleCommand returns [EObject current=null]
        		setWithLastConsumed(
        			$current, 
        			"message",
-        		lv_message_8_0, 
+        		lv_message_10_0, 
         		"STRING");
 	    }
 
 )
-))?	otherlv_9='}' 
+))?	otherlv_11='}' 
     {
-    	newLeafNode(otherlv_9, grammarAccess.getCommandAccess().getRightCurlyBracketKeyword_7());
+    	newLeafNode(otherlv_11, grammarAccess.getCommandAccess().getRightCurlyBracketKeyword_8());
     }
 )
 ;
@@ -1690,6 +1770,43 @@ finally {
 }
 
 
+
+
+
+// Rule TimeUnit
+ruleTimeUnit returns [Enumerator current=null] 
+    @init { enterRule(); }
+    @after { leaveRule(); }:
+((	enumLiteral_0='millis' 
+	{
+        $current = grammarAccess.getTimeUnitAccess().getMillisEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_0, grammarAccess.getTimeUnitAccess().getMillisEnumLiteralDeclaration_0()); 
+    }
+)
+    |(	enumLiteral_1='seconds' 
+	{
+        $current = grammarAccess.getTimeUnitAccess().getSecondsEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_1, grammarAccess.getTimeUnitAccess().getSecondsEnumLiteralDeclaration_1()); 
+    }
+)
+    |(	enumLiteral_2='minutes' 
+	{
+        $current = grammarAccess.getTimeUnitAccess().getMinutesEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_2, grammarAccess.getTimeUnitAccess().getMinutesEnumLiteralDeclaration_2()); 
+    }
+)
+    |(	enumLiteral_3='hours' 
+	{
+        $current = grammarAccess.getTimeUnitAccess().getHoursEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_3, grammarAccess.getTimeUnitAccess().getHoursEnumLiteralDeclaration_3()); 
+    }
+)
+    |(	enumLiteral_4='days' 
+	{
+        $current = grammarAccess.getTimeUnitAccess().getDaysEnumLiteralDeclaration_4().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_4, grammarAccess.getTimeUnitAccess().getDaysEnumLiteralDeclaration_4()); 
+    }
+));
 
 
 

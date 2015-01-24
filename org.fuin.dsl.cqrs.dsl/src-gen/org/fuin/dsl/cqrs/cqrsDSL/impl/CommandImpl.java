@@ -22,6 +22,7 @@ import org.fuin.dsl.cqrs.cqrsDSL.CqrsDSLPackage;
 
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractMethod;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Attribute;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Duration;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,6 +32,7 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.Attribute;
  * The following features are implemented:
  * <ul>
  *   <li>{@link org.fuin.dsl.cqrs.cqrsDSL.impl.CommandImpl#getTarget <em>Target</em>}</li>
+ *   <li>{@link org.fuin.dsl.cqrs.cqrsDSL.impl.CommandImpl#getAcceptable <em>Acceptable</em>}</li>
  *   <li>{@link org.fuin.dsl.cqrs.cqrsDSL.impl.CommandImpl#getAttributes <em>Attributes</em>}</li>
  *   <li>{@link org.fuin.dsl.cqrs.cqrsDSL.impl.CommandImpl#getMessage <em>Message</em>}</li>
  * </ul>
@@ -49,6 +51,16 @@ public class CommandImpl extends AbstractElementImpl implements Command
    * @ordered
    */
   protected AbstractMethod target;
+
+  /**
+   * The cached value of the '{@link #getAcceptable() <em>Acceptable</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getAcceptable()
+   * @generated
+   * @ordered
+   */
+  protected Duration acceptable;
 
   /**
    * The cached value of the '{@link #getAttributes() <em>Attributes</em>}' containment reference list.
@@ -149,6 +161,54 @@ public class CommandImpl extends AbstractElementImpl implements Command
    * <!-- end-user-doc -->
    * @generated
    */
+  public Duration getAcceptable()
+  {
+    return acceptable;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetAcceptable(Duration newAcceptable, NotificationChain msgs)
+  {
+    Duration oldAcceptable = acceptable;
+    acceptable = newAcceptable;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CqrsDSLPackage.COMMAND__ACCEPTABLE, oldAcceptable, newAcceptable);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setAcceptable(Duration newAcceptable)
+  {
+    if (newAcceptable != acceptable)
+    {
+      NotificationChain msgs = null;
+      if (acceptable != null)
+        msgs = ((InternalEObject)acceptable).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CqrsDSLPackage.COMMAND__ACCEPTABLE, null, msgs);
+      if (newAcceptable != null)
+        msgs = ((InternalEObject)newAcceptable).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CqrsDSLPackage.COMMAND__ACCEPTABLE, null, msgs);
+      msgs = basicSetAcceptable(newAcceptable, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, CqrsDSLPackage.COMMAND__ACCEPTABLE, newAcceptable, newAcceptable));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EList<Attribute> getAttributes()
   {
     if (attributes == null)
@@ -191,6 +251,8 @@ public class CommandImpl extends AbstractElementImpl implements Command
   {
     switch (featureID)
     {
+      case CqrsDSLPackage.COMMAND__ACCEPTABLE:
+        return basicSetAcceptable(null, msgs);
       case CqrsDSLPackage.COMMAND__ATTRIBUTES:
         return ((InternalEList<?>)getAttributes()).basicRemove(otherEnd, msgs);
     }
@@ -210,6 +272,8 @@ public class CommandImpl extends AbstractElementImpl implements Command
       case CqrsDSLPackage.COMMAND__TARGET:
         if (resolve) return getTarget();
         return basicGetTarget();
+      case CqrsDSLPackage.COMMAND__ACCEPTABLE:
+        return getAcceptable();
       case CqrsDSLPackage.COMMAND__ATTRIBUTES:
         return getAttributes();
       case CqrsDSLPackage.COMMAND__MESSAGE:
@@ -231,6 +295,9 @@ public class CommandImpl extends AbstractElementImpl implements Command
     {
       case CqrsDSLPackage.COMMAND__TARGET:
         setTarget((AbstractMethod)newValue);
+        return;
+      case CqrsDSLPackage.COMMAND__ACCEPTABLE:
+        setAcceptable((Duration)newValue);
         return;
       case CqrsDSLPackage.COMMAND__ATTRIBUTES:
         getAttributes().clear();
@@ -256,6 +323,9 @@ public class CommandImpl extends AbstractElementImpl implements Command
       case CqrsDSLPackage.COMMAND__TARGET:
         setTarget((AbstractMethod)null);
         return;
+      case CqrsDSLPackage.COMMAND__ACCEPTABLE:
+        setAcceptable((Duration)null);
+        return;
       case CqrsDSLPackage.COMMAND__ATTRIBUTES:
         getAttributes().clear();
         return;
@@ -278,6 +348,8 @@ public class CommandImpl extends AbstractElementImpl implements Command
     {
       case CqrsDSLPackage.COMMAND__TARGET:
         return target != null;
+      case CqrsDSLPackage.COMMAND__ACCEPTABLE:
+        return acceptable != null;
       case CqrsDSLPackage.COMMAND__ATTRIBUTES:
         return attributes != null && !attributes.isEmpty();
       case CqrsDSLPackage.COMMAND__MESSAGE:

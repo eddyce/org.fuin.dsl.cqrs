@@ -25,9 +25,15 @@ Import returns ddd::Import:
 AbstractElement:
 	Command | CommandHandler | Projection | View;
 
+enum TimeUnit returns ddd::TimeUnit:
+	millis | seconds | minutes | hours | days;
+
+Duration returns ddd::Duration:
+	time=INT unit=TimeUnit;
+
 Command:
 	doc=DOC? 
-	'command' name=ID ('target' target=[ddd::AbstractMethod|FQN])?  '{'
+	'command' name=ID ('target' target=[ddd::AbstractMethod|FQN])? ('sla' acceptable=Duration)? '{'
 		attributes+=Attribute*	
 		('message' message=STRING)?
 	'}';
