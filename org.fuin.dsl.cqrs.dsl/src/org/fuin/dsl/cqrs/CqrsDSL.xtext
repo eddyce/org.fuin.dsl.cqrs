@@ -60,10 +60,13 @@ TypeMetaInfo returns ddd::TypeMetaInfo:
     	('prompt' (prompt=STRING))?
     	('examples' (examples+=Literal*))?;
 
+GenericArgs returns ddd::GenericArgs:
+	'<' + args+=[ddd::Type|FQN] (',' args+=[ddd::Type|FQN])* '>';	
+
 Attribute returns ddd::Attribute:
 	doc=DOC? 
 	(nullable='nullable')? 
-	type=[ddd::Type] (multiplicity='*')? name=ID (invariants=Invariants)? (overridden=OverriddenTypeMetaInfo)?;
+	type=[ddd::Type] generics=GenericArgs? name=ID (invariants=Invariants)? (overridden=OverriddenTypeMetaInfo)?;
 
 Invariants returns ddd::Invariants:
 	'invariants' constraintInstances+=ConstraintInstance (',' constraintInstances+=ConstraintInstance)*;
